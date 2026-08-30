@@ -1,5 +1,6 @@
 /*
   MotionWakeSimpleTest.ino — minimal wake-on-motion -> BLE scan -> WiFi push
+  (power-optimized variant)
 
   Deliberately simple, for testing the pipeline end to end:
     1. Deep sleep. LIS3DH wakes it on motion (D2).
@@ -24,6 +25,40 @@
   Wiring (confirmed): SDA->D4 (GPIO22), SCL->D5 (GPIO23),
   LIS3DH I1 -> D2 (GPIO2, in the C6's LP/RTC wake domain).
   Libraries: SparkFun LIS3DH, NimBLE-Arduino.
+
+  --- POWER CHANGES vs. original ---
+  1. LIS3DH ODR dropped 10Hz -> 1Hz (CTRL_REG1 0x2F -> 0x1F). The
+     LPen (low-power) bit was already set, so this doesn't change
+     operating mode, only sample rate. Adds up to ~1s of wake
+     latency worst-case; bump back to 0x2F (10Hz) if that feels
+     sluggish in testing.
+  2. Added isolateUnusedPins(): on the ESP32-C6, only GPIO0-7 are in
+     the LP_IO domain that stays powered for GPIO wakeup (RTC_PERIPH
+     stays on for D2), so those are the only pins where a stray
+     pull can leak current in deep sleep. D0/D1 are unused here, so
+     they get isolated. D3/D6-D10 live in the HP GPIO domain, which
+     is fully powered off in deep sleep regardless of firmware —
+     nothing to isolate there.
+  3. No change needed on the LIS3DH side beyond ODR: LPen was
+     already enabled, and full power-down isn't usable since it
+     would also disable the wake interrupt.
+  4. Added phase timing: millis() timestamps at each stage boundary,
+     printed as a table right before deep sleep. Everything from
+     "sensor read" onward is measured exactly. Wake+boot latency
+     (interrupt -> setup() actually running) can't be measured this
+     way -- millis() itself resets at boot -- so WAKE_MARKER_PIN
+     (D6, unused) is driven HIGH as the very first line of setup()
+     and LOW right before sleep, so that latency shows up directly
+     on a scope or power profiler (e.g. Nordic PPK2) against the
+     current trace instead of being guessed at.
+
+  Note: XIAO ESP32C6 boards measure ~15uA bare deep-sleep current
+  (dominated by the onboard LDO's own quiescent draw per community
+  teardown measurements) — the LIS3DH in low-power mode typically
+  adds a few uA on top of that per its datasheet. These firmware
+  changes get you close to that floor; going lower generally means
+  a different/lower-Iq regulator on the board itself, which is a
+  hardware change, not a firmware one.
 */
 
 #include "SparkFunLIS3DH.h"
@@ -32,6 +67,7 @@
 #include <WiFi.h>
 #include <NimBLEDevice.h>
 #include <HTTPClient.h>
+#include "driver/rtc_io.h"
 
 #include "beacons.h"
 #include "estimator_types.h"
@@ -48,7 +84,24 @@ const char* DEVICE_ID       = "esp32-01";
 
                                         // Production value was 0x10 (~256mg). Raise back toward
                                         // that once testing is done, if it's too sensitive in use.
-#define SCAN_MS 3000              // how long to listen for BLE devices
+
+// CTRL_REG1: ODR[3:0] | LPen | Zen | Yen | Xen
+//   0x2F = 10Hz, low-power mode, all axes  (previous value)
+//   0x1F =  1Hz, low-power mode, all axes  (current — lower sample rate,
+//           same low-power mode, adds up to ~1s worst-case wake latency)
+#define LIS3DH_CTRL_REG1_VALUE 0x1F
+
+// Timing instrumentation ----------------------------------------------------
+// WAKE_MARKER_PIN is toggled HIGH as the very first line of setup() and LOW
+// right before esp_deep_sleep_start(). It's unused elsewhere on this board,
+// so probing it with a scope or power profiler lines up the exact moment
+// code execution starts against the current-draw trace -- the only way to
+// see true wake+boot latency, since millis() resets at boot and can't
+// measure anything before setup() runs.
+#define WAKE_MARKER_PIN D6
+
+#define SCAN_MS 1000              // how long to listen for BLE devices, set to 1500 or higher (not above 2500 to avoid high power drain) for better chances of locating the beacons and calculating the position
+
 const float TEMP =3.0f;
 static const int TOP_N =3;
 static const float ALPHA_W =0.55f;
@@ -72,6 +125,17 @@ RTC_DATA_ATTR uint32_t g_wakeCount = 0;
 RTC_DATA_ATTR uint32_t g_noBeaconCount = 0;
 RTC_DATA_ATTR uint32_t g_wifiFailCount = 0;
 RTC_DATA_ATTR uint32_t g_pushOkCount = 0;
+
+// Per-cycle phase timestamps. Plain (non-RTC) globals on purpose -- deep
+// sleep is a full chip reset, so these zero out every boot, giving a clean
+// per-cycle timing log instead of an accumulating total.
+static unsigned long g_tBoot = 0;
+static unsigned long g_tSensorReady = 0;
+static unsigned long g_tBleDone = 0;
+static unsigned long g_tPosDone = 0;
+static unsigned long g_tWifiDone = 0;      // 0 if WiFi step was skipped/never finished
+static unsigned long g_tPushDone = 0;      // 0 if push never happened this cycle
+
 // Single Burst aggregated beacon readings
 struct Agg{
   bool present = false;
@@ -114,7 +178,7 @@ static ScanCallbacks g_scanCallbacks;
 
 // ── LIS3DH motion-interrupt setup (same as the confirmed-working test) ─
 static void armMotionInterrupt() {
-  SensorOne.writeRegister(LIS3DH_CTRL_REG1, 0x2F);
+  SensorOne.writeRegister(LIS3DH_CTRL_REG1, LIS3DH_CTRL_REG1_VALUE);
   SensorOne.writeRegister(LIS3DH_CTRL_REG2, 0x01);
 
   // Reading REFERENCE resets the HPF's internal reference to whatever
@@ -140,6 +204,19 @@ static void clearMotionInterrupt() {
   SensorOne.readRegister(&dummy, LIS3DH_INT1_SRC);
 }
 
+// Isolate the GPIOs we don't use that actually matter for deep-sleep
+// current on the C6: GPIO0-7 are the LP_IO pins whose power domain
+// stays alive for our D2 (GPIO2) wake source. D0 (GPIO0) and D1
+// (GPIO1) are unused here, so disconnect their input/output/pull
+// circuitry before sleeping. D2 itself is left alone (it's the wake
+// pin). D3/D6-D10 (GPIO16-21) are outside the LP_IO range — they sit
+// in the HP GPIO domain, which is fully powered off in deep sleep on
+// this chip, so there's no isolate() call for them and none needed.
+static void isolateUnusedPins() {
+  rtc_gpio_isolate(GPIO_NUM_0);  // D0, unused
+  rtc_gpio_isolate(GPIO_NUM_1);  // D1, unused
+}
+
 static void doBleScan() {
   
   for(int i =0; i<NUM_BEACONS;i++){
@@ -155,7 +232,13 @@ unsigned long startSync = millis();
   scan->setActiveScan(true);
   scan->setInterval(100);
   scan->setWindow(99);
-  scan->start(SCAN_MS, false);   // blocks for SCAN_SECONDS
+  // NimBLE-Arduino v2.x note: start() is NON-blocking -- it returns almost
+  // immediately and the scan continues in the background. Calling deinit()
+  // right after start() (as the original code did) tears the scan down
+  // after only tens of ms, which is why beacons were never found. getResults()
+  // is the v2.x function that actually blocks for the given duration; the
+  // registered onResult() callback still fires per-device exactly as before.
+  scan->getResults(SCAN_MS, false);   // blocks for SCAN_MS milliseconds
   NimBLEDevice::deinit(true);
 }
 static bool calculatePosition(EstResult& out) {
@@ -246,6 +329,34 @@ static void pushPositionToServer(const EstResult& r, float ax, float ay, float a
   }
 }
 
+// Prints the per-cycle phase breakdown. Called right before deep sleep,
+// once all of this cycle's timestamps are known. tTeardownDone is passed
+// in rather than read from a global since it's taken right at the call site.
+static void printTimingSummary(unsigned long tTeardownDone) {
+  Serial.println("\n--- Phase timing (ms) ---");
+  Serial.printf("Sensor init+read : %4lu\n", g_tSensorReady - g_tBoot);
+  Serial.printf("BLE scan         : %4lu\n", g_tBleDone - g_tSensorReady);
+  Serial.printf("Position calc    : %4lu\n", g_tPosDone - g_tBleDone);
+
+  unsigned long lastStamp = g_tPosDone;
+  if (g_tWifiDone > 0) {
+    Serial.printf("WiFi connect     : %4lu\n", g_tWifiDone - g_tPosDone);
+    lastStamp = g_tWifiDone;
+    if (g_tPushDone > 0) {
+      Serial.printf("HTTP POST        : %4lu\n", g_tPushDone - g_tWifiDone);
+      lastStamp = g_tPushDone;
+    }
+  } else {
+    Serial.println("WiFi connect     : skipped (no beacons this cycle)");
+  }
+
+  Serial.printf("Teardown+isolate : %4lu\n", tTeardownDone - lastStamp);
+  Serial.printf("Total setup() time: %4lu ms\n", tTeardownDone - g_tBoot);
+  Serial.println("(wake+boot latency before setup() started is NOT included");
+  Serial.println(" here -- probe WAKE_MARKER_PIN against the current trace");
+  Serial.println(" on a scope/power profiler to see that part.)");
+}
+
 static void goToSleepUntilMotion() {
   armMotionInterrupt();
   clearMotionInterrupt();
@@ -258,12 +369,23 @@ if (WiFi.getMode() != WIFI_MODE_NULL) {
     WiFi.mode(WIFI_OFF);
   }
 
+  isolateUnusedPins();
+
+  unsigned long tTeardownDone = millis();
+  printTimingSummary(tTeardownDone);
+
+  digitalWrite(WAKE_MARKER_PIN, LOW);  // marks "code execution done" for the scope/profiler
+
   Serial.println("Going back to sleep. Move the board to wake it.\n");
   Serial.flush();
   esp_deep_sleep_start();
 }
 
 void setup() {
+  pinMode(WAKE_MARKER_PIN, OUTPUT);
+  digitalWrite(WAKE_MARKER_PIN, HIGH);  // marks "code execution started" for the scope/profiler
+  g_tBoot = millis();
+
   Serial.begin(115200);
   g_bootCount++;
 
@@ -288,26 +410,32 @@ g_wakeCount++;
   float ay = SensorOne.readFloatAccelY();
   float az = SensorOne.readFloatAccelZ();
   Serial.printf("Accel: X=%.3f Y=%.3f Z=%.3f\n", ax, ay, az);
+  g_tSensorReady = millis();
 
 // Scan the area for known beacons
   Serial.printf("Scanning for BLE devices for %ds...\n", SCAN_MS);
   doBleScan();
+  g_tBleDone = millis();
 
 // estimate the position
 EstResult result; //passing an object of EstResult type to the function
 //it will make in place changes 
 //and return a bool based on the success of the operation
 bool validPos = calculatePosition(result);
+g_tPosDone = millis();
 
 //push if position calcualted is valid
 if (validPos){
     Serial.println("Connecting to WiFi...");
   if (connectWiFi()) {
+    g_tWifiDone = millis();
     Serial.print("Connected, IP: "); Serial.println(WiFi.localIP());
     pushPositionToServer(result,ax,ay,az);
+    g_tPushDone = millis();
     // successfully pushed via WiFi
     g_pushOkCount++;
   } else {
+    g_tWifiDone = millis();
     // couldnt send via WiFi
     g_wifiFailCount++;
     Serial.println("WiFi connect failed — skipping push this cycle.");
