@@ -119,6 +119,15 @@ RTC_DATA_ATTR uint32_t g_bootCount = 0;
 RTC_DATA_ATTR bool g_haveEma = false;
 RTC_DATA_ATTR float g_emaX=0,g_emaY=0;
 RTC_DATA_ATTR int8_t g_top2[2] {-1,-1};
+RTC_DATA_ATTR uint32_t g_tooCloseCount =0;
+
+
+
+static const float MOVE_THRESHOLD_M =2.0f;
+// last position actually pushed to the server - distict
+//from g_emaX/g_emaY above. This is what MOVE_THRESHOLD_M compares against
+RTC_DATA_ATTR bool g_havePub = false;
+RTC_DATA_ATTR float g_pubX=0, g_pubY =0;
 
 // to check number of wakeups vs number of wifi pushes
 RTC_DATA_ATTR uint32_t g_wakeCount = 0;
@@ -150,9 +159,9 @@ static Agg g_agg[NUM_BEACONS];
 class ScanCallbacks : public NimBLEScanCallbacks {
   void onResult(const NimBLEAdvertisedDevice* dev) override {
     // return if the bluetooth device dosen't have a name that ( which prevents us from checking it's name in the known beacons list)
-  if(!dev->haveName()){ 
-    return;
-  }
+  // if(!dev->haveName()){ 
+  //   return;
+  // }
   std::string name = dev->getName();
   // now we get the rssi and later return if the value exceeds the limits
   int rssi = dev->getRSSI();
@@ -179,7 +188,7 @@ static ScanCallbacks g_scanCallbacks;
 // ── LIS3DH motion-interrupt setup (same as the confirmed-working test) ─
 static void armMotionInterrupt() {
   SensorOne.writeRegister(LIS3DH_CTRL_REG1, LIS3DH_CTRL_REG1_VALUE);
-  SensorOne.writeRegister(LIS3DH_CTRL_REG2, 0x01);
+  SensorOne.writeRegister(LIS3DH_CTRL_REG2, 0x2F);
 
   // Reading REFERENCE resets the HPF's internal reference to whatever
   // the current (post-filter) value is. Without this, the filter needs
@@ -189,19 +198,24 @@ static void armMotionInterrupt() {
   // with the board sitting perfectly still.
   uint8_t ref;
   SensorOne.readRegister(&ref, LIS3DH_REFERENCE);
-  delay(100); // let the filter fully settle before arming/clearing
-
+  delay(150); // let the filter fully settle before arming/clearing
+// was 100ms for 10Hz, at 1Hz we set 1000ms
   SensorOne.writeRegister(LIS3DH_CTRL_REG3, 0x40);
   SensorOne.writeRegister(LIS3DH_CTRL_REG4, 0x00);
   SensorOne.writeRegister(LIS3DH_CTRL_REG5, 0x08);
   SensorOne.writeRegister(LIS3DH_INT1_THS, LIS3DH_MOTION_THRESHOLD);
   SensorOne.writeRegister(LIS3DH_INT1_DURATION, 0x00);
-  SensorOne.writeRegister(LIS3DH_INT1_CFG, 0x7F);
+  SensorOne.writeRegister(LIS3DH_INT1_CFG, 0x2A);
 }
 
 static void clearMotionInterrupt() {
   uint8_t dummy;
-  SensorOne.readRegister(&dummy, LIS3DH_INT1_SRC);
+  // Read INT1_SRC in a loop until physical pin drops LOW
+  for (int i = 0; i < 10; i++) {
+    SensorOne.readRegister(&dummy, LIS3DH_INT1_SRC);
+    if (digitalRead(D2) == LOW) break;
+    delay(20);
+  }
 }
 
 // Isolate the GPIOs we don't use that actually matter for deep-sleep
@@ -217,6 +231,29 @@ static void isolateUnusedPins() {
   rtc_gpio_isolate(GPIO_NUM_1);  // D1, unused
 }
 
+// for checking if the chip is still moving or not
+static const uint32_t REST_TIMER_S =25;
+static const float MOTION_SAMPLE_COUNT =4;
+static const float MOTION_STILL_DELTA_G =0.15f;
+static bool isCurrentlyMoving(){
+float mag = 0;
+float minMag = 999.0f;
+float maxMag =0.0f;
+  for (int i = 0; i < MOTION_SAMPLE_COUNT; i++) {
+    float ax = SensorOne.readFloatAccelX();
+    float ay = SensorOne.readFloatAccelY();
+    float az = SensorOne.readFloatAccelZ();
+    mag = sqrtf(ax*ax + ay*ay + az*az);
+    if (mag < minMag) minMag = mag;
+    if (mag > maxMag) maxMag = mag;
+    delay(100);   // spread samples out a bit rather than reading back-to-back
+  }
+float deltaMag = maxMag - minMag;
+  Serial.printf("Motion check: min=%.3fg, max=%.3fg (delta=%.3fg)\n", minMag, maxMag, deltaMag);
+
+  return deltaMag > MOTION_STILL_DELTA_G;
+
+}
 static void doBleScan() {
   
   for(int i =0; i<NUM_BEACONS;i++){
@@ -310,7 +347,7 @@ static bool connectWiFi() {
   while (WiFi.status() != WL_CONNECTED && millis() - t0 < 8000) delay(50);
   return WiFi.status() == WL_CONNECTED;
 }
-
+// the max time that the post will try without response is 5 seconds
 static void pushPositionToServer(const EstResult& r, float ax, float ay, float az) {
   char buf[380];
   snprintf(buf, sizeof(buf),
@@ -356,13 +393,70 @@ static void printTimingSummary(unsigned long tTeardownDone) {
   Serial.println(" here -- probe WAKE_MARKER_PIN against the current trace");
   Serial.println(" on a scope/power profiler to see that part.)");
 }
+static void goToSleep(bool isMoving) {
+  pinMode(D2, INPUT_PULLDOWN);
 
-static void goToSleepUntilMotion() {
+  if (isMoving) {
+    // ── MODE 1: MOVING (Timer-Only Sleep) ─────────────────────────────
+    // Wakes ONLY when 25 seconds elapse. Motion events are ignored.
+    esp_sleep_enable_timer_wakeup((uint64_t)REST_TIMER_S * 1000000ULL);
+    Serial.println("State: MOVING -> Deep sleep for 25s (Timer wake ONLY, motion ignored).");
+  } 
+  else {
+    // ── MODE 2: SETTLED (Motion-Only Sleep) ───────────────────────────
+    // Wakes ONLY on LIS3DH interrupt (D2 HIGH). Timer is NOT armed.
+    armMotionInterrupt();
+    clearMotionInterrupt();
+
+    // Ensure physical line is LOW before arming to prevent immediate false wake
+    if (digitalRead(D2) == HIGH) {
+      Serial.println("Warning: INT1 line still HIGH, clearing latch...");
+      clearMotionInterrupt();
+    }
+
+    esp_deep_sleep_enable_gpio_wakeup((1ULL << D2), ESP_GPIO_WAKEUP_GPIO_HIGH);
+    Serial.println("State: SETTLED -> Deep sleep indefinitely (Motion wake ONLY, timer disabled).");
+  }
+
+  // Shut down Wi-Fi peripheral to conserve power
+  if (WiFi.getMode() != WIFI_MODE_NULL) {
+    WiFi.disconnect(true);
+    WiFi.mode(WIFI_OFF);
+  }
+
+  isolateUnusedPins();
+
+  unsigned long tTeardownDone = millis();
+  printTimingSummary(tTeardownDone);
+
+  digitalWrite(WAKE_MARKER_PIN, LOW);
+
+  Serial.println("Entering deep sleep...\n");
+  Serial.flush();
+  esp_deep_sleep_start();
+}
+static void goToSleepUntilMotion(bool armTimer) {
+  pinMode(D2, INPUT_PULLDOWN);
   armMotionInterrupt();
   clearMotionInterrupt();
-  pinMode(D2, INPUT);
+  // Verify D2 is LOW before enabling wake source
+  if (digitalRead(D2) == HIGH) {
+    Serial.println("Warning: INT1 still HIGH! Re-clearing filter...");
+    clearMotionInterrupt();
+  }
   esp_deep_sleep_enable_gpio_wakeup((1ULL << D2), ESP_GPIO_WAKEUP_GPIO_HIGH);
 
+// deciding wether to arm the timer or not
+// if the chip was still in motion when it went to deep sleep
+// wake up in 25 seconds and calculate, send the position
+if(armTimer){
+   esp_sleep_enable_timer_wakeup((uint64_t)REST_TIMER_S * 1000000ULL);
+    Serial.println("Still moving at sleep time -- also arming 25s recheck timer.");
+  
+}
+else{
+   Serial.println("Settled -- motion-only wake, sleeping indefinitely.");
+}
   // Safely shut down Wi-Fi only if it was turned on
 if (WiFi.getMode() != WIFI_MODE_NULL) {
     WiFi.disconnect(true);
@@ -426,7 +520,20 @@ g_tPosDone = millis();
 
 //push if position calcualted is valid
 if (validPos){
-    Serial.println("Connecting to WiFi...");
+
+
+// compare the current estimated postion against the last pusblished positon 
+//if we compare with the last estimated positon then it would almost 
+//always show a small delta, causing the value to never get published
+bool moved = true;
+if(g_havePub){
+  float dx = result.x - g_pubX;
+  float dy = result.y - g_pubY;
+float distM = sqrtf(dx*dx + dy*dy);
+moved = distM >= MOVE_THRESHOLD_M;
+}
+if(moved){
+      Serial.println("Connecting to WiFi...");
   if (connectWiFi()) {
     g_tWifiDone = millis();
     Serial.print("Connected, IP: "); Serial.println(WiFi.localIP());
@@ -434,6 +541,9 @@ if (validPos){
     g_tPushDone = millis();
     // successfully pushed via WiFi
     g_pushOkCount++;
+    g_havePub = true;
+    g_pubX = result.x;
+    g_pubY = result.y;
   } else {
     g_tWifiDone = millis();
     // couldnt send via WiFi
@@ -442,15 +552,22 @@ if (validPos){
   }
 }
 else{
+  g_tooCloseCount++;
+  Serial.printf("Moved <%.1fm since last push — skipping WiFi this cycle.\n", MOVE_THRESHOLD_M);
+}
+
+}
+else{
 
       // incrementing if no beacons get found, so no wifi pushup
     g_noBeaconCount++;
 }
 
+bool stillMoving = isCurrentlyMoving();
 // to see what is happening
   Serial.printf("wake=%lu noBeacon=%lu wifiFail=%lu pushOk=%lu\n",
   g_wakeCount, g_noBeaconCount, g_wifiFailCount, g_pushOkCount);
-  goToSleepUntilMotion();  // never returns
+  goToSleepUntilMotion(stillMoving);  // never returns
 }
 
 void loop() {
