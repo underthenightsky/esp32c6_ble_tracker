@@ -278,6 +278,40 @@ unsigned long startSync = millis();
   scan->getResults(SCAN_MS, false);   // blocks for SCAN_MS milliseconds
   NimBLEDevice::deinit(true);
 }
+static void sleepUntilTimerOnly(uint32_t seconds){
+  esp_sleep_enable_timer_wakeup((uint64_t)seconds*1000000ULL);
+
+  if(WiFi.getMode()!= WIFI_MODE_NULL){
+    WiFi.disconnect(true);
+    WiFi.mode(WIFI_OFF);
+  }
+  isolateUnusedPins();
+ unsigned long tTeardownDone = millis();
+ printTimingSummary(tTeardownDone);
+ digitalWrite(WAKE_MARKER_PIN,LOW);
+ Serial.println("Still moving, sleeping for 25 sec, motion won't wake the chip");
+ Serial.flush();
+  esp_deep_sleep_start();  
+}
+
+static void sleepUntilMotionOnly(){
+  // settled sleep: only the LIS3DH interrupt on D2 wakes it up 
+  armMotionInterrupt();
+  clearMotionInterrupt();
+  pinMode(D2,INPUT);
+  esp_deep_sleep_enable_gpio_wakeup((1ULL <<D2),ESP_GPIO_WAKEUP_GPIO_HIGH);
+  if(WiFi.getMode() != WIFI_MODE_NULL){
+    WiFi.disconnect(true);
+    WiFi.mode(WIFI_OFF);
+  }
+  isolateUnusedPins();
+  unsigned long tTeardownDone = millis();
+  printTimingSummary(tTeardownDone);
+  digitalWrite(WAKE_MARKER_PIN,LOW);
+  Serial.println("settled, wakeup on next motion");
+  Serial.flush();
+  esp_deep_sleep_start();
+}
 static bool calculatePosition(EstResult& out) {
   int8_t order[NUM_BEACONS];
   int nPresent = 0;
@@ -393,87 +427,87 @@ static void printTimingSummary(unsigned long tTeardownDone) {
   Serial.println(" here -- probe WAKE_MARKER_PIN against the current trace");
   Serial.println(" on a scope/power profiler to see that part.)");
 }
-static void goToSleep(bool isMoving) {
-  pinMode(D2, INPUT_PULLDOWN);
+// static void goToSleep(bool isMoving) {
+//   pinMode(D2, INPUT_PULLDOWN);
 
-  if (isMoving) {
-    // ── MODE 1: MOVING (Timer-Only Sleep) ─────────────────────────────
-    // Wakes ONLY when 25 seconds elapse. Motion events are ignored.
-    esp_sleep_enable_timer_wakeup((uint64_t)REST_TIMER_S * 1000000ULL);
-    Serial.println("State: MOVING -> Deep sleep for 25s (Timer wake ONLY, motion ignored).");
-  } 
-  else {
-    // ── MODE 2: SETTLED (Motion-Only Sleep) ───────────────────────────
-    // Wakes ONLY on LIS3DH interrupt (D2 HIGH). Timer is NOT armed.
-    armMotionInterrupt();
-    clearMotionInterrupt();
+//   if (isMoving) {
+//     // ── MODE 1: MOVING (Timer-Only Sleep) ─────────────────────────────
+//     // Wakes ONLY when 25 seconds elapse. Motion events are ignored.
+//     esp_sleep_enable_timer_wakeup((uint64_t)REST_TIMER_S * 1000000ULL);
+//     Serial.println("State: MOVING -> Deep sleep for 25s (Timer wake ONLY, motion ignored).");
+//   } 
+//   else {
+//     // ── MODE 2: SETTLED (Motion-Only Sleep) ───────────────────────────
+//     // Wakes ONLY on LIS3DH interrupt (D2 HIGH). Timer is NOT armed.
+//     armMotionInterrupt();
+//     clearMotionInterrupt();
 
-    // Ensure physical line is LOW before arming to prevent immediate false wake
-    if (digitalRead(D2) == HIGH) {
-      Serial.println("Warning: INT1 line still HIGH, clearing latch...");
-      clearMotionInterrupt();
-    }
+//     // Ensure physical line is LOW before arming to prevent immediate false wake
+//     if (digitalRead(D2) == HIGH) {
+//       Serial.println("Warning: INT1 line still HIGH, clearing latch...");
+//       clearMotionInterrupt();
+//     }
 
-    esp_deep_sleep_enable_gpio_wakeup((1ULL << D2), ESP_GPIO_WAKEUP_GPIO_HIGH);
-    Serial.println("State: SETTLED -> Deep sleep indefinitely (Motion wake ONLY, timer disabled).");
-  }
+//     esp_deep_sleep_enable_gpio_wakeup((1ULL << D2), ESP_GPIO_WAKEUP_GPIO_HIGH);
+//     Serial.println("State: SETTLED -> Deep sleep indefinitely (Motion wake ONLY, timer disabled).");
+//   }
 
-  // Shut down Wi-Fi peripheral to conserve power
-  if (WiFi.getMode() != WIFI_MODE_NULL) {
-    WiFi.disconnect(true);
-    WiFi.mode(WIFI_OFF);
-  }
+//   // Shut down Wi-Fi peripheral to conserve power
+//   if (WiFi.getMode() != WIFI_MODE_NULL) {
+//     WiFi.disconnect(true);
+//     WiFi.mode(WIFI_OFF);
+//   }
 
-  isolateUnusedPins();
+//   isolateUnusedPins();
 
-  unsigned long tTeardownDone = millis();
-  printTimingSummary(tTeardownDone);
+//   unsigned long tTeardownDone = millis();
+//   printTimingSummary(tTeardownDone);
 
-  digitalWrite(WAKE_MARKER_PIN, LOW);
+//   digitalWrite(WAKE_MARKER_PIN, LOW);
 
-  Serial.println("Entering deep sleep...\n");
-  Serial.flush();
-  esp_deep_sleep_start();
-}
-static void goToSleepUntilMotion(bool armTimer) {
-  pinMode(D2, INPUT_PULLDOWN);
-  armMotionInterrupt();
-  clearMotionInterrupt();
-  // Verify D2 is LOW before enabling wake source
-  if (digitalRead(D2) == HIGH) {
-    Serial.println("Warning: INT1 still HIGH! Re-clearing filter...");
-    clearMotionInterrupt();
-  }
-  esp_deep_sleep_enable_gpio_wakeup((1ULL << D2), ESP_GPIO_WAKEUP_GPIO_HIGH);
+//   Serial.println("Entering deep sleep...\n");
+//   Serial.flush();
+//   esp_deep_sleep_start();
+// }
+// static void goToSleepUntilMotion(bool armTimer) {
+//   pinMode(D2, INPUT_PULLDOWN);
+//   armMotionInterrupt();
+//   clearMotionInterrupt();
+//   // Verify D2 is LOW before enabling wake source
+//   if (digitalRead(D2) == HIGH) {
+//     Serial.println("Warning: INT1 still HIGH! Re-clearing filter...");
+//     clearMotionInterrupt();
+//   }
+//   esp_deep_sleep_enable_gpio_wakeup((1ULL << D2), ESP_GPIO_WAKEUP_GPIO_HIGH);
 
-// deciding wether to arm the timer or not
-// if the chip was still in motion when it went to deep sleep
-// wake up in 25 seconds and calculate, send the position
-if(armTimer){
-   esp_sleep_enable_timer_wakeup((uint64_t)REST_TIMER_S * 1000000ULL);
-    Serial.println("Still moving at sleep time -- also arming 25s recheck timer.");
+// // deciding wether to arm the timer or not
+// // if the chip was still in motion when it went to deep sleep
+// // wake up in 25 seconds and calculate, send the position
+// if(armTimer){
+//    esp_sleep_enable_timer_wakeup((uint64_t)REST_TIMER_S * 1000000ULL);
+//     Serial.println("Still moving at sleep time -- also arming 25s recheck timer.");
   
-}
-else{
-   Serial.println("Settled -- motion-only wake, sleeping indefinitely.");
-}
-  // Safely shut down Wi-Fi only if it was turned on
-if (WiFi.getMode() != WIFI_MODE_NULL) {
-    WiFi.disconnect(true);
-    WiFi.mode(WIFI_OFF);
-  }
+// }
+// else{
+//    Serial.println("Settled -- motion-only wake, sleeping indefinitely.");
+// }
+//   // Safely shut down Wi-Fi only if it was turned on
+// if (WiFi.getMode() != WIFI_MODE_NULL) {
+//     WiFi.disconnect(true);
+//     WiFi.mode(WIFI_OFF);
+//   }
 
-  isolateUnusedPins();
+//   isolateUnusedPins();
 
-  unsigned long tTeardownDone = millis();
-  printTimingSummary(tTeardownDone);
+//   unsigned long tTeardownDone = millis();
+//   printTimingSummary(tTeardownDone);
 
-  digitalWrite(WAKE_MARKER_PIN, LOW);  // marks "code execution done" for the scope/profiler
+//   digitalWrite(WAKE_MARKER_PIN, LOW);  // marks "code execution done" for the scope/profiler
 
-  Serial.println("Going back to sleep. Move the board to wake it.\n");
-  Serial.flush();
-  esp_deep_sleep_start();
-}
+//   Serial.println("Going back to sleep. Move the board to wake it.\n");
+//   Serial.flush();
+//   esp_deep_sleep_start();
+// }
 
 void setup() {
   pinMode(WAKE_MARKER_PIN, OUTPUT);
@@ -564,10 +598,13 @@ else{
 }
 
 bool stillMoving = isCurrentlyMoving();
-// to see what is happening
-  Serial.printf("wake=%lu noBeacon=%lu wifiFail=%lu pushOk=%lu\n",
-  g_wakeCount, g_noBeaconCount, g_wifiFailCount, g_pushOkCount);
-  goToSleepUntilMotion(stillMoving);  // never returns
+Serial.printf("Motion check at sleep time: %s\n", stillMoving ? "moving" : "settled");
+
+if (stillMoving) {
+  sleepUntilTimerOnly(REST_TIMER_S);   // never returns
+} else {
+  sleepUntilMotionOnly();              // never returns
+}
 }
 
 void loop() {
