@@ -75,9 +75,9 @@
 // ── WiFi / local test server ────────────────────────────────────────
 const char* WIFI_SSID       = "Airtel_Iwayplus";
 const char* WIFI_PASS       = "sulpyawi";
-const char* SERVER_HOST     = "http://192.168.1.250:5000";  // your laptop's IP
+const char* SERVER_HOST = "http://192.168.1.234:5000";  // was .250
 const char* SERVER_API_KEY  = "f4d0cb00-dbf5-11f0-bd35-dd4e9bf51317";
-const char* DEVICE_ID       = "esp32-01";
+const char* DEVICE_ID       = "esp32-02";
 
 #define LIS3DH_MOTION_THRESHOLD 0x10   // MIDDLE GROUND: ~96mg ( 0x6), a firm tap/nudge triggers it,
                                         // but not every tiny desk vibration.
@@ -232,7 +232,7 @@ static void isolateUnusedPins() {
 }
 
 // for checking if the chip is still moving or not
-static const uint32_t REST_TIMER_S =25;
+static const uint32_t REST_TIMER_S =15;
 static const float MOTION_SAMPLE_COUNT =4;
 static const float MOTION_STILL_DELTA_G =0.15f;
 static bool isCurrentlyMoving(){
