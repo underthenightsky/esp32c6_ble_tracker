@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, render_template_string
-from datetime import datetime
+from datetime import datetime,timezone,timedelta
 
 app = Flask(__name__)
 
@@ -108,6 +108,8 @@ def handle_push():
 
     # Add timestamp and append to the list (keeping last 25 records)
     data['time'] = datetime.now().strftime("%H:%M:%S")
+    IST = timezone(timedelta(hours=5, minutes=30))
+    data['time'] = datetime.now(IST).strftime("%H:%M:%S")
     latest_payloads.insert(0, data)
     if len(latest_payloads) > 25:
         latest_payloads.pop()

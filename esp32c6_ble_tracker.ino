@@ -75,9 +75,9 @@
 // ── WiFi / local test server ────────────────────────────────────────
 const char* WIFI_SSID       = "Airtel_Iwayplus";
 const char* WIFI_PASS       = "sulpyawi";
-const char* SERVER_HOST = "http://192.168.1.234:5000";  // was .250
+const char* SERVER_HOST = "https://esp32c6-ble-tracker.onrender.com";  // was .250
 const char* SERVER_API_KEY  = "f4d0cb00-dbf5-11f0-bd35-dd4e9bf51317";
-const char* DEVICE_ID       = "esp32-02";
+const char* DEVICE_ID       = "esp32-01";
 
 #define LIS3DH_MOTION_THRESHOLD 0x10   // MIDDLE GROUND: ~96mg ( 0x6), a firm tap/nudge triggers it,
                                         // but not every tiny desk vibration.
