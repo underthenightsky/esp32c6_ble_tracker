@@ -79,7 +79,7 @@ const char* SERVER_HOST = "https://esp32c6-ble-tracker.onrender.com";  // was .2
 const char* SERVER_API_KEY  = "f4d0cb00-dbf5-11f0-bd35-dd4e9bf51317";
 const char* DEVICE_ID       = "esp32-01";
 
-#define LIS3DH_MOTION_THRESHOLD 0x10   // MIDDLE GROUND: ~96mg ( 0x6), a firm tap/nudge triggers it,
+#define LIS3DH_MOTION_THRESHOLD 0x6  // MIDDLE GROUND: ~96mg ( 0x6), a firm tap/nudge triggers it,
                                         // but not every tiny desk vibration.
 
                                         // Production value was 0x10 (~256mg). Raise back toward
