@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "/home/joseph/Downloads/esp32c6_ble_tracker/tracker/tracker.kicad_sch")
-		(date "2026-09-15T18:05:36")
+		(date "2026-09-16T17:43:17")
 		(tool "Eeschema 10.0.6-1.fc44")
 		(sheet
 			(number "1")
@@ -57,7 +57,7 @@
 		(comp
 			(ref "BT1")
 			(value "Battery_Cell")
-			(footprint "Battery:BatteryClip_Keystone_54_D16-19mm")
+			(footprint "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal")
 			(description "Single-cell battery")
 			(fields
 				(field
@@ -67,7 +67,7 @@
 				(field
 					(name "Sim.Pins") "1=+ 2=-")
 				(field
-					(name "Footprint") "Battery:BatteryClip_Keystone_54_D16-19mm")
+					(name "Footprint") "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal")
 				(field
 					(name "Datasheet")
 				)
@@ -124,12 +124,12 @@
 		)
 		(comp
 			(ref "C1")
-			(value "C")
-			(footprint "Capacitor_SMD:C_01005_0402Metric")
+			(value "100n")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
 			(description "Unpolarized capacitor")
 			(fields
 				(field
-					(name "Footprint") "Capacitor_SMD:C_01005_0402Metric")
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
 				(field
 					(name "Datasheet")
 				)
@@ -178,12 +178,12 @@
 		)
 		(comp
 			(ref "C2")
-			(value "C")
-			(footprint "Capacitor_SMD:C_01005_0402Metric")
+			(value "10u")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
 			(description "Unpolarized capacitor")
 			(fields
 				(field
-					(name "Footprint") "Capacitor_SMD:C_01005_0402Metric")
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
 				(field
 					(name "Datasheet")
 				)
@@ -232,12 +232,12 @@
 		)
 		(comp
 			(ref "C3")
-			(value "100p")
-			(footprint "C49851:MSOP-10_L3.0-W3.0-P0.50-LS5.0-BL")
+			(value "100n")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
 			(description "Unpolarized capacitor")
 			(fields
 				(field
-					(name "Footprint") "C49851:MSOP-10_L3.0-W3.0-P0.50-LS5.0-BL")
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
 				(field
 					(name "Datasheet")
 				)
@@ -324,6 +324,168 @@
 				(tstamps "/")
 			)
 			(tstamps "48b03140-7626-4205-b6d2-59b0f7ac83b9")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R2")
+			(value "4.7k")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(description "Resistor")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "tracker")
+			)
+			(property
+				(name "Sheetfile")
+				(value "tracker.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "c8cf2dfc-5434-4443-bb94-f2f9e1eabbf6")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R3")
+			(value "4.7k")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(description "Resistor")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "tracker")
+			)
+			(property
+				(name "Sheetfile")
+				(value "tracker.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "6a475f30-1907-41b0-bf85-c630b0615556")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R4")
+			(value "2.4k")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(description "Resistor")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "tracker")
+			)
+			(property
+				(name "Sheetfile")
+				(value "tracker.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "75709d91-e5c0-478b-b424-48a15b564569")
 			(units
 				(unit
 					(name "A")
@@ -547,160 +709,9 @@
 			)
 		)
 		(comp
-			(ref "U3")
-			(value "TP4056_MICRO-USB_CHARGER_-_1A")
-			(footprint "TP4056_MICRO-USB_CHARGER_-_1A:MODULE_TP4056_MICRO-USB_CHARGER_-_1A")
-			(description "The TP4056ES Li-Ion micro USB charger is an improved version of the TP4056, ideal for 18650 batteries, with a micro USB connection for direct PC charging.")
-			(fields
-				(field
-					(name "MF") "Generic")
-				(field
-					(name "MAXIMUM_PACKAGE_HEIGHT") "3.562mm")
-				(field
-					(name "CREATOR") "ASHISH")
-				(field
-					(name "NOTES")
-				)
-				(field
-					(name "Package") "Package")
-				(field
-					(name "Check_prices") "https://www.snapeda.com/parts/TP4056%20Micro-USB%20Charger%20-%201A/Generic/view-part/?ref=eda")
-				(field
-					(name "STANDARD") "Manufacturer Recommendations")
-				(field
-					(name "PARTREV")
-				)
-				(field
-					(name "VERIFIER")
-				)
-				(field
-					(name "SnapEDA_Link") "https://www.snapeda.com/parts/TP4056%20Micro-USB%20Charger%20-%201A/Generic/view-part/?ref=snap")
-				(field
-					(name "MP") "TP4056 Micro-USB Charger - 1A")
-				(field
-					(name "Availability") "Not in stock")
-				(field
-					(name "Price") "None")
-				(field
-					(name "UNIT") "mm")
-				(field
-					(name "MANUFACTURER") "Generic")
-				(field
-					(name "Footprint") "TP4056_MICRO-USB_CHARGER_-_1A:MODULE_TP4056_MICRO-USB_CHARGER_-_1A")
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "The TP4056ES Li-Ion micro USB charger is an improved version of the TP4056, ideal for 18650 batteries, with a micro USB connection for direct PC charging.")
-			)
-			(libsource
-				(lib "TP4056_MICRO-USB_CHARGER_-_1A")
-				(part "TP4056_MICRO-USB_CHARGER_-_1A")
-				(description "The TP4056ES Li-Ion micro USB charger is an improved version of the TP4056, ideal for 18650 batteries, with a micro USB connection for direct PC charging.")
-			)
-			(property
-				(name "MF")
-				(value "Generic")
-			)
-			(property
-				(name "MAXIMUM_PACKAGE_HEIGHT")
-				(value "3.562mm")
-			)
-			(property
-				(name "CREATOR")
-				(value "ASHISH")
-			)
-			(property
-				(name "NOTES")
-				(value "")
-			)
-			(property
-				(name "Package")
-				(value "Package")
-			)
-			(property
-				(name "Check_prices")
-				(value "https://www.snapeda.com/parts/TP4056%20Micro-USB%20Charger%20-%201A/Generic/view-part/?ref=eda")
-			)
-			(property
-				(name "STANDARD")
-				(value "Manufacturer Recommendations")
-			)
-			(property
-				(name "PARTREV")
-				(value "")
-			)
-			(property
-				(name "VERIFIER")
-				(value "")
-			)
-			(property
-				(name "SnapEDA_Link")
-				(value "https://www.snapeda.com/parts/TP4056%20Micro-USB%20Charger%20-%201A/Generic/view-part/?ref=snap")
-			)
-			(property
-				(name "MP")
-				(value "TP4056 Micro-USB Charger - 1A")
-			)
-			(property
-				(name "Availability")
-				(value "Not in stock")
-			)
-			(property
-				(name "Price")
-				(value "None")
-			)
-			(property
-				(name "UNIT")
-				(value "mm")
-			)
-			(property
-				(name "MANUFACTURER")
-				(value "Generic")
-			)
-			(property
-				(name "Sheetname")
-				(value "tracker")
-			)
-			(property
-				(name "Sheetfile")
-				(value "tracker.kicad_sch")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "dd057e31-dc01-400b-961a-31604e68c6ec")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "IN_P")
-						)
-						(pin
-							(num "IN_N")
-						)
-						(pin
-							(num "BAT_P")
-						)
-						(pin
-							(num "OUT_P")
-						)
-						(pin
-							(num "OUT_N")
-						)
-						(pin
-							(num "BAT_N")
-						)
-					)
-				)
-			)
-		)
-		(comp
 			(ref "U4")
 			(value "INA226AIDGSR")
-			(footprint "C49851:MSOP-10_L3.0-W3.0-P0.50-LS5.0-BL")
+			(footprint "Package_SO:TSSOP-10_3x3mm_P0.5mm")
 			(datasheet "https://lcsc.com/product-detail/PMIC-Current-Regulation_TI_INA226AIDGSR_INA226AIDGSR_C49851.html")
 			(fields
 				(field
@@ -710,7 +721,7 @@
 				(field
 					(name "LCSC Part") "C49851")
 				(field
-					(name "Footprint") "C49851:MSOP-10_L3.0-W3.0-P0.50-LS5.0-BL")
+					(name "Footprint") "Package_SO:TSSOP-10_3x3mm_P0.5mm")
 				(field
 					(name "Datasheet") "https://lcsc.com/product-detail/PMIC-Current-Regulation_TI_INA226AIDGSR_INA226AIDGSR_C49851.html")
 				(field
@@ -789,10 +800,153 @@
 				)
 			)
 		)
+		(comp
+			(ref "U5")
+			(value "TP4056-42-ESOP8")
+			(footprint "Package_SO:SOIC-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.3mm_ThermalVias")
+			(datasheet "https://www.lcsc.com/datasheet/lcsc_datasheet_2410121619_TOPPOWER-Nanjing-Extension-Microelectronics-TP4056-42-ESOP8_C16581.pdf")
+			(description "1A Standalone Linear Li-ion/LiPo single-cell battery charger, 4.2V ±1% charge voltage, VCC = 4.0..8.0V, SOIC-8 (SOP-8)")
+			(fields
+				(field
+					(name "Footprint") "Package_SO:SOIC-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.3mm_ThermalVias")
+				(field
+					(name "Datasheet") "https://www.lcsc.com/datasheet/lcsc_datasheet_2410121619_TOPPOWER-Nanjing-Extension-Microelectronics-TP4056-42-ESOP8_C16581.pdf")
+				(field
+					(name "Description") "1A Standalone Linear Li-ion/LiPo single-cell battery charger, 4.2V ±1% charge voltage, VCC = 4.0..8.0V, SOIC-8 (SOP-8)")
+			)
+			(libsource
+				(lib "Battery_Management")
+				(part "TP4056-42-ESOP8")
+				(description "1A Standalone Linear Li-ion/LiPo single-cell battery charger, 4.2V ±1% charge voltage, VCC = 4.0..8.0V, SOIC-8 (SOP-8)")
+			)
+			(property
+				(name "Sheetname")
+				(value "tracker")
+			)
+			(property
+				(name "Sheetfile")
+				(value "tracker.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "lithium-ion lithium-polymer Li-Poly")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "*SO*3.9x4.*P1.27mm*EP2.4*x3.3*mm*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "0a5a05d8-03c8-4971-b333-79d42ac02c61")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
 	)
 	(groups)
 	(variants)
 	(libparts
+		(libpart
+			(lib "Battery_Management")
+			(part "TP4056-42-ESOP8")
+			(description "1A Standalone Linear Li-ion/LiPo single-cell battery charger, 4.2V ±1% charge voltage, VCC = 4.0..8.0V, SOIC-8 (SOP-8)")
+			(docs "https://www.lcsc.com/datasheet/lcsc_datasheet_2410121619_TOPPOWER-Nanjing-Extension-Microelectronics-TP4056-42-ESOP8_C16581.pdf")
+			(footprints
+				(fp "*SO*3.9x4.*P1.27mm*EP2.4*x3.3*mm*")
+			)
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "TP4056-42-ESOP8")
+				(field
+					(name "Footprint") "Package_SO:SOIC-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.3mm_ThermalVias")
+				(field
+					(name "Datasheet") "https://www.lcsc.com/datasheet/lcsc_datasheet_2410121619_TOPPOWER-Nanjing-Extension-Microelectronics-TP4056-42-ESOP8_C16581.pdf")
+				(field
+					(name "Description") "1A Standalone Linear Li-ion/LiPo single-cell battery charger, 4.2V ±1% charge voltage, VCC = 4.0..8.0V, SOIC-8 (SOP-8)")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "TEMP")
+					(type "input")
+				)
+				(pin
+					(num "2")
+					(name "PROG")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "4")
+					(name "V_{CC}")
+					(type "power_in")
+				)
+				(pin
+					(num "5")
+					(name "BAT")
+					(type "power_out")
+				)
+				(pin
+					(num "6")
+					(name "~{STDBY}")
+					(type "open_collector")
+				)
+				(pin
+					(num "7")
+					(name "~{CHRG}")
+					(type "open_collector")
+				)
+				(pin
+					(num "8")
+					(name "CE")
+					(type "input")
+				)
+				(pin
+					(num "9")
+					(name "EPAD")
+					(type "passive")
+				)
+			)
+		)
 		(libpart
 			(lib "Device")
 			(part "Battery_Cell")
@@ -1217,91 +1371,12 @@
 				)
 			)
 		)
-		(libpart
-			(lib "TP4056_MICRO-USB_CHARGER_-_1A")
-			(part "TP4056_MICRO-USB_CHARGER_-_1A")
-			(description "The TP4056ES Li-Ion micro USB charger is an improved version of the TP4056, ideal for 18650 batteries, with a micro USB connection for direct PC charging.")
-			(fields
-				(field
-					(name "Reference") "U")
-				(field
-					(name "Value") "TP4056_MICRO-USB_CHARGER_-_1A")
-				(field
-					(name "Footprint") "TP4056_MICRO-USB_CHARGER_-_1A:MODULE_TP4056_MICRO-USB_CHARGER_-_1A")
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "The TP4056ES Li-Ion micro USB charger is an improved version of the TP4056, ideal for 18650 batteries, with a micro USB connection for direct PC charging.")
-				(field
-					(name "MF") "Generic")
-				(field
-					(name "MAXIMUM_PACKAGE_HEIGHT") "3.562mm")
-				(field
-					(name "CREATOR") "ASHISH")
-				(field
-					(name "NOTES")
-				)
-				(field
-					(name "Package") "Package")
-				(field
-					(name "Check_prices") "https://www.snapeda.com/parts/TP4056%20Micro-USB%20Charger%20-%201A/Generic/view-part/?ref=eda")
-				(field
-					(name "STANDARD") "Manufacturer Recommendations")
-				(field
-					(name "PARTREV")
-				)
-				(field
-					(name "VERIFIER")
-				)
-				(field
-					(name "SnapEDA_Link") "https://www.snapeda.com/parts/TP4056%20Micro-USB%20Charger%20-%201A/Generic/view-part/?ref=snap")
-				(field
-					(name "MP") "TP4056 Micro-USB Charger - 1A")
-				(field
-					(name "Availability") "Not in stock")
-				(field
-					(name "Price") "None")
-				(field
-					(name "UNIT") "mm")
-				(field
-					(name "MANUFACTURER") "Generic")
-			)
-			(pins
-				(pin
-					(num "BAT_N")
-					(name "BAT-")
-					(type "power_in")
-				)
-				(pin
-					(num "BAT_P")
-					(name "BAT+")
-					(type "power_in")
-				)
-				(pin
-					(num "IN_N")
-					(name "IN-")
-					(type "input")
-				)
-				(pin
-					(num "IN_P")
-					(name "IN+")
-					(type "input")
-				)
-				(pin
-					(num "OUT_N")
-					(name "OUT-")
-					(type "output")
-				)
-				(pin
-					(num "OUT_P")
-					(name "OUT+")
-					(type "output")
-				)
-			)
-		)
 	)
 	(libraries
+		(library
+			(logical "Battery_Management")
+			(uri "${KICAD10_SYMBOL_DIR}/Battery_Management.kicad_sym")
+		)
 		(library
 			(logical "Device")
 			(uri "${KICAD10_SYMBOL_DIR}/Device.kicad_sym")
@@ -1314,16 +1389,18 @@
 			(logical "Sensor_Motion")
 			(uri "${KICAD10_SYMBOL_DIR}/Sensor_Motion.kicad_sym")
 		)
-		(library
-			(logical "TP4056_MICRO-USB_CHARGER_-_1A")
-			(uri "/home/joseph/Downloads/esp32c6_ble_tracker/tracker/TP4056_MICRO-USB_CHARGER_-_1A/TP4056_MICRO-USB_CHARGER_-_1A.kicad_sym")
-		)
 	)
 	(nets
 		(net
 			(code "1")
 			(name "GND")
 			(class "Default")
+			(node
+				(ref "BT1")
+				(pin "2")
+				(pinfunction "-_2")
+				(pintype "passive")
+			)
 			(node
 				(ref "C1")
 				(pin "1")
@@ -1336,6 +1413,11 @@
 			)
 			(node
 				(ref "C3")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R4")
 				(pin "2")
 				(pintype "passive")
 			)
@@ -1370,12 +1452,6 @@
 				(pintype "power_in")
 			)
 			(node
-				(ref "U3")
-				(pin "OUT_N")
-				(pinfunction "OUT-_OUT_N")
-				(pintype "output")
-			)
-			(node
 				(ref "U4")
 				(pin "1")
 				(pinfunction "A1_1")
@@ -1393,6 +1469,24 @@
 				(pinfunction "GND_7")
 				(pintype "unspecified")
 			)
+			(node
+				(ref "U5")
+				(pin "1")
+				(pinfunction "TEMP_1")
+				(pintype "input")
+			)
+			(node
+				(ref "U5")
+				(pin "3")
+				(pinfunction "GND_3")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U5")
+				(pin "9")
+				(pinfunction "EPAD_9")
+				(pintype "passive")
+			)
 		)
 		(net
 			(code "2")
@@ -1405,31 +1499,14 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "U3")
-				(pin "BAT_P")
-				(pinfunction "BAT+_BAT_P")
-				(pintype "power_in")
+				(ref "U5")
+				(pin "5")
+				(pinfunction "BAT_5")
+				(pintype "power_out")
 			)
 		)
 		(net
 			(code "3")
-			(name "Net-(BT1--)")
-			(class "Default")
-			(node
-				(ref "BT1")
-				(pin "2")
-				(pinfunction "-_2")
-				(pintype "passive")
-			)
-			(node
-				(ref "U3")
-				(pin "BAT_N")
-				(pinfunction "BAT-_BAT_N")
-				(pintype "power_in")
-			)
-		)
-		(net
-			(code "4")
 			(name "Net-(U1-D0)")
 			(class "Default")
 			(node
@@ -1446,7 +1523,7 @@
 			)
 		)
 		(net
-			(code "5")
+			(code "4")
 			(name "Net-(U1-D2)")
 			(class "Default")
 			(node
@@ -1463,9 +1540,14 @@
 			)
 		)
 		(net
-			(code "6")
+			(code "5")
 			(name "Net-(U1-D4)")
 			(class "Default")
+			(node
+				(ref "R3")
+				(pin "2")
+				(pintype "passive")
+			)
 			(node
 				(ref "U1")
 				(pin "5")
@@ -1486,9 +1568,14 @@
 			)
 		)
 		(net
-			(code "7")
+			(code "6")
 			(name "Net-(U1-D5)")
 			(class "Default")
+			(node
+				(ref "R2")
+				(pin "1")
+				(pintype "passive")
+			)
 			(node
 				(ref "U1")
 				(pin "6")
@@ -1509,7 +1596,7 @@
 			)
 		)
 		(net
-			(code "8")
+			(code "7")
 			(name "Net-(U1-VBAT)")
 			(class "Default")
 			(node
@@ -1537,8 +1624,8 @@
 			)
 		)
 		(net
-			(code "9")
-			(name "Net-(U2-VDD)")
+			(code "8")
+			(name "Net-(U2-CS)")
 			(class "Default")
 			(node
 				(ref "C1")
@@ -1552,6 +1639,16 @@
 			)
 			(node
 				(ref "C3")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R2")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R3")
 				(pin "1")
 				(pintype "passive")
 			)
@@ -1574,6 +1671,12 @@
 				(pintype "power_in")
 			)
 			(node
+				(ref "U2")
+				(pin "8")
+				(pinfunction "CS_8")
+				(pintype "input")
+			)
+			(node
 				(ref "U4")
 				(pin "6")
 				(pinfunction "VS+_6")
@@ -1581,19 +1684,13 @@
 			)
 		)
 		(net
-			(code "10")
-			(name "Net-(U3-OUT+)")
+			(code "9")
+			(name "Net-(U4-VIN+)")
 			(class "Default")
 			(node
 				(ref "R1")
 				(pin "1")
 				(pintype "passive")
-			)
-			(node
-				(ref "U3")
-				(pin "OUT_P")
-				(pinfunction "OUT+_OUT_P")
-				(pintype "output")
 			)
 			(node
 				(ref "U4")
@@ -1603,7 +1700,40 @@
 			)
 		)
 		(net
+			(code "10")
+			(name "Net-(U5-CE)")
+			(class "Default")
+			(node
+				(ref "U5")
+				(pin "4")
+				(pinfunction "V_{CC}_4")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U5")
+				(pin "8")
+				(pinfunction "CE_8")
+				(pintype "input")
+			)
+		)
+		(net
 			(code "11")
+			(name "Net-(U5-PROG)")
+			(class "Default")
+			(node
+				(ref "R4")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U5")
+				(pin "2")
+				(pinfunction "PROG_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "12")
 			(name "unconnected-(U1-3V3_OUT-Pad22)")
 			(class "Default")
 			(node
@@ -1614,7 +1744,7 @@
 			)
 		)
 		(net
-			(code "12")
+			(code "13")
 			(name "unconnected-(U1-BOOT-Pad21)")
 			(class "Default")
 			(node
@@ -1625,7 +1755,7 @@
 			)
 		)
 		(net
-			(code "13")
+			(code "14")
 			(name "unconnected-(U1-D1-Pad2)")
 			(class "Default")
 			(node
@@ -1636,7 +1766,7 @@
 			)
 		)
 		(net
-			(code "14")
+			(code "15")
 			(name "unconnected-(U1-D3-Pad4)")
 			(class "Default")
 			(node
@@ -1647,7 +1777,7 @@
 			)
 		)
 		(net
-			(code "15")
+			(code "16")
 			(name "unconnected-(U1-D6-Pad7)")
 			(class "Default")
 			(node
@@ -1658,7 +1788,7 @@
 			)
 		)
 		(net
-			(code "16")
+			(code "17")
 			(name "unconnected-(U1-D7-Pad8)")
 			(class "Default")
 			(node
@@ -1669,7 +1799,7 @@
 			)
 		)
 		(net
-			(code "17")
+			(code "18")
 			(name "unconnected-(U1-D8-Pad9)")
 			(class "Default")
 			(node
@@ -1680,7 +1810,7 @@
 			)
 		)
 		(net
-			(code "18")
+			(code "19")
 			(name "unconnected-(U1-D9-Pad10)")
 			(class "Default")
 			(node
@@ -1691,7 +1821,7 @@
 			)
 		)
 		(net
-			(code "19")
+			(code "20")
 			(name "unconnected-(U1-D10-Pad11)")
 			(class "Default")
 			(node
@@ -1702,7 +1832,7 @@
 			)
 		)
 		(net
-			(code "20")
+			(code "21")
 			(name "unconnected-(U1-EN-Pad17)")
 			(class "Default")
 			(node
@@ -1713,7 +1843,7 @@
 			)
 		)
 		(net
-			(code "21")
+			(code "22")
 			(name "unconnected-(U1-GND-Pad18)")
 			(class "Default")
 			(node
@@ -1724,7 +1854,7 @@
 			)
 		)
 		(net
-			(code "22")
+			(code "23")
 			(name "unconnected-(U1-MTCK-Pad20)")
 			(class "Default")
 			(node
@@ -1735,7 +1865,7 @@
 			)
 		)
 		(net
-			(code "23")
+			(code "24")
 			(name "unconnected-(U1-MTDI-Pad15)")
 			(class "Default")
 			(node
@@ -1746,7 +1876,7 @@
 			)
 		)
 		(net
-			(code "24")
+			(code "25")
 			(name "unconnected-(U1-MTDO-Pad16)")
 			(class "Default")
 			(node
@@ -1757,7 +1887,7 @@
 			)
 		)
 		(net
-			(code "25")
+			(code "26")
 			(name "unconnected-(U1-MTMS-Pad19)")
 			(class "Default")
 			(node
@@ -1768,7 +1898,7 @@
 			)
 		)
 		(net
-			(code "26")
+			(code "27")
 			(name "unconnected-(U1-VBUS-Pad14)")
 			(class "Default")
 			(node
@@ -1779,7 +1909,7 @@
 			)
 		)
 		(net
-			(code "27")
+			(code "28")
 			(name "unconnected-(U2-ADC1-Pad16)")
 			(class "Default")
 			(node
@@ -1790,7 +1920,7 @@
 			)
 		)
 		(net
-			(code "28")
+			(code "29")
 			(name "unconnected-(U2-ADC2-Pad15)")
 			(class "Default")
 			(node
@@ -1801,24 +1931,13 @@
 			)
 		)
 		(net
-			(code "29")
+			(code "30")
 			(name "unconnected-(U2-ADC3-Pad13)")
 			(class "Default")
 			(node
 				(ref "U2")
 				(pin "13")
 				(pinfunction "ADC3_13")
-				(pintype "input+no_connect")
-			)
-		)
-		(net
-			(code "30")
-			(name "unconnected-(U2-CS-Pad8)")
-			(class "Default")
-			(node
-				(ref "U2")
-				(pin "8")
-				(pinfunction "CS_8")
 				(pintype "input+no_connect")
 			)
 		)
@@ -1868,24 +1987,24 @@
 		)
 		(net
 			(code "35")
-			(name "unconnected-(U3-IN+-PadIN_P)")
+			(name "unconnected-(U5-~{CHRG}-Pad7)")
 			(class "Default")
 			(node
-				(ref "U3")
-				(pin "IN_P")
-				(pinfunction "IN+_IN_P")
-				(pintype "input")
+				(ref "U5")
+				(pin "7")
+				(pinfunction "~{CHRG}_7")
+				(pintype "open_collector+no_connect")
 			)
 		)
 		(net
 			(code "36")
-			(name "unconnected-(U3-IN--PadIN_N)")
+			(name "unconnected-(U5-~{STDBY}-Pad6)")
 			(class "Default")
 			(node
-				(ref "U3")
-				(pin "IN_N")
-				(pinfunction "IN-_IN_N")
-				(pintype "input")
+				(ref "U5")
+				(pin "6")
+				(pinfunction "~{STDBY}_6")
+				(pintype "open_collector+no_connect")
 			)
 		)
 	)
