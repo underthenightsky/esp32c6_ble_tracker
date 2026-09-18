@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "/home/joseph/Downloads/esp32c6_ble_tracker/tracker/tracker.kicad_sch")
-		(date "2026-09-17T17:34:16")
+		(date "2026-09-18T12:26:56")
 		(tool "Eeschema 10.0.6-1.fc44")
 		(sheet
 			(number "1")
@@ -637,7 +637,7 @@
 		(comp
 			(ref "U4")
 			(value "INA226AIDGSR")
-			(footprint "Package_SO:TSSOP-10_3x3mm_P0.5mm")
+			(footprint "Package_SO:MSOP-10_3x3mm_P0.5mm")
 			(datasheet "https://lcsc.com/product-detail/PMIC-Current-Regulation_TI_INA226AIDGSR_INA226AIDGSR_C49851.html")
 			(fields
 				(field
@@ -647,7 +647,7 @@
 				(field
 					(name "LCSC Part") "C49851")
 				(field
-					(name "Footprint") "Package_SO:TSSOP-10_3x3mm_P0.5mm")
+					(name "Footprint") "Package_SO:MSOP-10_3x3mm_P0.5mm")
 				(field
 					(name "Datasheet") "https://lcsc.com/product-detail/PMIC-Current-Regulation_TI_INA226AIDGSR_INA226AIDGSR_C49851.html")
 				(field
@@ -957,14 +957,134 @@
 			)
 		)
 		(comp
+			(ref "D1")
+			(value "LED")
+			(footprint "LED_SMD:LED_0603_1608Metric")
+			(description "Light emitting diode")
+			(fields
+				(field
+					(name "Sim.Pins") "1=K 2=A")
+				(field
+					(name "Footprint") "LED_SMD:LED_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Light emitting diode")
+			)
+			(libsource
+				(lib "Device")
+				(part "LED")
+				(description "Light emitting diode")
+			)
+			(property
+				(name "Sim.Pins")
+				(value "1=K 2=A")
+			)
+			(property
+				(name "Sheetname")
+				(value "Charging_and_Battery")
+			)
+			(property
+				(name "Sheetfile")
+				(value "charging_and_battery.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "LED diode")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "LED* LED_SMD:* LED_THT:*")
+			)
+			(sheetpath
+				(names "/Charging_and_Battery/")
+				(tstamps "/c73a9412-a8df-45fb-8b45-856a5aea081b/")
+			)
+			(tstamps "59180110-cc89-450a-8eb2-24d1e568d2dc")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "D2")
+			(value "LED")
+			(footprint "LED_SMD:LED_0603_1608Metric")
+			(description "Light emitting diode")
+			(fields
+				(field
+					(name "Sim.Pins") "1=K 2=A")
+				(field
+					(name "Footprint") "LED_SMD:LED_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Light emitting diode")
+			)
+			(libsource
+				(lib "Device")
+				(part "LED")
+				(description "Light emitting diode")
+			)
+			(property
+				(name "Sim.Pins")
+				(value "1=K 2=A")
+			)
+			(property
+				(name "Sheetname")
+				(value "Charging_and_Battery")
+			)
+			(property
+				(name "Sheetfile")
+				(value "charging_and_battery.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "LED diode")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "LED* LED_SMD:* LED_THT:*")
+			)
+			(sheetpath
+				(names "/Charging_and_Battery/")
+				(tstamps "/c73a9412-a8df-45fb-8b45-856a5aea081b/")
+			)
+			(tstamps "316c2d01-849c-41f4-9eb4-1c75b5dbb6db")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
 			(ref "J1")
 			(value "USB_C_Receptacle_PowerOnly_6P")
-			(footprint "Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm")
+			(footprint "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12")
 			(datasheet "https://www.usb.org/sites/default/files/documents/usb_type-c.zip")
 			(description "USB Power-Only 6P Type-C Receptacle connector")
 			(fields
 				(field
-					(name "Footprint") "Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm")
+					(name "Footprint") "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12")
 				(field
 					(name "Datasheet") "https://www.usb.org/sites/default/files/documents/usb_type-c.zip")
 				(field
@@ -1093,7 +1213,7 @@
 		)
 		(comp
 			(ref "R4")
-			(value "2.4k")
+			(value "1.2k")
 			(footprint "Resistor_SMD:R_0603_1608Metric")
 			(description "Resistor")
 			(fields
@@ -1308,6 +1428,60 @@
 			)
 		)
 		(comp
+			(ref "R8")
+			(value "680")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(description "Resistor")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Charging_and_Battery")
+			)
+			(property
+				(name "Sheetfile")
+				(value "charging_and_battery.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Charging_and_Battery/")
+				(tstamps "/c73a9412-a8df-45fb-8b45-856a5aea081b/")
+			)
+			(tstamps "f20c14f2-b955-494c-bd4f-c95bf30ce08c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
 			(ref "R9")
 			(value "1k")
 			(footprint "Resistor_SMD:R_0603_1608Metric")
@@ -1347,6 +1521,60 @@
 				(tstamps "/c73a9412-a8df-45fb-8b45-856a5aea081b/")
 			)
 			(tstamps "33873511-10a5-45a5-a67a-e48245787bd7")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R10")
+			(value "680")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(description "Resistor")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Charging_and_Battery")
+			)
+			(property
+				(name "Sheetfile")
+				(value "charging_and_battery.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Charging_and_Battery/")
+				(tstamps "/c73a9412-a8df-45fb-8b45-856a5aea081b/")
+			)
+			(tstamps "9db5dc39-203a-499e-b65a-4bfa476deb17")
 			(units
 				(unit
 					(name "A")
@@ -1753,6 +1981,44 @@
 				(pin
 					(num "2")
 					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Device")
+			(part "LED")
+			(description "Light emitting diode")
+			(footprints
+				(fp "LED*")
+				(fp "LED_SMD:*")
+				(fp "LED_THT:*")
+			)
+			(fields
+				(field
+					(name "Reference") "D")
+				(field
+					(name "Value") "LED")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Light emitting diode")
+				(field
+					(name "Sim.Pins") "1=K 2=A")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "K")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "A")
 					(type "passive")
 				)
 			)
@@ -2196,7 +2462,7 @@
 		(net
 			(code "1")
 			(name "/Charging_and_Battery/BAT+")
-			(class "Default")
+			(class "Power,Default")
 			(node
 				(ref "BT1")
 				(pin "1")
@@ -2234,7 +2500,7 @@
 		(net
 			(code "2")
 			(name "/Charging_and_Battery/BAT-")
-			(class "Default")
+			(class "Power,Default")
 			(node
 				(ref "BT1")
 				(pin "2")
@@ -2278,6 +2544,34 @@
 		)
 		(net
 			(code "4")
+			(name "/Shunt_Output")
+			(class "Power,Default")
+			(node
+				(ref "R1")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "23")
+				(pinfunction "VBAT_23")
+				(pintype "passive")
+			)
+			(node
+				(ref "U4")
+				(pin "8")
+				(pinfunction "VBUS_8")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "U4")
+				(pin "9")
+				(pinfunction "VIN-_9")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "5")
 			(name "GND")
 			(class "Default")
 			(node
@@ -2417,7 +2711,73 @@
 			)
 		)
 		(net
-			(code "5")
+			(code "6")
+			(name "Net-(D1-A)")
+			(class "Default")
+			(node
+				(ref "D1")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R8")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "7")
+			(name "Net-(D1-K)")
+			(class "Default")
+			(node
+				(ref "D1")
+				(pin "1")
+				(pinfunction "K_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U5")
+				(pin "7")
+				(pinfunction "~{CHRG}_7")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "8")
+			(name "Net-(D2-A)")
+			(class "Default")
+			(node
+				(ref "D2")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R10")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "9")
+			(name "Net-(D2-K)")
+			(class "Default")
+			(node
+				(ref "D2")
+				(pin "1")
+				(pinfunction "K_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U5")
+				(pin "6")
+				(pinfunction "~{STDBY}_6")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "10")
 			(name "Net-(J1-CC1)")
 			(class "Default")
 			(node
@@ -2433,7 +2793,7 @@
 			)
 		)
 		(net
-			(code "6")
+			(code "11")
 			(name "Net-(J1-CC2)")
 			(class "Default")
 			(node
@@ -2449,7 +2809,7 @@
 			)
 		)
 		(net
-			(code "7")
+			(code "12")
 			(name "Net-(U1-D0)")
 			(class "Default")
 			(node
@@ -2466,7 +2826,7 @@
 			)
 		)
 		(net
-			(code "8")
+			(code "13")
 			(name "Net-(U1-D2)")
 			(class "Default")
 			(node
@@ -2483,7 +2843,7 @@
 			)
 		)
 		(net
-			(code "9")
+			(code "14")
 			(name "Net-(U1-D4)")
 			(class "Default")
 			(node
@@ -2511,7 +2871,7 @@
 			)
 		)
 		(net
-			(code "10")
+			(code "15")
 			(name "Net-(U1-D5)")
 			(class "Default")
 			(node
@@ -2539,35 +2899,7 @@
 			)
 		)
 		(net
-			(code "11")
-			(name "Net-(U1-VBAT)")
-			(class "Default")
-			(node
-				(ref "R1")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "U1")
-				(pin "23")
-				(pinfunction "VBAT_23")
-				(pintype "passive")
-			)
-			(node
-				(ref "U4")
-				(pin "8")
-				(pinfunction "VBUS_8")
-				(pintype "unspecified")
-			)
-			(node
-				(ref "U4")
-				(pin "9")
-				(pinfunction "VIN-_9")
-				(pintype "unspecified")
-			)
-		)
-		(net
-			(code "12")
+			(code "16")
 			(name "Net-(U2-CS)")
 			(class "Default")
 			(node
@@ -2627,7 +2959,7 @@
 			)
 		)
 		(net
-			(code "13")
+			(code "17")
 			(name "Net-(U3-CS)")
 			(class "Default")
 			(node
@@ -2643,7 +2975,7 @@
 			)
 		)
 		(net
-			(code "14")
+			(code "18")
 			(name "Net-(U3-OC)")
 			(class "Default")
 			(node
@@ -2660,7 +2992,7 @@
 			)
 		)
 		(net
-			(code "15")
+			(code "19")
 			(name "Net-(U3-OD)")
 			(class "Default")
 			(node
@@ -2677,7 +3009,7 @@
 			)
 		)
 		(net
-			(code "16")
+			(code "20")
 			(name "Net-(U3-VCC)")
 			(class "Default")
 			(node
@@ -2698,7 +3030,7 @@
 			)
 		)
 		(net
-			(code "17")
+			(code "21")
 			(name "Net-(U5-CE)")
 			(class "Default")
 			(node
@@ -2719,6 +3051,16 @@
 				(pintype "passive")
 			)
 			(node
+				(ref "R10")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R8")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
 				(ref "U5")
 				(pin "4")
 				(pinfunction "V_{CC}_4")
@@ -2732,7 +3074,7 @@
 			)
 		)
 		(net
-			(code "18")
+			(code "22")
 			(name "Net-(U5-PROG)")
 			(class "Default")
 			(node
@@ -2748,7 +3090,7 @@
 			)
 		)
 		(net
-			(code "19")
+			(code "23")
 			(name "unconnected-(U1-3V3_OUT-Pad22)")
 			(class "Default")
 			(node
@@ -2759,7 +3101,7 @@
 			)
 		)
 		(net
-			(code "20")
+			(code "24")
 			(name "unconnected-(U1-BOOT-Pad21)")
 			(class "Default")
 			(node
@@ -2770,7 +3112,7 @@
 			)
 		)
 		(net
-			(code "21")
+			(code "25")
 			(name "unconnected-(U1-D1-Pad2)")
 			(class "Default")
 			(node
@@ -2781,7 +3123,7 @@
 			)
 		)
 		(net
-			(code "22")
+			(code "26")
 			(name "unconnected-(U1-D3-Pad4)")
 			(class "Default")
 			(node
@@ -2792,7 +3134,7 @@
 			)
 		)
 		(net
-			(code "23")
+			(code "27")
 			(name "unconnected-(U1-D6-Pad7)")
 			(class "Default")
 			(node
@@ -2803,7 +3145,7 @@
 			)
 		)
 		(net
-			(code "24")
+			(code "28")
 			(name "unconnected-(U1-D7-Pad8)")
 			(class "Default")
 			(node
@@ -2814,7 +3156,7 @@
 			)
 		)
 		(net
-			(code "25")
+			(code "29")
 			(name "unconnected-(U1-D8-Pad9)")
 			(class "Default")
 			(node
@@ -2825,7 +3167,7 @@
 			)
 		)
 		(net
-			(code "26")
+			(code "30")
 			(name "unconnected-(U1-D9-Pad10)")
 			(class "Default")
 			(node
@@ -2836,7 +3178,7 @@
 			)
 		)
 		(net
-			(code "27")
+			(code "31")
 			(name "unconnected-(U1-D10-Pad11)")
 			(class "Default")
 			(node
@@ -2847,7 +3189,7 @@
 			)
 		)
 		(net
-			(code "28")
+			(code "32")
 			(name "unconnected-(U1-EN-Pad17)")
 			(class "Default")
 			(node
@@ -2858,7 +3200,7 @@
 			)
 		)
 		(net
-			(code "29")
+			(code "33")
 			(name "unconnected-(U1-GND-Pad18)")
 			(class "Default")
 			(node
@@ -2869,7 +3211,7 @@
 			)
 		)
 		(net
-			(code "30")
+			(code "34")
 			(name "unconnected-(U1-MTCK-Pad20)")
 			(class "Default")
 			(node
@@ -2880,7 +3222,7 @@
 			)
 		)
 		(net
-			(code "31")
+			(code "35")
 			(name "unconnected-(U1-MTDI-Pad15)")
 			(class "Default")
 			(node
@@ -2891,7 +3233,7 @@
 			)
 		)
 		(net
-			(code "32")
+			(code "36")
 			(name "unconnected-(U1-MTDO-Pad16)")
 			(class "Default")
 			(node
@@ -2902,7 +3244,7 @@
 			)
 		)
 		(net
-			(code "33")
+			(code "37")
 			(name "unconnected-(U1-MTMS-Pad19)")
 			(class "Default")
 			(node
@@ -2913,7 +3255,7 @@
 			)
 		)
 		(net
-			(code "34")
+			(code "38")
 			(name "unconnected-(U1-VBUS-Pad14)")
 			(class "Default")
 			(node
@@ -2924,7 +3266,7 @@
 			)
 		)
 		(net
-			(code "35")
+			(code "39")
 			(name "unconnected-(U2-ADC1-Pad16)")
 			(class "Default")
 			(node
@@ -2935,7 +3277,7 @@
 			)
 		)
 		(net
-			(code "36")
+			(code "40")
 			(name "unconnected-(U2-ADC2-Pad15)")
 			(class "Default")
 			(node
@@ -2946,7 +3288,7 @@
 			)
 		)
 		(net
-			(code "37")
+			(code "41")
 			(name "unconnected-(U2-ADC3-Pad13)")
 			(class "Default")
 			(node
@@ -2957,7 +3299,7 @@
 			)
 		)
 		(net
-			(code "38")
+			(code "42")
 			(name "unconnected-(U2-INT2-Pad9)")
 			(class "Default")
 			(node
@@ -2968,7 +3310,7 @@
 			)
 		)
 		(net
-			(code "39")
+			(code "43")
 			(name "unconnected-(U2-NC-Pad2)")
 			(class "Default")
 			(node
@@ -2979,7 +3321,7 @@
 			)
 		)
 		(net
-			(code "40")
+			(code "44")
 			(name "unconnected-(U2-NC-Pad3)")
 			(class "Default")
 			(node
@@ -2990,7 +3332,7 @@
 			)
 		)
 		(net
-			(code "41")
+			(code "45")
 			(name "unconnected-(U2-SDO-Pad7)")
 			(class "Default")
 			(node
@@ -3001,7 +3343,7 @@
 			)
 		)
 		(net
-			(code "42")
+			(code "46")
 			(name "unconnected-(U3-TD-Pad4)")
 			(class "Default")
 			(node
@@ -3009,28 +3351,6 @@
 				(pin "4")
 				(pinfunction "TD_4")
 				(pintype "no_connect")
-			)
-		)
-		(net
-			(code "43")
-			(name "unconnected-(U5-~{CHRG}-Pad7)")
-			(class "Default")
-			(node
-				(ref "U5")
-				(pin "7")
-				(pinfunction "~{CHRG}_7")
-				(pintype "open_collector+no_connect")
-			)
-		)
-		(net
-			(code "44")
-			(name "unconnected-(U5-~{STDBY}-Pad6)")
-			(class "Default")
-			(node
-				(ref "U5")
-				(pin "6")
-				(pinfunction "~{STDBY}_6")
-				(pintype "open_collector+no_connect")
 			)
 		)
 	)

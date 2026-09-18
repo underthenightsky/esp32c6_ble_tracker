@@ -3026,6 +3026,16 @@
 		)
 		(uuid "2d6c92e7-6986-44e6-abce-b06f06accf0b")
 	)
+	(label "Shunt_Output"
+		(at 49.53 50.8 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "4987d49b-5e31-42c5-aeec-6804d0e934d4")
+	)
 	(symbol
 		(lib_id "power:GND")
 		(at 213.36 59.69 180)
@@ -3922,7 +3932,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:TSSOP-10_3x3mm_P0.5mm"
+		(property "Footprint" "Package_SO:MSOP-10_3x3mm_P0.5mm"
 			(at 73.66 60.96 0)
 			(hide yes)
 			(show_name no)
