@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "/home/joseph/Downloads/esp32c6_ble_tracker/tracker/tracker.kicad_sch")
-		(date "2026-09-16T17:43:17")
+		(date "2026-09-17T17:34:16")
 		(tool "Eeschema 10.0.6-1.fc44")
 		(sheet
 			(number "1")
@@ -52,76 +52,56 @@
 				)
 			)
 		)
-	)
-	(components
-		(comp
-			(ref "BT1")
-			(value "Battery_Cell")
-			(footprint "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal")
-			(description "Single-cell battery")
-			(fields
-				(field
-					(name "Sim.Device") "V")
-				(field
-					(name "Sim.Type") "DC")
-				(field
-					(name "Sim.Pins") "1=+ 2=-")
-				(field
-					(name "Footprint") "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal")
-				(field
-					(name "Datasheet")
+		(sheet
+			(number "2")
+			(name "/Charging_and_Battery/")
+			(tstamps "/c73a9412-a8df-45fb-8b45-856a5aea081b/")
+			(title_block
+				(title)
+				(company)
+				(rev)
+				(date)
+				(source "charging_and_battery.kicad_sch")
+				(comment
+					(number "1")
+					(value "")
 				)
-				(field
-					(name "Description") "Single-cell battery")
-			)
-			(libsource
-				(lib "Device")
-				(part "Battery_Cell")
-				(description "Single-cell battery")
-			)
-			(property
-				(name "Sim.Device")
-				(value "V")
-			)
-			(property
-				(name "Sim.Type")
-				(value "DC")
-			)
-			(property
-				(name "Sim.Pins")
-				(value "1=+ 2=-")
-			)
-			(property
-				(name "Sheetname")
-				(value "tracker")
-			)
-			(property
-				(name "Sheetfile")
-				(value "tracker.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "battery cell")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "8ecb4028-e76c-4f4e-9bf4-fc6698bae7d4")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
-						)
-					)
+				(comment
+					(number "2")
+					(value "")
+				)
+				(comment
+					(number "3")
+					(value "")
+				)
+				(comment
+					(number "4")
+					(value "")
+				)
+				(comment
+					(number "5")
+					(value "")
+				)
+				(comment
+					(number "6")
+					(value "")
+				)
+				(comment
+					(number "7")
+					(value "")
+				)
+				(comment
+					(number "8")
+					(value "")
+				)
+				(comment
+					(number "9")
+					(value "")
 				)
 			)
 		)
+	)
+	(components
 		(comp
 			(ref "C1")
 			(value "100n")
@@ -447,60 +427,6 @@
 			)
 		)
 		(comp
-			(ref "R4")
-			(value "2.4k")
-			(footprint "Resistor_SMD:R_0603_1608Metric")
-			(description "Resistor")
-			(fields
-				(field
-					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "Resistor")
-			)
-			(libsource
-				(lib "Device")
-				(part "R")
-				(description "Resistor")
-			)
-			(property
-				(name "Sheetname")
-				(value "tracker")
-			)
-			(property
-				(name "Sheetfile")
-				(value "tracker.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "R res resistor")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "R_*")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "75709d91-e5c0-478b-b424-48a15b564569")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
-						)
-					)
-				)
-			)
-		)
-		(comp
 			(ref "U1")
 			(value "XIAO-ESP32-C6-SMD")
 			(footprint "Seeed_Studio_XIAO_Series:XIAO-ESP32-C6-SMD")
@@ -801,6 +727,707 @@
 			)
 		)
 		(comp
+			(ref "BT1")
+			(value "Battery_Cell")
+			(footprint "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal")
+			(description "Single-cell battery")
+			(fields
+				(field
+					(name "Sim.Device") "V")
+				(field
+					(name "Sim.Type") "DC")
+				(field
+					(name "Sim.Pins") "1=+ 2=-")
+				(field
+					(name "Footprint") "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Single-cell battery")
+			)
+			(libsource
+				(lib "Device")
+				(part "Battery_Cell")
+				(description "Single-cell battery")
+			)
+			(property
+				(name "Sim.Device")
+				(value "V")
+			)
+			(property
+				(name "Sim.Type")
+				(value "DC")
+			)
+			(property
+				(name "Sim.Pins")
+				(value "1=+ 2=-")
+			)
+			(property
+				(name "Sheetname")
+				(value "Charging_and_Battery")
+			)
+			(property
+				(name "Sheetfile")
+				(value "charging_and_battery.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "battery cell")
+			)
+			(sheetpath
+				(names "/Charging_and_Battery/")
+				(tstamps "/c73a9412-a8df-45fb-8b45-856a5aea081b/")
+			)
+			(tstamps "ab727768-4e05-43b2-b84e-22c464992e8c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C5")
+			(value "10u")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(description "Unpolarized capacitor")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unpolarized capacitor")
+			)
+			(libsource
+				(lib "Device")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Charging_and_Battery")
+			)
+			(property
+				(name "Sheetfile")
+				(value "charging_and_battery.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/Charging_and_Battery/")
+				(tstamps "/c73a9412-a8df-45fb-8b45-856a5aea081b/")
+			)
+			(tstamps "8c4293a4-9d26-4caf-9465-33b8ee23f831")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C6")
+			(value "10u")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(description "Unpolarized capacitor")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unpolarized capacitor")
+			)
+			(libsource
+				(lib "Device")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Charging_and_Battery")
+			)
+			(property
+				(name "Sheetfile")
+				(value "charging_and_battery.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/Charging_and_Battery/")
+				(tstamps "/c73a9412-a8df-45fb-8b45-856a5aea081b/")
+			)
+			(tstamps "6f904ba8-e339-4b4a-9f9d-6924da35d687")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C7")
+			(value "100n")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(description "Unpolarized capacitor")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unpolarized capacitor")
+			)
+			(libsource
+				(lib "Device")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Charging_and_Battery")
+			)
+			(property
+				(name "Sheetfile")
+				(value "charging_and_battery.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/Charging_and_Battery/")
+				(tstamps "/c73a9412-a8df-45fb-8b45-856a5aea081b/")
+			)
+			(tstamps "e39e2f07-3734-4c4f-b4f1-86bf22a0e4e9")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J1")
+			(value "USB_C_Receptacle_PowerOnly_6P")
+			(footprint "Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm")
+			(datasheet "https://www.usb.org/sites/default/files/documents/usb_type-c.zip")
+			(description "USB Power-Only 6P Type-C Receptacle connector")
+			(fields
+				(field
+					(name "Footprint") "Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm")
+				(field
+					(name "Datasheet") "https://www.usb.org/sites/default/files/documents/usb_type-c.zip")
+				(field
+					(name "Description") "USB Power-Only 6P Type-C Receptacle connector")
+			)
+			(libsource
+				(lib "Connector")
+				(part "USB_C_Receptacle_PowerOnly_6P")
+				(description "USB Power-Only 6P Type-C Receptacle connector")
+			)
+			(property
+				(name "Sheetname")
+				(value "Charging_and_Battery")
+			)
+			(property
+				(name "Sheetfile")
+				(value "charging_and_battery.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "usb universal serial bus type-C power-only charging-only 6P 6C")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "USB*C*Receptacle*")
+			)
+			(sheetpath
+				(names "/Charging_and_Battery/")
+				(tstamps "/c73a9412-a8df-45fb-8b45-856a5aea081b/")
+			)
+			(tstamps "ba94f0a7-8e20-4f31-bfa2-19c16c78bddd")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "SH")
+						)
+						(pin
+							(num "A12")
+						)
+						(pin
+							(num "B12")
+						)
+						(pin
+							(num "A9")
+						)
+						(pin
+							(num "B9")
+						)
+						(pin
+							(num "A5")
+						)
+						(pin
+							(num "B5")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "Q1")
+			(value "DMG9926UDM-7")
+			(footprint "SOT-26_DIO")
+			(datasheet "DMG9926UDM-7")
+			(fields
+				(field
+					(name "Footprint") "SOT-26_DIO")
+				(field
+					(name "Datasheet") "DMG9926UDM-7")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "digikey-dual_channel_nfets")
+				(part "DMG9926UDM-7")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "Charging_and_Battery")
+			)
+			(property
+				(name "Sheetfile")
+				(value "charging_and_battery.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "DMG9926UDM-7")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "SOT-26_DIO SOT-26_DIO-M SOT-26_DIO-L")
+			)
+			(sheetpath
+				(names "/Charging_and_Battery/")
+				(tstamps "/c73a9412-a8df-45fb-8b45-856a5aea081b/")
+			)
+			(tstamps "6a997649-29a8-43e3-847b-7c05e313b523")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R4")
+			(value "2.4k")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(description "Resistor")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Charging_and_Battery")
+			)
+			(property
+				(name "Sheetfile")
+				(value "charging_and_battery.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Charging_and_Battery/")
+				(tstamps "/c73a9412-a8df-45fb-8b45-856a5aea081b/")
+			)
+			(tstamps "9749deb4-0d91-4e2f-8cc9-9e3340fc982b")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R5")
+			(value "5.1k")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(description "Resistor")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Charging_and_Battery")
+			)
+			(property
+				(name "Sheetfile")
+				(value "charging_and_battery.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Charging_and_Battery/")
+				(tstamps "/c73a9412-a8df-45fb-8b45-856a5aea081b/")
+			)
+			(tstamps "51d19b1a-5085-4c8d-9c09-1ddc57d34bb9")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R6")
+			(value "5.1k")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(description "Resistor")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Charging_and_Battery")
+			)
+			(property
+				(name "Sheetfile")
+				(value "charging_and_battery.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Charging_and_Battery/")
+				(tstamps "/c73a9412-a8df-45fb-8b45-856a5aea081b/")
+			)
+			(tstamps "95e9e76f-bd64-4610-a6a9-c492d81517b6")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R7")
+			(value "100")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(description "Resistor")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Charging_and_Battery")
+			)
+			(property
+				(name "Sheetfile")
+				(value "charging_and_battery.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Charging_and_Battery/")
+				(tstamps "/c73a9412-a8df-45fb-8b45-856a5aea081b/")
+			)
+			(tstamps "3b86868f-be2e-4c3c-be69-5fa8e3bbd5b6")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R9")
+			(value "1k")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(description "Resistor")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Charging_and_Battery")
+			)
+			(property
+				(name "Sheetfile")
+				(value "charging_and_battery.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Charging_and_Battery/")
+				(tstamps "/c73a9412-a8df-45fb-8b45-856a5aea081b/")
+			)
+			(tstamps "33873511-10a5-45a5-a67a-e48245787bd7")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U3")
+			(value "DW01A")
+			(footprint "Package_TO_SOT_SMD:SOT-23-6")
+			(datasheet "https://hmsemi.com/downfile/DW01A.PDF")
+			(description "Overcharge, overcurrent and overdischarge protection IC for single cell lithium-ion/polymer battery")
+			(fields
+				(field
+					(name "Footprint") "Package_TO_SOT_SMD:SOT-23-6")
+				(field
+					(name "Datasheet") "https://hmsemi.com/downfile/DW01A.PDF")
+				(field
+					(name "Description") "Overcharge, overcurrent and overdischarge protection IC for single cell lithium-ion/polymer battery")
+			)
+			(libsource
+				(lib "Battery_Management")
+				(part "DW01A")
+				(description "Overcharge, overcurrent and overdischarge protection IC for single cell lithium-ion/polymer battery")
+			)
+			(property
+				(name "Sheetname")
+				(value "Charging_and_Battery")
+			)
+			(property
+				(name "Sheetfile")
+				(value "charging_and_battery.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "battery protection li-ion lipo overcurrent overdischarge overcharge")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "SOT?23*")
+			)
+			(sheetpath
+				(names "/Charging_and_Battery/")
+				(tstamps "/c73a9412-a8df-45fb-8b45-856a5aea081b/")
+			)
+			(tstamps "f92e4fc9-42bf-41d6-bad1-aeb76b410cef")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
 			(ref "U5")
 			(value "TP4056-42-ESOP8")
 			(footprint "Package_SO:SOIC-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.3mm_ThermalVias")
@@ -821,11 +1448,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "tracker")
+				(value "Charging_and_Battery")
 			)
 			(property
 				(name "Sheetfile")
-				(value "tracker.kicad_sch")
+				(value "charging_and_battery.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -836,10 +1463,10 @@
 				(value "*SO*3.9x4.*P1.27mm*EP2.4*x3.3*mm*")
 			)
 			(sheetpath
-				(names "/")
-				(tstamps "/")
+				(names "/Charging_and_Battery/")
+				(tstamps "/c73a9412-a8df-45fb-8b45-856a5aea081b/")
 			)
-			(tstamps "0a5a05d8-03c8-4971-b333-79d42ac02c61")
+			(tstamps "45c43b4f-8ba9-42c1-a41a-cf9717d040aa")
 			(units
 				(unit
 					(name "A")
@@ -879,6 +1506,59 @@
 	(groups)
 	(variants)
 	(libparts
+		(libpart
+			(lib "Battery_Management")
+			(part "DW01A")
+			(description "Overcharge, overcurrent and overdischarge protection IC for single cell lithium-ion/polymer battery")
+			(docs "https://hmsemi.com/downfile/DW01A.PDF")
+			(footprints
+				(fp "SOT?23*")
+			)
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "DW01A")
+				(field
+					(name "Footprint") "Package_TO_SOT_SMD:SOT-23-6")
+				(field
+					(name "Datasheet") "https://hmsemi.com/downfile/DW01A.PDF")
+				(field
+					(name "Description") "Overcharge, overcurrent and overdischarge protection IC for single cell lithium-ion/polymer battery")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "OD")
+					(type "output")
+				)
+				(pin
+					(num "2")
+					(name "CS")
+					(type "input")
+				)
+				(pin
+					(num "3")
+					(name "OC")
+					(type "output")
+				)
+				(pin
+					(num "4")
+					(name "TD")
+					(type "no_connect")
+				)
+				(pin
+					(num "5")
+					(name "VCC")
+					(type "power_in")
+				)
+				(pin
+					(num "6")
+					(name "GND")
+					(type "power_in")
+				)
+			)
+		)
 		(libpart
 			(lib "Battery_Management")
 			(part "TP4056-42-ESOP8")
@@ -943,6 +1623,65 @@
 				(pin
 					(num "9")
 					(name "EPAD")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Connector")
+			(part "USB_C_Receptacle_PowerOnly_6P")
+			(description "USB Power-Only 6P Type-C Receptacle connector")
+			(docs "https://www.usb.org/sites/default/files/documents/usb_type-c.zip")
+			(footprints
+				(fp "USB*C*Receptacle*")
+			)
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "USB_C_Receptacle_PowerOnly_6P")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet") "https://www.usb.org/sites/default/files/documents/usb_type-c.zip")
+				(field
+					(name "Description") "USB Power-Only 6P Type-C Receptacle connector")
+			)
+			(pins
+				(pin
+					(num "A5")
+					(name "CC1")
+					(type "bidirectional")
+				)
+				(pin
+					(num "A9")
+					(name "VBUS")
+					(type "passive")
+				)
+				(pin
+					(num "A12")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "B5")
+					(name "CC2")
+					(type "bidirectional")
+				)
+				(pin
+					(num "B9")
+					(name "VBUS")
+					(type "passive")
+				)
+				(pin
+					(num "B12")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "SH")
+					(name "SHIELD")
 					(type "passive")
 				)
 			)
@@ -1371,11 +2110,70 @@
 				)
 			)
 		)
+		(libpart
+			(lib "digikey-dual_channel_nfets")
+			(part "DMG9926UDM-7")
+			(docs "DMG9926UDM-7")
+			(footprints
+				(fp "SOT-26_DIO")
+				(fp "SOT-26_DIO-M")
+				(fp "SOT-26_DIO-L")
+			)
+			(fields
+				(field
+					(name "Reference") "Q")
+				(field
+					(name "Value") "DMG9926UDM-7")
+				(field
+					(name "Footprint") "SOT-26_DIO")
+				(field
+					(name "Datasheet") "DMG9926UDM-7")
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "unspecified")
+				)
+				(pin
+					(num "2")
+					(name "2")
+					(type "unspecified")
+				)
+				(pin
+					(num "3")
+					(name "3")
+					(type "unspecified")
+				)
+				(pin
+					(num "4")
+					(name "4")
+					(type "unspecified")
+				)
+				(pin
+					(num "5")
+					(name "5")
+					(type "unspecified")
+				)
+				(pin
+					(num "6")
+					(name "6")
+					(type "unspecified")
+				)
+			)
+		)
 	)
 	(libraries
 		(library
 			(logical "Battery_Management")
 			(uri "${KICAD10_SYMBOL_DIR}/Battery_Management.kicad_sym")
+		)
+		(library
+			(logical "Connector")
+			(uri "${KICAD10_SYMBOL_DIR}/Connector.kicad_sym")
 		)
 		(library
 			(logical "Device")
@@ -1389,11 +2187,53 @@
 			(logical "Sensor_Motion")
 			(uri "${KICAD10_SYMBOL_DIR}/Sensor_Motion.kicad_sym")
 		)
+		(library
+			(logical "digikey-dual_channel_nfets")
+			(uri "/home/joseph/Downloads/esp32c6_ble_tracker/tracker/digikey_dual_n_fets/digikey-dual_channel_nfets.kicad_sym")
+		)
 	)
 	(nets
 		(net
 			(code "1")
-			(name "GND")
+			(name "/Charging_and_Battery/BAT+")
+			(class "Default")
+			(node
+				(ref "BT1")
+				(pin "1")
+				(pinfunction "+_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C6")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R1")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R7")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U4")
+				(pin "10")
+				(pinfunction "VIN+_10")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "U5")
+				(pin "5")
+				(pinfunction "BAT_5")
+				(pintype "power_out")
+			)
+		)
+		(net
+			(code "2")
+			(name "/Charging_and_Battery/BAT-")
 			(class "Default")
 			(node
 				(ref "BT1")
@@ -1401,6 +2241,45 @@
 				(pinfunction "-_2")
 				(pintype "passive")
 			)
+			(node
+				(ref "C7")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "Q1")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "U3")
+				(pin "6")
+				(pinfunction "GND_6")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "3")
+			(name "/Charging_and_Battery/PROTECT_MID")
+			(class "Default")
+			(node
+				(ref "Q1")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "Q1")
+				(pin "5")
+				(pinfunction "5_5")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "4")
+			(name "GND")
+			(class "Default")
 			(node
 				(ref "C1")
 				(pin "1")
@@ -1417,7 +2296,56 @@
 				(pintype "passive")
 			)
 			(node
+				(ref "C5")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C6")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "A12")
+				(pinfunction "GND_A12")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "B12")
+				(pinfunction "GND_B12")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "SH")
+				(pinfunction "SHIELD_SH")
+				(pintype "passive")
+			)
+			(node
+				(ref "Q1")
+				(pin "3")
+				(pinfunction "3_3")
+				(pintype "unspecified")
+			)
+			(node
 				(ref "R4")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R5")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R6")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R9")
 				(pin "2")
 				(pintype "passive")
 			)
@@ -1489,24 +2417,39 @@
 			)
 		)
 		(net
-			(code "2")
-			(name "Net-(BT1-+)")
+			(code "5")
+			(name "Net-(J1-CC1)")
 			(class "Default")
 			(node
-				(ref "BT1")
-				(pin "1")
-				(pinfunction "+_1")
-				(pintype "passive")
+				(ref "J1")
+				(pin "A5")
+				(pinfunction "CC1_A5")
+				(pintype "bidirectional")
 			)
 			(node
-				(ref "U5")
-				(pin "5")
-				(pinfunction "BAT_5")
-				(pintype "power_out")
+				(ref "R6")
+				(pin "1")
+				(pintype "passive")
 			)
 		)
 		(net
-			(code "3")
+			(code "6")
+			(name "Net-(J1-CC2)")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "B5")
+				(pinfunction "CC2_B5")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "R5")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "7")
 			(name "Net-(U1-D0)")
 			(class "Default")
 			(node
@@ -1523,7 +2466,7 @@
 			)
 		)
 		(net
-			(code "4")
+			(code "8")
 			(name "Net-(U1-D2)")
 			(class "Default")
 			(node
@@ -1540,7 +2483,7 @@
 			)
 		)
 		(net
-			(code "5")
+			(code "9")
 			(name "Net-(U1-D4)")
 			(class "Default")
 			(node
@@ -1568,7 +2511,7 @@
 			)
 		)
 		(net
-			(code "6")
+			(code "10")
 			(name "Net-(U1-D5)")
 			(class "Default")
 			(node
@@ -1596,7 +2539,7 @@
 			)
 		)
 		(net
-			(code "7")
+			(code "11")
 			(name "Net-(U1-VBAT)")
 			(class "Default")
 			(node
@@ -1624,7 +2567,7 @@
 			)
 		)
 		(net
-			(code "8")
+			(code "12")
 			(name "Net-(U2-CS)")
 			(class "Default")
 			(node
@@ -1684,25 +2627,97 @@
 			)
 		)
 		(net
-			(code "9")
-			(name "Net-(U4-VIN+)")
+			(code "13")
+			(name "Net-(U3-CS)")
 			(class "Default")
 			(node
-				(ref "R1")
+				(ref "R9")
 				(pin "1")
 				(pintype "passive")
 			)
 			(node
-				(ref "U4")
-				(pin "10")
-				(pinfunction "VIN+_10")
-				(pintype "unspecified")
+				(ref "U3")
+				(pin "2")
+				(pinfunction "CS_2")
+				(pintype "input")
 			)
 		)
 		(net
-			(code "10")
+			(code "14")
+			(name "Net-(U3-OC)")
+			(class "Default")
+			(node
+				(ref "Q1")
+				(pin "4")
+				(pinfunction "4_4")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "U3")
+				(pin "3")
+				(pinfunction "OC_3")
+				(pintype "output")
+			)
+		)
+		(net
+			(code "15")
+			(name "Net-(U3-OD)")
+			(class "Default")
+			(node
+				(ref "Q1")
+				(pin "6")
+				(pinfunction "6_6")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "U3")
+				(pin "1")
+				(pinfunction "OD_1")
+				(pintype "output")
+			)
+		)
+		(net
+			(code "16")
+			(name "Net-(U3-VCC)")
+			(class "Default")
+			(node
+				(ref "C7")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R7")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "5")
+				(pinfunction "VCC_5")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "17")
 			(name "Net-(U5-CE)")
 			(class "Default")
+			(node
+				(ref "C5")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "A9")
+				(pinfunction "VBUS_A9")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "B9")
+				(pinfunction "VBUS_B9")
+				(pintype "passive")
+			)
 			(node
 				(ref "U5")
 				(pin "4")
@@ -1717,7 +2732,7 @@
 			)
 		)
 		(net
-			(code "11")
+			(code "18")
 			(name "Net-(U5-PROG)")
 			(class "Default")
 			(node
@@ -1733,7 +2748,7 @@
 			)
 		)
 		(net
-			(code "12")
+			(code "19")
 			(name "unconnected-(U1-3V3_OUT-Pad22)")
 			(class "Default")
 			(node
@@ -1744,7 +2759,7 @@
 			)
 		)
 		(net
-			(code "13")
+			(code "20")
 			(name "unconnected-(U1-BOOT-Pad21)")
 			(class "Default")
 			(node
@@ -1755,7 +2770,7 @@
 			)
 		)
 		(net
-			(code "14")
+			(code "21")
 			(name "unconnected-(U1-D1-Pad2)")
 			(class "Default")
 			(node
@@ -1766,7 +2781,7 @@
 			)
 		)
 		(net
-			(code "15")
+			(code "22")
 			(name "unconnected-(U1-D3-Pad4)")
 			(class "Default")
 			(node
@@ -1777,7 +2792,7 @@
 			)
 		)
 		(net
-			(code "16")
+			(code "23")
 			(name "unconnected-(U1-D6-Pad7)")
 			(class "Default")
 			(node
@@ -1788,7 +2803,7 @@
 			)
 		)
 		(net
-			(code "17")
+			(code "24")
 			(name "unconnected-(U1-D7-Pad8)")
 			(class "Default")
 			(node
@@ -1799,7 +2814,7 @@
 			)
 		)
 		(net
-			(code "18")
+			(code "25")
 			(name "unconnected-(U1-D8-Pad9)")
 			(class "Default")
 			(node
@@ -1810,7 +2825,7 @@
 			)
 		)
 		(net
-			(code "19")
+			(code "26")
 			(name "unconnected-(U1-D9-Pad10)")
 			(class "Default")
 			(node
@@ -1821,7 +2836,7 @@
 			)
 		)
 		(net
-			(code "20")
+			(code "27")
 			(name "unconnected-(U1-D10-Pad11)")
 			(class "Default")
 			(node
@@ -1832,7 +2847,7 @@
 			)
 		)
 		(net
-			(code "21")
+			(code "28")
 			(name "unconnected-(U1-EN-Pad17)")
 			(class "Default")
 			(node
@@ -1843,7 +2858,7 @@
 			)
 		)
 		(net
-			(code "22")
+			(code "29")
 			(name "unconnected-(U1-GND-Pad18)")
 			(class "Default")
 			(node
@@ -1854,7 +2869,7 @@
 			)
 		)
 		(net
-			(code "23")
+			(code "30")
 			(name "unconnected-(U1-MTCK-Pad20)")
 			(class "Default")
 			(node
@@ -1865,7 +2880,7 @@
 			)
 		)
 		(net
-			(code "24")
+			(code "31")
 			(name "unconnected-(U1-MTDI-Pad15)")
 			(class "Default")
 			(node
@@ -1876,7 +2891,7 @@
 			)
 		)
 		(net
-			(code "25")
+			(code "32")
 			(name "unconnected-(U1-MTDO-Pad16)")
 			(class "Default")
 			(node
@@ -1887,7 +2902,7 @@
 			)
 		)
 		(net
-			(code "26")
+			(code "33")
 			(name "unconnected-(U1-MTMS-Pad19)")
 			(class "Default")
 			(node
@@ -1898,7 +2913,7 @@
 			)
 		)
 		(net
-			(code "27")
+			(code "34")
 			(name "unconnected-(U1-VBUS-Pad14)")
 			(class "Default")
 			(node
@@ -1909,7 +2924,7 @@
 			)
 		)
 		(net
-			(code "28")
+			(code "35")
 			(name "unconnected-(U2-ADC1-Pad16)")
 			(class "Default")
 			(node
@@ -1920,7 +2935,7 @@
 			)
 		)
 		(net
-			(code "29")
+			(code "36")
 			(name "unconnected-(U2-ADC2-Pad15)")
 			(class "Default")
 			(node
@@ -1931,7 +2946,7 @@
 			)
 		)
 		(net
-			(code "30")
+			(code "37")
 			(name "unconnected-(U2-ADC3-Pad13)")
 			(class "Default")
 			(node
@@ -1942,7 +2957,7 @@
 			)
 		)
 		(net
-			(code "31")
+			(code "38")
 			(name "unconnected-(U2-INT2-Pad9)")
 			(class "Default")
 			(node
@@ -1953,7 +2968,7 @@
 			)
 		)
 		(net
-			(code "32")
+			(code "39")
 			(name "unconnected-(U2-NC-Pad2)")
 			(class "Default")
 			(node
@@ -1964,7 +2979,7 @@
 			)
 		)
 		(net
-			(code "33")
+			(code "40")
 			(name "unconnected-(U2-NC-Pad3)")
 			(class "Default")
 			(node
@@ -1975,7 +2990,7 @@
 			)
 		)
 		(net
-			(code "34")
+			(code "41")
 			(name "unconnected-(U2-SDO-Pad7)")
 			(class "Default")
 			(node
@@ -1986,7 +3001,18 @@
 			)
 		)
 		(net
-			(code "35")
+			(code "42")
+			(name "unconnected-(U3-TD-Pad4)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "4")
+				(pinfunction "TD_4")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "43")
 			(name "unconnected-(U5-~{CHRG}-Pad7)")
 			(class "Default")
 			(node
@@ -1997,7 +3023,7 @@
 			)
 		)
 		(net
-			(code "36")
+			(code "44")
 			(name "unconnected-(U5-~{STDBY}-Pad6)")
 			(class "Default")
 			(node
