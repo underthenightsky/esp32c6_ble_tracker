@@ -4587,7 +4587,7 @@
 				)
 			)
 		)
-		(property "Footprint" "SOT-26_DIO"
+		(property "Footprint" "dikigey_dual_channel_nfets:SOT-26_DIO"
 			(at 184.15 113.03 0)
 			(hide yes)
 			(show_name no)
