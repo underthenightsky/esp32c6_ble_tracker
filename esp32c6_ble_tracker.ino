@@ -132,14 +132,14 @@ INA226_WE ina226 = INA226_WE(I2C_INA226_ADDRESS);
 struct PowerReading{
   float busV =NAN,shuntMv =NAN, currentMa =NAN,powerMw =NAN;
 };
-static bool g_inaOk =false;
+static bool g_inaOk =false; //can be used across functions, global variable
 
 static bool inaBegin(){
   if(!ina226.init()){
     return false;
   }
   ina226.setResistorRange(INA_SHUNT_OHMS,INA_MAX_AMPS);
-  ina226.setAverage(AVERAGE_16);
+  ina226.setAverage(INA226_AVERAGE_16);
   ina226.setConversionTime(CONV_TIME_1100);
   ina226.setMeasureMode(CONTINOUS);
   return true;
@@ -319,6 +319,9 @@ static void sleepUntilTimerOnly(uint32_t seconds){
     WiFi.disconnect(true);
     WiFi.mode(WIFI_OFF);
   }
+   if(g_inaOk){
+    ina226.powerDown();
+  }
   isolateUnusedPins();
  unsigned long tTeardownDone = millis();
  printTimingSummary(tTeardownDone);
@@ -332,6 +335,9 @@ static void sleepUntilMotionOnly(){
   // settled sleep: only the LIS3DH interrupt on D2 wakes it up 
   armMotionInterrupt();
   clearMotionInterrupt();
+  if(g_inaOk){
+    ina226.powerDown();
+  }
   pinMode(D2,INPUT);
   esp_deep_sleep_enable_gpio_wakeup((1ULL <<D2),ESP_GPIO_WAKEUP_GPIO_HIGH);
   if(WiFi.getMode() != WIFI_MODE_NULL){
@@ -450,7 +456,7 @@ static void printTimingSummary(unsigned long tTeardownDone) {
     if (g_tPushDone > 0) {
       Serial.printf("HTTP POST        : %4lu\n", g_tPushDone - g_tWifiDone);
       lastStamp = g_tPushDone;
-    }
+    })
   } else {
     Serial.println("WiFi connect     : skipped (no beacons this cycle)");
   }
@@ -542,7 +548,14 @@ static void printTimingSummary(unsigned long tTeardownDone) {
 //   Serial.flush();
 //   esp_deep_sleep_start();
 // }
+#define PIN_CHRG D0
+#define PIN_STDBY D1
+enum ChargeState{CHG_ON_BATTERY,CHG_CHARGING,CHG_DONE,CHG_FAULT_OR_NO_BAT};
 
+static ChargeState readCharger(){
+  bool chrgHigh = digitalRead(PIN_CHRG);
+  bool stdbyHigh = di
+}
 void setup() {
   pinMode(WAKE_MARKER_PIN, OUTPUT);
   digitalWrite(WAKE_MARKER_PIN, HIGH);  // marks "code execution started" for the scope/profiler
@@ -570,15 +583,17 @@ void setup() {
   }
 
   // turning on I2C sensor
-  if(!ina226.init()){
-    Serial.println("INA226 chip not connected at 0x40 or not working");
-    while(1){
-      delay(100);
-    }
+  g_inaOk = inaBegin();
+  if(!g_inaOk){
+    Serial.println("INA226 not responding at 0x40, contnuing without power data");
+
   }
   clearMotionInterrupt();  // clear any latch before doing anything else
-
-  ina226.waitUntilConversionCompleted(); //wait for first conversion
+  if(g_inaOk){
+    ina226.waitUntilConversionCompleted(); //wait for first conversion
+  }
+  PowerReading pIdle = readPower();
+  Serial.printf("Idle:%.3fV %.2fmA %.1fmW \n",pIdle.busV,pIdle.currentMa,pIdle.powerMw);
   // set initial voltage to 0
  float shuntVoltage_mV =0.0;
   float loadVoltage_V =0.0;
@@ -621,8 +636,6 @@ g_tPosDone = millis();
 
 //push if position calcualted is valid
 if (validPos){
-
-
 // compare the current estimated postion against the last pusblished positon 
 //if we compare with the last estimated positon then it would almost 
 //always show a small delta, causing the value to never get published
@@ -663,7 +676,7 @@ else{
       // incrementing if no beacons get found, so no wifi pushup
     g_noBeaconCount++;
 }
-
+PowerReading pWiFi = readPower();
 bool stillMoving = isCurrentlyMoving();
 Serial.printf("Motion check at sleep time: %s\n", stillMoving ? "moving" : "settled");
 
