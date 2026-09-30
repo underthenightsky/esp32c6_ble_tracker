@@ -68,7 +68,7 @@
 #include <NimBLEDevice.h>
 #include <HTTPClient.h>
 #include "driver/rtc_io.h"
-
+#include <INA226_WE.h>
 #include "beacons.h"
 #include "estimator_types.h"
 
@@ -90,6 +90,12 @@ const char* DEVICE_ID       = "esp32-01";
 //   0x1F =  1Hz, low-power mode, all axes  (current — lower sample rate,
 //           same low-power mode, adds up to ~1s worst-case wake latency)
 #define LIS3DH_CTRL_REG1_VALUE 0x1F
+#define INA_SHUNT_OHMS 0.1f
+#define INA_MAX_AMPS 1.0f
+
+// INA226 connection code
+// I2C address for INA226 is 0x40
+#define I2C_INA226_ADDRESS 0x40
 
 // Timing instrumentation ----------------------------------------------------
 // WAKE_MARKER_PIN is toggled HIGH as the very first line of setup() and LOW
@@ -121,7 +127,35 @@ RTC_DATA_ATTR float g_emaX=0,g_emaY=0;
 RTC_DATA_ATTR int8_t g_top2[2] {-1,-1};
 RTC_DATA_ATTR uint32_t g_tooCloseCount =0;
 
+INA226_WE ina226 = INA226_WE(I2C_INA226_ADDRESS);
 
+struct PowerReading{
+  float busV =NAN,shuntMv =NAN, currentMa =NAN,powerMw =NAN;
+};
+static bool g_inaOk =false;
+
+static bool inaBegin(){
+  if(!ina226.init()){
+    return false;
+  }
+  ina226.setResistorRange(INA_SHUNT_OHMS,INA_MAX_AMPS);
+  ina226.setAverage(AVERAGE_16);
+  ina226.setConversionTime(CONV_TIME_1100);
+  ina226.setMeasureMode(CONTINOUS);
+  return true;
+}
+static PowerReading readPower(){
+  PowerReading p;
+  if(!g_inaOk)
+{
+  return p;
+}
+p.busV = ina226.getBusVoltage_V();
+p.shuntMv = ina226.getBusVoltage_V();
+p.currentMa = ina226.getCurrent_mA();
+p.powerMw = ina226.getBusPower();
+return p;
+}
 
 static const float MOVE_THRESHOLD_M =2.0f;
 // last position actually pushed to the server - distict
@@ -517,6 +551,7 @@ void setup() {
   Serial.begin(115200);
   g_bootCount++;
 
+  //switching on the SDA, SCL lines 
   Wire.begin(D4, D5);
 
   esp_sleep_wakeup_cause_t cause = esp_sleep_get_wakeup_cause();
@@ -526,13 +561,45 @@ void setup() {
   Serial.printf("\nBoot #%lu, wake cause: %d (%s)\n", (unsigned long)g_bootCount, (int)cause, wakeReason);
 
 //incrementing wake up counter
-g_wakeCount++;
+  g_wakeCount++;
 
+  // turning on Motion detector sensor 
   if (SensorOne.begin() != 0) {
     Serial.println("LIS3DH not responding at 0x19 — halting.");
     while (true) delay(1000);
   }
+
+  // turning on I2C sensor
+  if(!ina226.init()){
+    Serial.println("INA226 chip not connected at 0x40 or not working");
+    while(1){
+      delay(100);
+    }
+  }
   clearMotionInterrupt();  // clear any latch before doing anything else
+
+  ina226.waitUntilConversionCompleted(); //wait for first conversion
+  // set initial voltage to 0
+ float shuntVoltage_mV =0.0;
+  float loadVoltage_V =0.0;
+  float busVoltage_V =0.0;
+  float current_mA =0.0;
+  float power_mW =0.0;
+
+// Read the raw values from the INA226
+shuntVoltage_mV = ina226.getShuntVoltage_mV();
+busVoltage_V = ina226.getBusVoltage_V();
+current_mA = ina226.getCurrent_mA();
+power_mW = ina226.getBusPower();
+loadVoltage_V = busVoltage_V + (shuntVoltage_mV/1000.0);
+// Print results 
+ // Print results to the Serial Monitor
+  Serial.print("Bus Voltage:   "); Serial.print(busVoltage_V);     Serial.println(" V");
+  Serial.print("Shunt Voltage: "); Serial.print(shuntVoltage_mV);   Serial.println(" mV");
+  Serial.print("Load Voltage:  "); Serial.print(loadVoltage_V);    Serial.println(" V");
+  Serial.print("Current:       "); Serial.print(current_mA);       Serial.println(" mA");
+  Serial.print("Power:         "); Serial.print(power_mW);         Serial.println(" mW");
+  Serial.println("---------------------------------------");
 
   float ax = SensorOne.readFloatAccelX();
   float ay = SensorOne.readFloatAccelY();
@@ -602,9 +669,11 @@ Serial.printf("Motion check at sleep time: %s\n", stillMoving ? "moving" : "sett
 
 if (stillMoving) {
   sleepUntilTimerOnly(REST_TIMER_S);   // never returns
-} else {
+}
+ else {
   sleepUntilMotionOnly();              // never returns
 }
+
 }
 
 void loop() {
