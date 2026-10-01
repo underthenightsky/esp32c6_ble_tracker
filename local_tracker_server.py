@@ -87,6 +87,33 @@ HTML_TEMPLATE = """
 </html>
 """
 
+OCV = [(3.27,0),(3.61,5),(3.69,10),(3.71,15),(3.73,20),(3.75,25),(3.77,30),(3.79,35),
+       (3.80,40),(3.82,45),(3.84,50),(3.85,55),(3.87,60),(3.91,65),(3.95,70),(3.98,75),
+       (4.02,80),(4.08,85),(4.11,90),(4.15,95),(4.20,100)]   # generic LiPo, replace with yours
+
+def soc_from_ocv(v):
+    if v <= OCV[0][0]: return 0.0
+    if v >= OCV[-1][0]: return 100.0
+    for (v0, s0), (v1, s1) in zip(OCV, OCV[1:]):
+        if v0 <= v <= v1:
+            return s0 + (s1 - s0) * (v - v0) / (v1 - v0)
+
+CAP_MAH = 500.0     # usable capacity of your cell
+R_INT   = 0.2       # Ω, see below
+
+def update_soc(state, p):
+    used = p["used_mah"]
+    delta = used - state["last_used"] if used >= state["last_used"] else used  # counter reset
+    state["last_used"] = used
+    soc = state["soc"] - 100.0 * delta / CAP_MAH
+
+    if p.get("vbat") is not None and p.get("slept_s", 0) >= 600:   # cell has rested
+        ocv = p["vbat"] + (p.get("i_idle_ma") or 0) / 1000.0 * R_INT
+        soc += 0.2 * (soc_from_ocv(ocv) - soc)                      # pull toward voltage estimate
+        if ocv >= 4.17: soc = 100.0                                 # full-charge anchor
+    state["soc"] = max(0.0, min(100.0, soc))
+    return state["soc"]
+
 @app.route('/', methods=['GET'])
 def index():
     return render_template_string(HTML_TEMPLATE, logs=latest_payloads)

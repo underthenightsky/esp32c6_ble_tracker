@@ -71,6 +71,8 @@
 #include <INA226_WE.h>
 #include "beacons.h"
 #include "estimator_types.h"
+#include <sys/time.h>
+#include "power_meter.h"
 
 // ── WiFi / local test server ────────────────────────────────────────
 const char* WIFI_SSID       = "Airtel_Iwayplus";
@@ -90,8 +92,6 @@ const char* DEVICE_ID       = "esp32-01";
 //   0x1F =  1Hz, low-power mode, all axes  (current — lower sample rate,
 //           same low-power mode, adds up to ~1s worst-case wake latency)
 #define LIS3DH_CTRL_REG1_VALUE 0x1F
-#define INA_SHUNT_OHMS 0.1f
-#define INA_MAX_AMPS 1.0f
 
 // INA226 connection code
 // I2C address for INA226 is 0x40
@@ -127,36 +127,6 @@ RTC_DATA_ATTR float g_emaX=0,g_emaY=0;
 RTC_DATA_ATTR int8_t g_top2[2] {-1,-1};
 RTC_DATA_ATTR uint32_t g_tooCloseCount =0;
 
-INA226_WE ina226 = INA226_WE(I2C_INA226_ADDRESS);
-
-struct PowerReading{
-  float busV =NAN,shuntMv =NAN, currentMa =NAN,powerMw =NAN;
-};
-static bool g_inaOk =false; //can be used across functions, global variable
-
-static bool inaBegin(){
-  if(!ina226.init()){
-    return false;
-  }
-  ina226.setResistorRange(INA_SHUNT_OHMS,INA_MAX_AMPS);
-  ina226.setAverage(INA226_AVERAGE_16);
-  ina226.setConversionTime(CONV_TIME_1100);
-  ina226.setMeasureMode(CONTINOUS);
-  return true;
-}
-static PowerReading readPower(){
-  PowerReading p;
-  if(!g_inaOk)
-{
-  return p;
-}
-p.busV = ina226.getBusVoltage_V();
-p.shuntMv = ina226.getBusVoltage_V();
-p.currentMa = ina226.getCurrent_mA();
-p.powerMw = ina226.getBusPower();
-return p;
-}
-
 static const float MOVE_THRESHOLD_M =2.0f;
 // last position actually pushed to the server - distict
 //from g_emaX/g_emaY above. This is what MOVE_THRESHOLD_M compares against
@@ -190,12 +160,10 @@ struct Agg{
 
 static Agg g_agg[NUM_BEACONS];
 
+// we are making our own class called ScanCallbacks
 class ScanCallbacks : public NimBLEScanCallbacks {
   void onResult(const NimBLEAdvertisedDevice* dev) override {
-    // return if the bluetooth device dosen't have a name that ( which prevents us from checking it's name in the known beacons list)
-  // if(!dev->haveName()){ 
-  //   return;
-  // }
+
   std::string name = dev->getName();
   // now we get the rssi and later return if the value exceeds the limits
   int rssi = dev->getRSSI();
@@ -319,9 +287,13 @@ static void sleepUntilTimerOnly(uint32_t seconds){
     WiFi.disconnect(true);
     WiFi.mode(WIFI_OFF);
   }
+  meterTick();
    if(g_inaOk){
     ina226.powerDown();
   }
+  gettimeofday(&g_sleepEnter,NULL);
+  g_haveSleepStamp=true;
+
   isolateUnusedPins();
  unsigned long tTeardownDone = millis();
  printTimingSummary(tTeardownDone);
@@ -335,9 +307,13 @@ static void sleepUntilMotionOnly(){
   // settled sleep: only the LIS3DH interrupt on D2 wakes it up 
   armMotionInterrupt();
   clearMotionInterrupt();
-  if(g_inaOk){
+  meterTick();
+   if(g_inaOk){
     ina226.powerDown();
   }
+  gettimeofday(&g_sleepEnter,NULL);
+  g_haveSleepStamp=true;
+
   pinMode(D2,INPUT);
   esp_deep_sleep_enable_gpio_wakeup((1ULL <<D2),ESP_GPIO_WAKEUP_GPIO_HIGH);
   if(WiFi.getMode() != WIFI_MODE_NULL){
@@ -421,13 +397,21 @@ static bool connectWiFi() {
   while (WiFi.status() != WL_CONNECTED && millis() - t0 < 8000) delay(50);
   return WiFi.status() == WL_CONNECTED;
 }
+static void num(char* out, size_t n, float v, const char* fmt) {
+  if (isnan(v)) snprintf(out, n, "null"); else snprintf(out, n, fmt, v);
+}
+
 // the max time that the post will try without response is 5 seconds
 static void pushPositionToServer(const EstResult& r, float ax, float ay, float az) {
-  char buf[380];
+  char vb[16], ii[16], iw[16];
+  num(vb, sizeof(vb), pi.battV,     "%.3f");
+  num(ii, sizeof(ii), pi.currentMa, "%.1f");
+  num(iw, sizeof(iw), pw.currentMa, "%.1f");
+  char buf[520];  
   snprintf(buf, sizeof(buf),
     "{\"device_id\":\"%s\",\"x\":%.2f,\"y\":%.2f,\"conf\":\"%s\","
     "\"motion\":\"%s\",\"b1\":\"%s\",\"b1_rssi\":%d,\"n\":%d,"
-    "\"accel\":{\"x\":%.2f,\"y\":%.2f,\"z\":%.2f}}",
+    "\"accel\":{\"x\":%.2f,\"y\":%.2f,\"z\":%.2f},\"vbat\":%s,\"i_idle_ma\":%s,\"vbat_wifi\":%s,\"i_wifi_ma\":%s,\"used_mah\":%.3f,\"slept_s\":%.0f}}",
     DEVICE_ID, r.x, r.y, r.conf, r.motion, r.b1Name, r.b1Rssi, r.nBeacons, ax, ay, az);
 
   HTTPClient http;
@@ -548,15 +532,13 @@ static void printTimingSummary(unsigned long tTeardownDone) {
 //   Serial.flush();
 //   esp_deep_sleep_start();
 // }
-#define PIN_CHRG D0
-#define PIN_STDBY D1
-enum ChargeState{CHG_ON_BATTERY,CHG_CHARGING,CHG_DONE,CHG_FAULT_OR_NO_BAT};
 
-static ChargeState readCharger(){
-  bool chrgHigh = digitalRead(PIN_CHRG);
-  bool stdbyHigh = di
-}
 void setup() {
+  // disable ROM bootloader system logging
+  esp_deep_sleep_disable_rom_logging();
+  // mutes the esp-idf framework logs
+  esp_log_level_set("*",ESP_LOG_NONE);
+
   pinMode(WAKE_MARKER_PIN, OUTPUT);
   digitalWrite(WAKE_MARKER_PIN, HIGH);  // marks "code execution started" for the scope/profiler
   g_tBoot = millis();
@@ -564,6 +546,15 @@ void setup() {
   Serial.begin(115200);
   g_bootCount++;
 
+  struct timeval nowTv;
+  gettimeofday(&nowTv,NULL);
+  if(g_haveSleepStamp){
+    g_sleptS = (nowTv.tv_sec - g_sleepEnter.tv_sec) +(nowTv.tv_usec -g_sleepEnter.tv_usec)/1e6f;
+  if(g_sleptS <0){
+    g_sleptS =0;
+  }
+  g_usedMah += I_SLEEP_MA *g_sleptS /3600.0 + BOOT_OVERHEAD_MAH;
+  }
   //switching on the SDA, SCL lines 
   Wire.begin(D4, D5);
 
@@ -582,7 +573,7 @@ void setup() {
     while (true) delay(1000);
   }
 
-  // turning on I2C sensor
+  // turning on INA
   g_inaOk = inaBegin();
   if(!g_inaOk){
     Serial.println("INA226 not responding at 0x40, contnuing without power data");
@@ -594,27 +585,8 @@ void setup() {
   }
   PowerReading pIdle = readPower();
   Serial.printf("Idle:%.3fV %.2fmA %.1fmW \n",pIdle.busV,pIdle.currentMa,pIdle.powerMw);
-  // set initial voltage to 0
- float shuntVoltage_mV =0.0;
-  float loadVoltage_V =0.0;
-  float busVoltage_V =0.0;
-  float current_mA =0.0;
-  float power_mW =0.0;
 
-// Read the raw values from the INA226
-shuntVoltage_mV = ina226.getShuntVoltage_mV();
-busVoltage_V = ina226.getBusVoltage_V();
-current_mA = ina226.getCurrent_mA();
-power_mW = ina226.getBusPower();
-loadVoltage_V = busVoltage_V + (shuntVoltage_mV/1000.0);
-// Print results 
- // Print results to the Serial Monitor
-  Serial.print("Bus Voltage:   "); Serial.print(busVoltage_V);     Serial.println(" V");
-  Serial.print("Shunt Voltage: "); Serial.print(shuntVoltage_mV);   Serial.println(" mV");
-  Serial.print("Load Voltage:  "); Serial.print(loadVoltage_V);    Serial.println(" V");
-  Serial.print("Current:       "); Serial.print(current_mA);       Serial.println(" mA");
-  Serial.print("Power:         "); Serial.print(power_mW);         Serial.println(" mW");
-  Serial.println("---------------------------------------");
+
 
   float ax = SensorOne.readFloatAccelX();
   float ay = SensorOne.readFloatAccelY();
@@ -649,16 +621,19 @@ moved = distM >= MOVE_THRESHOLD_M;
 if(moved){
       Serial.println("Connecting to WiFi...");
   if (connectWiFi()) {
+    //measuring the wifi power consumption
+    PowerReading pWifi = readPower();
     g_tWifiDone = millis();
     Serial.print("Connected, IP: "); Serial.println(WiFi.localIP());
-    pushPositionToServer(result,ax,ay,az);
+    pushPositionToServer(result,ax,ay,az,pIdle,pWifi);
     g_tPushDone = millis();
     // successfully pushed via WiFi
     g_pushOkCount++;
     g_havePub = true;
     g_pubX = result.x;
     g_pubY = result.y;
-  } else {
+  } 
+  else {
     g_tWifiDone = millis();
     // couldnt send via WiFi
     g_wifiFailCount++;
