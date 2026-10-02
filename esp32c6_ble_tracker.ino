@@ -278,6 +278,7 @@ unsigned long startSync = millis();
   // is the v2.x function that actually blocks for the given duration; the
   // registered onResult() callback still fires per-device exactly as before.
   scan->getResults(SCAN_MS, false);   // blocks for SCAN_MS milliseconds
+  meterTick();
   NimBLEDevice::deinit(true);
 }
 static void sleepUntilTimerOnly(uint32_t seconds){
@@ -293,6 +294,8 @@ static void sleepUntilTimerOnly(uint32_t seconds){
   }
   gettimeofday(&g_sleepEnter,NULL);
   g_haveSleepStamp=true;
+
+  meterPrepareSleep();
 
   isolateUnusedPins();
  unsigned long tTeardownDone = millis();
@@ -394,7 +397,10 @@ static bool connectWiFi() {
   WiFi.mode(WIFI_STA);
   WiFi.begin(WIFI_SSID, WIFI_PASS);
   unsigned long t0 = millis();
-  while (WiFi.status() != WL_CONNECTED && millis() - t0 < 8000) delay(50);
+  while (WiFi.status() != WL_CONNECTED && millis() - t0 < 8000){
+    meterTick();
+    delay(50);
+  } 
   return WiFi.status() == WL_CONNECTED;
 }
 static void num(char* out, size_t n, float v, const char* fmt) {
@@ -402,17 +408,23 @@ static void num(char* out, size_t n, float v, const char* fmt) {
 }
 
 // the max time that the post will try without response is 5 seconds
-static void pushPositionToServer(const EstResult& r, float ax, float ay, float az) {
-  char vb[16], ii[16], iw[16];
-  num(vb, sizeof(vb), pi.battV,     "%.3f");
-  num(ii, sizeof(ii), pi.currentMa, "%.1f");
-  num(iw, sizeof(iw), pw.currentMa, "%.1f");
-  char buf[520];  
+static void pushPositionToServer(const EstResult& r, float ax, float ay, float az,
+                                 const PowerReading& pi, const PowerReading& pw) {
+  char vb[16], ii[16], vw[16], iw[16];
+  jnum(vb, sizeof(vb), pi.battV,     "%.3f");
+  jnum(ii, sizeof(ii), pi.currentMa, "%.1f");
+  jnum(vw, sizeof(vw), pw.battV,     "%.3f");
+  jnum(iw, sizeof(iw), pw.currentMa, "%.1f");
+
+  char buf[520];
   snprintf(buf, sizeof(buf),
     "{\"device_id\":\"%s\",\"x\":%.2f,\"y\":%.2f,\"conf\":\"%s\","
     "\"motion\":\"%s\",\"b1\":\"%s\",\"b1_rssi\":%d,\"n\":%d,"
-    "\"accel\":{\"x\":%.2f,\"y\":%.2f,\"z\":%.2f},\"vbat\":%s,\"i_idle_ma\":%s,\"vbat_wifi\":%s,\"i_wifi_ma\":%s,\"used_mah\":%.3f,\"slept_s\":%.0f}}",
-    DEVICE_ID, r.x, r.y, r.conf, r.motion, r.b1Name, r.b1Rssi, r.nBeacons, ax, ay, az);
+    "\"accel\":{\"x\":%.2f,\"y\":%.2f,\"z\":%.2f},"
+    "\"vbat\":%s,\"i_idle_ma\":%s,\"vbat_wifi\":%s,\"i_wifi_ma\":%s,"
+    "\"used_mah\":%.3f,\"slept_s\":%.0f}",
+    DEVICE_ID, r.x, r.y, r.conf, r.motion, r.b1Name, r.b1Rssi, r.nBeacons, ax, ay, az,
+    vb, ii, vw, iw, g_usedMah, g_sleptS);
 
   HTTPClient http;
   String url = String(SERVER_HOST) + "/api/push?api_key=" + String(SERVER_API_KEY);
@@ -440,7 +452,8 @@ static void printTimingSummary(unsigned long tTeardownDone) {
     if (g_tPushDone > 0) {
       Serial.printf("HTTP POST        : %4lu\n", g_tPushDone - g_tWifiDone);
       lastStamp = g_tPushDone;
-    })
+    };
+    
   } else {
     Serial.println("WiFi connect     : skipped (no beacons this cycle)");
   }
@@ -542,7 +555,7 @@ void setup() {
   pinMode(WAKE_MARKER_PIN, OUTPUT);
   digitalWrite(WAKE_MARKER_PIN, HIGH);  // marks "code execution started" for the scope/profiler
   g_tBoot = millis();
-
+  meterWake(g_tBoot);
   Serial.begin(115200);
   g_bootCount++;
 
@@ -607,6 +620,7 @@ bool validPos = calculatePosition(result);
 g_tPosDone = millis();
 
 //push if position calcualted is valid
+PowerReading pWifi;
 if (validPos){
 // compare the current estimated postion against the last pusblished positon 
 //if we compare with the last estimated positon then it would almost 
@@ -622,10 +636,11 @@ if(moved){
       Serial.println("Connecting to WiFi...");
   if (connectWiFi()) {
     //measuring the wifi power consumption
-    PowerReading pWifi = readPower();
     g_tWifiDone = millis();
+    PowerReading pWifi = readPower();
     Serial.print("Connected, IP: "); Serial.println(WiFi.localIP());
     pushPositionToServer(result,ax,ay,az,pIdle,pWifi);
+    meterTick();
     g_tPushDone = millis();
     // successfully pushed via WiFi
     g_pushOkCount++;
