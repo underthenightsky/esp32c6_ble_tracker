@@ -5,6 +5,129 @@
 	(uuid "0704e846-b6bf-4206-baa8-1088b529855e")
 	(paper "A4")
 	(lib_symbols
+		(symbol "Connector:TestPoint"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:C"
 			(pin_numbers
 				(hide yes)
@@ -1726,6 +1849,24 @@
 		(uuid "34198b2b-f156-4fd5-b847-e87d3e2f4ae5")
 	)
 	(junction
+		(at 132.08 100.33)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4c985589-4807-4a5c-9cc9-7b9c36cb6564")
+	)
+	(junction
+		(at 172.72 49.53)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "63dd5bca-9c09-46dd-a9a1-077ee2b23e4f")
+	)
+	(junction
+		(at 132.08 96.52)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "75494d5b-c75f-4fb0-9613-62cdbd02d6f7")
+	)
+	(junction
 		(at 233.68 73.66)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1742,6 +1883,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "849dd3d7-307e-42e7-bb3a-6095429aee93")
+	)
+	(junction
+		(at 224.79 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9e03e217-0ad1-4587-aba0-0d81fe58bd4c")
 	)
 	(junction
 		(at 242.57 74.93)
@@ -1768,6 +1915,12 @@
 		(uuid "d37f7242-b0c5-46aa-9800-368ad0d62d5a")
 	)
 	(junction
+		(at 185.42 147.32)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "dec0d4ae-6406-41a9-9544-0d2b23331ddc")
+	)
+	(junction
 		(at 53.34 52.07)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1784,6 +1937,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f80de046-0005-4b57-a933-42521c1bd0d6")
+	)
+	(junction
+		(at 209.55 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f9ca598c-5614-4b87-a5b5-b6da88ab286c")
 	)
 	(junction
 		(at 171.45 147.32)
@@ -1820,16 +1979,16 @@
 		(uuid "4beff871-416c-424a-b3c7-9cb4b049324d")
 	)
 	(no_connect
+		(at 186.69 92.71)
+		(uuid "52517bda-c9f6-4060-b7ab-31e5bc26d251")
+	)
+	(no_connect
 		(at 252.73 92.71)
 		(uuid "549f50c9-28de-4f76-8919-9bbf2738c8b9")
 	)
 	(no_connect
 		(at 156.21 69.85)
 		(uuid "559640f8-0953-4639-b4a7-b07c63e1e9c9")
-	)
-	(no_connect
-		(at 227.33 90.17)
-		(uuid "828c5ca6-2db1-4056-a1ac-135613772a30")
 	)
 	(no_connect
 		(at 140.97 104.14)
@@ -1842,10 +2001,6 @@
 	(no_connect
 		(at 252.73 90.17)
 		(uuid "9a16c490-88fd-4972-87c2-30a47b3037e4")
-	)
-	(no_connect
-		(at 186.69 92.71)
-		(uuid "a4707d9c-3928-40ed-bed9-b9767a3ea376")
 	)
 	(no_connect
 		(at 175.26 69.85)
@@ -1917,6 +2072,16 @@
 	)
 	(wire
 		(pts
+			(xy 224.79 76.2) (xy 236.22 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "10bc6875-1374-4039-96e9-ec9fc0b4269f")
+	)
+	(wire
+		(pts
 			(xy 20.32 25.4) (xy 20.32 19.05)
 		)
 		(stroke
@@ -1977,13 +2142,23 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 96.52) (xy 140.97 96.52)
+			(xy 128.27 96.52) (xy 132.08 96.52)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "2b96ae9c-54db-43ba-8271-7100c5ab8f16")
+	)
+	(wire
+		(pts
+			(xy 209.55 76.2) (xy 224.79 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c7109ed-9c01-4d4c-8557-55f0c9a15192")
 	)
 	(wire
 		(pts
@@ -2097,13 +2272,23 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 147.32) (xy 190.5 147.32)
+			(xy 171.45 147.32) (xy 185.42 147.32)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "4855faf3-3477-401d-9cee-2c8c0b7e0cf3")
+	)
+	(wire
+		(pts
+			(xy 172.72 49.53) (xy 130.81 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4f4ed043-f59e-4934-8c2c-110729f0f81a")
 	)
 	(wire
 		(pts
@@ -2147,6 +2332,16 @@
 	)
 	(wire
 		(pts
+			(xy 132.08 96.52) (xy 140.97 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5d8d8919-13ac-4194-affc-2479236bf24b")
+	)
+	(wire
+		(pts
 			(xy 233.68 63.5) (xy 233.68 64.77)
 		)
 		(stroke
@@ -2167,7 +2362,7 @@
 	)
 	(wire
 		(pts
-			(xy 210.82 76.2) (xy 236.22 76.2)
+			(xy 207.01 76.2) (xy 209.55 76.2)
 		)
 		(stroke
 			(width 0)
@@ -2204,6 +2399,16 @@
 			(type default)
 		)
 		(uuid "6d7c24c8-cd9d-47fe-a03b-767f8331e16a")
+	)
+	(wire
+		(pts
+			(xy 227.33 90.17) (xy 224.79 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "73d58028-3647-4630-9941-f54db6e9eab1")
 	)
 	(wire
 		(pts
@@ -2357,6 +2562,16 @@
 	)
 	(wire
 		(pts
+			(xy 224.79 90.17) (xy 224.79 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9d7fe79a-d94f-437d-b233-22ca69ca4225")
+	)
+	(wire
+		(pts
 			(xy 49.53 21.59) (xy 66.04 21.59)
 		)
 		(stroke
@@ -2447,7 +2662,7 @@
 	)
 	(wire
 		(pts
-			(xy 227.33 49.53) (xy 130.81 49.53)
+			(xy 227.33 49.53) (xy 172.72 49.53)
 		)
 		(stroke
 			(width 0)
@@ -2457,7 +2672,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 100.33) (xy 140.97 100.33)
+			(xy 128.27 100.33) (xy 132.08 100.33)
 		)
 		(stroke
 			(width 0)
@@ -2554,6 +2769,16 @@
 			(type default)
 		)
 		(uuid "bb68aafa-02cb-4e4e-aae9-a527c02ba3e1")
+	)
+	(wire
+		(pts
+			(xy 185.42 147.32) (xy 190.5 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bd1badf9-c73f-45f0-a796-c4d538417851")
 	)
 	(wire
 		(pts
@@ -2697,6 +2922,16 @@
 	)
 	(wire
 		(pts
+			(xy 132.08 100.33) (xy 140.97 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e459e1c6-386a-4572-8eab-721c274620ea")
+	)
+	(wire
+		(pts
 			(xy 220.98 92.71) (xy 220.98 91.44)
 		)
 		(stroke
@@ -2777,7 +3012,7 @@
 	)
 	(global_label "3v3"
 		(shape bidirectional)
-		(at 210.82 76.2 180)
+		(at 207.01 76.2 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2787,7 +3022,7 @@
 		)
 		(uuid "10ef5734-23b0-4545-973c-1768320f0da7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 203.3369 76.2 0)
+			(at 199.5269 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3109,9 +3344,88 @@
 			(uuid "13503a9f-f35c-4808-a207-3ddfa70c30cb")
 		)
 		(instances
-			(project "tracker"
+			(project "tracker_v2"
 				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
 					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 185.42 147.32 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "125947ba-6e40-4f91-95d0-699a0805b349")
+		(property "Reference" "TP1"
+			(at 187.96 142.7479 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 187.96 145.2879 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 190.5 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 190.5 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 185.42 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d50b56a9-5126-434b-a919-0465d47cb534")
+		)
+		(instances
+			(project "tracker_v2"
+				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
+					(reference "TP1")
 					(unit 1)
 				)
 			)
@@ -3188,7 +3502,7 @@
 			(uuid "32492634-069b-4367-81d7-653233a8dd63")
 		)
 		(instances
-			(project "tracker"
+			(project "tracker_v2"
 				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
 					(reference "#PWR05")
 					(unit 1)
@@ -3270,7 +3584,7 @@
 			(uuid "3b773660-53df-4b0a-a24e-5b047820957a")
 		)
 		(instances
-			(project "tracker"
+			(project "tracker_v2"
 				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
 					(reference "C2")
 					(unit 1)
@@ -3352,7 +3666,7 @@
 			(uuid "65fc94a6-c2de-49af-b942-cd4d7039f35a")
 		)
 		(instances
-			(project "tracker"
+			(project "tracker_v2"
 				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
 					(reference "C3")
 					(unit 1)
@@ -3435,9 +3749,88 @@
 			(uuid "3fded8be-89f0-424c-9cf3-a3640d305ba6")
 		)
 		(instances
-			(project "tracker"
+			(project "tracker_v2"
 				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
 					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 132.08 100.33 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5ad6fadf-98d1-47b9-a10d-44276222a046")
+		(property "Reference" "TP4"
+			(at 134.62 102.3619 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 134.62 104.9019 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 127 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 127 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 132.08 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "afd720cd-65e4-4009-8039-30d0c455d405")
+		)
+		(instances
+			(project "tracker_v2"
+				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
+					(reference "TP4")
 					(unit 1)
 				)
 			)
@@ -3583,7 +3976,7 @@
 			(uuid "39e68eb0-eab8-409d-927e-b1ea5add6f64")
 		)
 		(instances
-			(project "tracker"
+			(project "tracker_v2"
 				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
 					(reference "U1")
 					(unit 1)
@@ -3663,7 +4056,7 @@
 			(uuid "8a33a44f-2ed5-466d-bc52-b13b2967a594")
 		)
 		(instances
-			(project "tracker"
+			(project "tracker_v2"
 				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
 					(reference "R3")
 					(unit 1)
@@ -3741,7 +4134,7 @@
 			(uuid "94b8f743-6d58-406b-854c-33cf552ea0b9")
 		)
 		(instances
-			(project "tracker"
+			(project "tracker_v2"
 				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
 					(reference "#PWR02")
 					(unit 1)
@@ -3877,7 +4270,7 @@
 			(uuid "9186bd1c-04ca-4bcf-bead-1b4257f7ce79")
 		)
 		(instances
-			(project "tracker"
+			(project "tracker_v2"
 				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
 					(reference "U4")
 					(unit 1)
@@ -3959,7 +4352,7 @@
 			(uuid "c5a2bd10-4624-44a8-8a6c-40b9e2769708")
 		)
 		(instances
-			(project "tracker"
+			(project "tracker_v2"
 				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
 					(reference "C1")
 					(unit 1)
@@ -4037,7 +4430,7 @@
 			(uuid "b94fdf39-1e8d-456d-8d61-4b4ceb5185a0")
 		)
 		(instances
-			(project "tracker"
+			(project "tracker_v2"
 				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
 					(reference "#PWR08")
 					(unit 1)
@@ -4115,7 +4508,7 @@
 			(uuid "f34ccfff-0517-4e4d-ae85-404116d521f0")
 		)
 		(instances
-			(project "tracker"
+			(project "tracker_v2"
 				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
 					(reference "#PWR011")
 					(unit 1)
@@ -4195,9 +4588,88 @@
 			(uuid "8ee8a851-d4af-4c10-a0b1-666845fefa8f")
 		)
 		(instances
-			(project "tracker"
+			(project "tracker_v2"
 				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
 					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 209.55 76.2 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d551baad-8726-4439-9dfa-5f3e27238fa1")
+		(property "Reference" "TP6"
+			(at 212.09 71.6279 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 212.09 74.1679 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 214.63 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 214.63 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 209.55 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "aebab4e3-5067-40ef-91a2-be2838ade086")
+		)
+		(instances
+			(project "tracker_v2"
+				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
+					(reference "TP6")
 					(unit 1)
 				)
 			)
@@ -4273,9 +4745,88 @@
 			(uuid "b867cc7b-40b4-4597-8652-e2ffa0138471")
 		)
 		(instances
-			(project "tracker"
+			(project "tracker_v2"
 				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
 					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 172.72 49.53 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "df5cb1a9-aa5b-4cb9-81b5-29018a5eba28")
+		(property "Reference" "TP5"
+			(at 175.26 44.9579 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 175.26 47.4979 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 177.8 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 177.8 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 172.72 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f1a926d7-ac73-4724-bfcb-522c204ab313")
+		)
+		(instances
+			(project "tracker_v2"
+				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
+					(reference "TP5")
 					(unit 1)
 				)
 			)
@@ -4351,9 +4902,88 @@
 			(uuid "aeefe3fd-377b-4dde-94bd-b86d850d3b86")
 		)
 		(instances
-			(project "tracker"
+			(project "tracker_v2"
 				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
 					(reference "#PWR07")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 132.08 96.52 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e611dfdb-ba17-45cf-ac17-ef458210a48a")
+		(property "Reference" "TP3"
+			(at 134.62 91.9479 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 134.62 94.4879 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 137.16 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 137.16 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 132.08 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9e85306f-f35d-4b33-b789-d331d226c078")
+		)
+		(instances
+			(project "tracker_v2"
+				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
+					(reference "TP3")
 					(unit 1)
 				)
 			)
@@ -4475,7 +5105,7 @@
 			(uuid "a3177830-e899-40bf-9e4c-c65315b5ecdf")
 		)
 		(instances
-			(project "tracker"
+			(project "tracker_v2"
 				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
 					(reference "U2")
 					(unit 1)
@@ -4532,7 +5162,7 @@
 			)
 		)
 		(instances
-			(project "tracker"
+			(project "tracker_v2"
 				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
 					(page "2")
 				)
