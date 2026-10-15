@@ -492,7 +492,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "tracker_v3.kicad_pro",
+    "filename": "tracker_v4.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -685,18 +685,18 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "tracker_v3.kicad_sch",
-        "name": "tracker_v3",
+        "filename": "tracker_v4.kicad_sch",
+        "name": "tracker_v4",
         "uuid": "0704e846-b6bf-4206-baa8-1088b529855e"
       }
     ],
-    "used_designators": "J2-3,TP1-8",
+    "used_designators": "#PWR10,J2-3,TP1-8",
     "variants": []
   },
   "sheets": [
     [
       "0704e846-b6bf-4206-baa8-1088b529855e",
-      "tracker_v3"
+      "tracker_v4"
     ],
     [
       "c73a9412-a8df-45fb-8b45-856a5aea081b",
