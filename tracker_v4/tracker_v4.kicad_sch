@@ -5713,7 +5713,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4f6ba89a-d8d1-4aa7-8d9f-0e0902a29c1a")
-		(property "Reference" "R?"
+		(property "Reference" "R13"
 			(at 111.76 38.0999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5777,7 +5777,7 @@
 		(instances
 			(project "tracker_v4"
 				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
-					(reference "R?")
+					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -6329,7 +6329,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7c2965a9-3568-4210-9cce-5d619462ba30")
-		(property "Reference" "C?"
+		(property "Reference" "C8"
 			(at 31.75 102.8699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6393,7 +6393,7 @@
 		(instances
 			(project "tracker_v4"
 				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
-					(reference "C?")
+					(reference "C8")
 					(unit 1)
 				)
 			)
@@ -7369,7 +7369,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dc2e4e1b-ad3a-46c7-9bf5-bce5fb940035")
-		(property "Reference" "IC?"
+		(property "Reference" "IC1"
 			(at 53.34 87.63 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7538,7 +7538,7 @@
 		(instances
 			(project "tracker_v4"
 				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
-					(reference "IC?")
+					(reference "IC1")
 					(unit 1)
 				)
 			)
@@ -8072,7 +8072,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f19db072-4398-455e-918a-25233d360f1c")
-		(property "Reference" "SW?"
+		(property "Reference" "SW1"
 			(at 146.05 106.6799 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8136,7 +8136,7 @@
 		(instances
 			(project "tracker_v4"
 				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
-					(reference "SW?")
+					(reference "SW1")
 					(unit 1)
 				)
 			)

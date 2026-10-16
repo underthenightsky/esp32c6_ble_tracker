@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "/home/joseph/Downloads/esp32c6_ble_tracker/tracker_v4/tracker_v4.kicad_sch")
-		(date "2026-10-16T17:45:35")
+		(date "2026-10-16T18:32:34")
 		(tool "Eeschema 10.0.7-1.fc44")
 		(sheet
 			(number "1")
@@ -319,6 +319,163 @@
 			)
 		)
 		(comp
+			(ref "C8")
+			(value "10u")
+			(description "Unpolarized capacitor")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unpolarized capacitor")
+			)
+			(libsource
+				(lib "Device")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "tracker_v4")
+			)
+			(property
+				(name "Sheetfile")
+				(value "tracker_v4.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "7c2965a9-3568-4210-9cce-5d619462ba30")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "IC1")
+			(value "RT9080-33GJ5")
+			(footprint "RT9080-33GJ5:SOT94P280X100-5N")
+			(description "Linear Voltage Regulator IC Positive Fixed 1 Output  600mA TSOT-23-5")
+			(fields
+				(field
+					(name "SnapEDA_Link") "https://www.snapeda.com/parts/RT9080-33GJ5/Richtek/view-part/?ref=snap")
+				(field
+					(name "Check_prices") "https://www.snapeda.com/parts/RT9080-33GJ5/Richtek/view-part/?ref=eda")
+				(field
+					(name "Package") "TSOT-23 Richtek")
+				(field
+					(name "Price") "None")
+				(field
+					(name "MF") "Richtek USA")
+				(field
+					(name "MP") "RT9080-33GJ5")
+				(field
+					(name "Purchase-URL") "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=1406383&manufacturer=Richtek USA&part_name=RT9080-33GJ5&search_term=None")
+				(field
+					(name "Availability") "In Stock")
+				(field
+					(name "Footprint") "RT9080-33GJ5:SOT94P280X100-5N")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Linear Voltage Regulator IC Positive Fixed 1 Output  600mA TSOT-23-5")
+			)
+			(libsource
+				(lib "RT9080-33GJ5")
+				(part "RT9080-33GJ5")
+				(description "Linear Voltage Regulator IC Positive Fixed 1 Output  600mA TSOT-23-5")
+			)
+			(property
+				(name "SnapEDA_Link")
+				(value "https://www.snapeda.com/parts/RT9080-33GJ5/Richtek/view-part/?ref=snap")
+			)
+			(property
+				(name "Check_prices")
+				(value "https://www.snapeda.com/parts/RT9080-33GJ5/Richtek/view-part/?ref=eda")
+			)
+			(property
+				(name "Package")
+				(value "TSOT-23 Richtek")
+			)
+			(property
+				(name "Price")
+				(value "None")
+			)
+			(property
+				(name "MF")
+				(value "Richtek USA")
+			)
+			(property
+				(name "MP")
+				(value "RT9080-33GJ5")
+			)
+			(property
+				(name "Purchase-URL")
+				(value "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=1406383&manufacturer=Richtek USA&part_name=RT9080-33GJ5&search_term=None")
+			)
+			(property
+				(name "Availability")
+				(value "In Stock")
+			)
+			(property
+				(name "Sheetname")
+				(value "tracker_v4")
+			)
+			(property
+				(name "Sheetfile")
+				(value "tracker_v4.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "dc2e4e1b-ad3a-46c7-9bf5-bce5fb940035")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+					)
+				)
+			)
+		)
+		(comp
 			(ref "R1")
 			(value "0.1")
 			(footprint "Resistor_SMD:R_2512_6332Metric")
@@ -574,6 +731,110 @@
 				(tstamps "/")
 			)
 			(tstamps "fb350cc1-b11a-4ee1-a8b4-09d6dfc5db6f")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R13")
+			(value "4.7k")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(description "Resistor")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "tracker_v4")
+			)
+			(property
+				(name "Sheetfile")
+				(value "tracker_v4.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "4f6ba89a-d8d1-4aa7-8d9f-0e0902a29c1a")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "SW1")
+			(value "SW_Push")
+			(description "Push button switch, generic, two pins")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Push button switch, generic, two pins")
+			)
+			(libsource
+				(lib "Switch")
+				(part "SW_Push")
+				(description "Push button switch, generic, two pins")
+			)
+			(property
+				(name "Sheetname")
+				(value "tracker_v4")
+			)
+			(property
+				(name "Sheetfile")
+				(value "tracker_v4.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "switch normally-open pushbutton push-button")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "f19db072-4398-455e-918a-25233d360f1c")
 			(units
 				(unit
 					(name "A")
@@ -1843,7 +2104,7 @@
 		)
 		(comp
 			(ref "R4")
-			(value "1.2k")
+			(value "2.1k")
 			(footprint "Resistor_SMD:R_0603_1608Metric")
 			(description "Resistor")
 			(fields
@@ -3346,6 +3607,67 @@
 			)
 		)
 		(libpart
+			(lib "RT9080-33GJ5")
+			(part "RT9080-33GJ5")
+			(description "Linear Voltage Regulator IC Positive Fixed 1 Output  600mA TSOT-23-5")
+			(fields
+				(field
+					(name "Reference") "IC")
+				(field
+					(name "Value") "RT9080-33GJ5")
+				(field
+					(name "Footprint") "RT9080-33GJ5:SOT94P280X100-5N")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Linear Voltage Regulator IC Positive Fixed 1 Output  600mA TSOT-23-5")
+				(field
+					(name "SnapEDA_Link") "https://www.snapeda.com/parts/RT9080-33GJ5/Richtek/view-part/?ref=snap")
+				(field
+					(name "Check_prices") "https://www.snapeda.com/parts/RT9080-33GJ5/Richtek/view-part/?ref=eda")
+				(field
+					(name "Package") "TSOT-23 Richtek")
+				(field
+					(name "Price") "None")
+				(field
+					(name "MF") "Richtek USA")
+				(field
+					(name "MP") "RT9080-33GJ5")
+				(field
+					(name "Purchase-URL") "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=1406383&manufacturer=Richtek USA&part_name=RT9080-33GJ5&search_term=None")
+				(field
+					(name "Availability") "In Stock")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "VIN")
+					(type "bidirectional")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "bidirectional")
+				)
+				(pin
+					(num "3")
+					(name "EN")
+					(type "bidirectional")
+				)
+				(pin
+					(num "4")
+					(name "SNS")
+					(type "bidirectional")
+				)
+				(pin
+					(num "5")
+					(name "VOUT")
+					(type "bidirectional")
+				)
+			)
+		)
+		(libpart
 			(lib "Sensor_Motion")
 			(part "LIS3DH")
 			(description "3-Axis Accelerometer, 2/4/8/16g range, I2C/SPI interface, LGA-16")
@@ -3449,6 +3771,37 @@
 			)
 		)
 		(libpart
+			(lib "Switch")
+			(part "SW_Push")
+			(description "Push button switch, generic, two pins")
+			(fields
+				(field
+					(name "Reference") "SW")
+				(field
+					(name "Value") "SW_Push")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Push button switch, generic, two pins")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "2")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
 			(lib "digikey-dual_channel_nfets")
 			(part "DMG9926UDM-7")
 			(docs "DMG9926UDM-7")
@@ -3526,8 +3879,16 @@
 			(uri "/home/joseph/Downloads/esp32c6_ble_tracker/tracker/INA226.kicad_sym")
 		)
 		(library
+			(logical "RT9080-33GJ5")
+			(uri "/home/joseph/Downloads/esp32c6_ble_tracker/tracker_v4/RT9080-33GJ5/RT9080-33GJ5.kicad_sym")
+		)
+		(library
 			(logical "Sensor_Motion")
 			(uri "${KICAD10_SYMBOL_DIR}/Sensor_Motion.kicad_sym")
+		)
+		(library
+			(logical "Switch")
+			(uri "${KICAD10_SYMBOL_DIR}/Switch.kicad_sym")
 		)
 		(library
 			(logical "digikey-dual_channel_nfets")
@@ -3642,28 +4003,6 @@
 		)
 		(net
 			(code "3")
-			(name "/Shunt_Output")
-			(class "Default")
-			(node
-				(ref "R1")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "U4")
-				(pin "8")
-				(pinfunction "VBUS_8")
-				(pintype "unspecified")
-			)
-			(node
-				(ref "U4")
-				(pin "9")
-				(pinfunction "VIN-_9")
-				(pintype "unspecified")
-			)
-		)
-		(net
-			(code "4")
 			(name "3v3")
 			(class "Default")
 			(node
@@ -3682,6 +4021,12 @@
 				(pintype "passive")
 			)
 			(node
+				(ref "IC1")
+				(pin "5")
+				(pinfunction "VOUT_5")
+				(pintype "bidirectional")
+			)
+			(node
 				(ref "R11")
 				(pin "1")
 				(pintype "passive")
@@ -3689,6 +4034,11 @@
 			(node
 				(ref "R12")
 				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R13")
+				(pin "1")
 				(pintype "passive")
 			)
 			(node
@@ -3751,7 +4101,7 @@
 			)
 		)
 		(net
-			(code "5")
+			(code "4")
 			(name "GND")
 			(class "Default")
 			(node
@@ -3783,6 +4133,23 @@
 				(ref "C6")
 				(pin "1")
 				(pintype "passive")
+			)
+			(node
+				(ref "C8")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "IC1")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "IC1")
+				(pin "4")
+				(pinfunction "SNS_4")
+				(pintype "bidirectional")
 			)
 			(node
 				(ref "J1")
@@ -3836,6 +4203,12 @@
 				(pintype "passive")
 			)
 			(node
+				(ref "SW1")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
 				(ref "TP1")
 				(pin "1")
 				(pinfunction "1_1")
@@ -3870,12 +4243,6 @@
 				(pin "2")
 				(pinfunction "GND1_2")
 				(pintype "power_in")
-			)
-			(node
-				(ref "U1")
-				(pin "23")
-				(pinfunction "IO9_23")
-				(pintype "bidirectional")
 			)
 			(node
 				(ref "U1")
@@ -4089,9 +4456,14 @@
 			)
 		)
 		(net
-			(code "6")
+			(code "5")
 			(name "INA226_ALERT")
 			(class "Default")
+			(node
+				(ref "R13")
+				(pin "2")
+				(pintype "passive")
+			)
 			(node
 				(ref "U1")
 				(pin "12")
@@ -4106,13 +4478,13 @@
 			)
 		)
 		(net
-			(code "7")
+			(code "6")
 			(name "LIS3DH_INT1")
 			(class "Default")
 			(node
 				(ref "U1")
-				(pin "10")
-				(pinfunction "IO5_10")
+				(pin "5")
+				(pinfunction "IO2_5")
 				(pintype "bidirectional")
 			)
 			(node
@@ -4123,7 +4495,7 @@
 			)
 		)
 		(net
-			(code "8")
+			(code "7")
 			(name "Net-(D1-A)")
 			(class "Default")
 			(node
@@ -4139,7 +4511,7 @@
 			)
 		)
 		(net
-			(code "9")
+			(code "8")
 			(name "Net-(D1-K)")
 			(class "Default")
 			(node
@@ -4156,7 +4528,7 @@
 			)
 		)
 		(net
-			(code "10")
+			(code "9")
 			(name "Net-(D2-A)")
 			(class "Default")
 			(node
@@ -4172,7 +4544,7 @@
 			)
 		)
 		(net
-			(code "11")
+			(code "10")
 			(name "Net-(D2-K)")
 			(class "Default")
 			(node
@@ -4189,7 +4561,7 @@
 			)
 		)
 		(net
-			(code "12")
+			(code "11")
 			(name "Net-(J1-CC1)")
 			(class "Default")
 			(node
@@ -4205,7 +4577,7 @@
 			)
 		)
 		(net
-			(code "13")
+			(code "12")
 			(name "Net-(J1-CC2)")
 			(class "Default")
 			(node
@@ -4221,7 +4593,7 @@
 			)
 		)
 		(net
-			(code "14")
+			(code "13")
 			(name "Net-(U1-EN)")
 			(class "Default")
 			(node
@@ -4242,7 +4614,7 @@
 			)
 		)
 		(net
-			(code "15")
+			(code "14")
 			(name "Net-(U1-IO8)")
 			(class "Default")
 			(node
@@ -4254,6 +4626,23 @@
 				(ref "U1")
 				(pin "22")
 				(pinfunction "IO8_22")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "15")
+			(name "Net-(U1-IO9)")
+			(class "Default")
+			(node
+				(ref "SW1")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "23")
+				(pinfunction "IO9_23")
 				(pintype "bidirectional")
 			)
 		)
@@ -4393,30 +4782,46 @@
 		)
 		(net
 			(code "22")
-			(name "USB_DM")
+			(name "SHUNT_OUTPUT")
 			(class "Default")
 			(node
-				(ref "J1")
-				(pin "A6")
-				(pinfunction "D+_A6")
+				(ref "C8")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "IC1")
+				(pin "1")
+				(pinfunction "VIN_1")
 				(pintype "bidirectional")
 			)
 			(node
-				(ref "J1")
-				(pin "B6")
-				(pinfunction "D+_B6")
+				(ref "IC1")
+				(pin "3")
+				(pinfunction "EN_3")
 				(pintype "bidirectional")
 			)
 			(node
-				(ref "U1")
-				(pin "17")
-				(pinfunction "IO12_17")
-				(pintype "bidirectional")
+				(ref "R1")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U4")
+				(pin "8")
+				(pinfunction "VBUS_8")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "U4")
+				(pin "9")
+				(pinfunction "VIN-_9")
+				(pintype "unspecified")
 			)
 		)
 		(net
 			(code "23")
-			(name "USB_DP")
+			(name "USB_DM")
 			(class "Default")
 			(node
 				(ref "J1")
@@ -4432,13 +4837,36 @@
 			)
 			(node
 				(ref "U1")
+				(pin "17")
+				(pinfunction "IO12_17")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "24")
+			(name "USB_DP")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "A6")
+				(pinfunction "D+_A6")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "J1")
+				(pin "B6")
+				(pinfunction "D+_B6")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "U1")
 				(pin "18")
 				(pinfunction "IO13_18")
 				(pintype "bidirectional")
 			)
 		)
 		(net
-			(code "24")
+			(code "25")
 			(name "USB_VBUS")
 			(class "Default")
 			(node
@@ -4500,7 +4928,7 @@
 			)
 		)
 		(net
-			(code "25")
+			(code "26")
 			(name "unconnected-(J1-SBU1-PadA8)")
 			(class "Default")
 			(node
@@ -4511,7 +4939,7 @@
 			)
 		)
 		(net
-			(code "26")
+			(code "27")
 			(name "unconnected-(J1-SBU2-PadB8)")
 			(class "Default")
 			(node
@@ -4522,24 +4950,13 @@
 			)
 		)
 		(net
-			(code "27")
+			(code "28")
 			(name "unconnected-(U1-IO1-Pad13)")
 			(class "Default")
 			(node
 				(ref "U1")
 				(pin "13")
 				(pinfunction "IO1_13")
-				(pintype "bidirectional+no_connect")
-			)
-		)
-		(net
-			(code "28")
-			(name "unconnected-(U1-IO2-Pad5)")
-			(class "Default")
-			(node
-				(ref "U1")
-				(pin "5")
-				(pinfunction "IO2_5")
 				(pintype "bidirectional+no_connect")
 			)
 		)
@@ -4567,6 +4984,17 @@
 		)
 		(net
 			(code "31")
+			(name "unconnected-(U1-IO5-Pad10)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "10")
+				(pinfunction "IO5_10")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "32")
 			(name "unconnected-(U1-IO6-Pad15)")
 			(class "Default")
 			(node
@@ -4577,7 +5005,7 @@
 			)
 		)
 		(net
-			(code "32")
+			(code "33")
 			(name "unconnected-(U1-IO7-Pad16)")
 			(class "Default")
 			(node
@@ -4588,7 +5016,7 @@
 			)
 		)
 		(net
-			(code "33")
+			(code "34")
 			(name "unconnected-(U1-IO14-Pad19)")
 			(class "Default")
 			(node
@@ -4599,7 +5027,7 @@
 			)
 		)
 		(net
-			(code "34")
+			(code "35")
 			(name "unconnected-(U1-IO15-Pad20)")
 			(class "Default")
 			(node
@@ -4610,7 +5038,7 @@
 			)
 		)
 		(net
-			(code "35")
+			(code "36")
 			(name "unconnected-(U1-IO18-Pad24)")
 			(class "Default")
 			(node
@@ -4621,7 +5049,7 @@
 			)
 		)
 		(net
-			(code "36")
+			(code "37")
 			(name "unconnected-(U1-IO19-Pad25)")
 			(class "Default")
 			(node
@@ -4632,7 +5060,7 @@
 			)
 		)
 		(net
-			(code "37")
+			(code "38")
 			(name "unconnected-(U1-IO20-Pad26)")
 			(class "Default")
 			(node
@@ -4643,7 +5071,7 @@
 			)
 		)
 		(net
-			(code "38")
+			(code "39")
 			(name "unconnected-(U1-IO21-Pad27)")
 			(class "Default")
 			(node
@@ -4654,7 +5082,7 @@
 			)
 		)
 		(net
-			(code "39")
+			(code "40")
 			(name "unconnected-(U1-NC-Pad4)")
 			(class "Default")
 			(node
@@ -4665,7 +5093,7 @@
 			)
 		)
 		(net
-			(code "40")
+			(code "41")
 			(name "unconnected-(U1-NC-Pad7)")
 			(class "Default")
 			(node
@@ -4676,7 +5104,7 @@
 			)
 		)
 		(net
-			(code "41")
+			(code "42")
 			(name "unconnected-(U1-NC-Pad21)")
 			(class "Default")
 			(node
@@ -4687,7 +5115,7 @@
 			)
 		)
 		(net
-			(code "42")
+			(code "43")
 			(name "unconnected-(U1-NC-Pad32)")
 			(class "Default")
 			(node
@@ -4698,7 +5126,7 @@
 			)
 		)
 		(net
-			(code "43")
+			(code "44")
 			(name "unconnected-(U1-NC-Pad33)")
 			(class "Default")
 			(node
@@ -4709,7 +5137,7 @@
 			)
 		)
 		(net
-			(code "44")
+			(code "45")
 			(name "unconnected-(U1-NC-Pad34)")
 			(class "Default")
 			(node
@@ -4720,7 +5148,7 @@
 			)
 		)
 		(net
-			(code "45")
+			(code "46")
 			(name "unconnected-(U1-NC-Pad35)")
 			(class "Default")
 			(node
@@ -4731,7 +5159,7 @@
 			)
 		)
 		(net
-			(code "46")
+			(code "47")
 			(name "unconnected-(U1-RXD0-Pad30)")
 			(class "Default")
 			(node
@@ -4742,7 +5170,7 @@
 			)
 		)
 		(net
-			(code "47")
+			(code "48")
 			(name "unconnected-(U1-TXD0-Pad31)")
 			(class "Default")
 			(node
@@ -4753,7 +5181,7 @@
 			)
 		)
 		(net
-			(code "48")
+			(code "49")
 			(name "unconnected-(U2-ADC1-Pad16)")
 			(class "Default")
 			(node
@@ -4764,7 +5192,7 @@
 			)
 		)
 		(net
-			(code "49")
+			(code "50")
 			(name "unconnected-(U2-ADC2-Pad15)")
 			(class "Default")
 			(node
@@ -4775,7 +5203,7 @@
 			)
 		)
 		(net
-			(code "50")
+			(code "51")
 			(name "unconnected-(U2-ADC3-Pad13)")
 			(class "Default")
 			(node
@@ -4786,7 +5214,7 @@
 			)
 		)
 		(net
-			(code "51")
+			(code "52")
 			(name "unconnected-(U2-INT2-Pad9)")
 			(class "Default")
 			(node
@@ -4797,7 +5225,7 @@
 			)
 		)
 		(net
-			(code "52")
+			(code "53")
 			(name "unconnected-(U2-NC-Pad2)")
 			(class "Default")
 			(node
@@ -4808,7 +5236,7 @@
 			)
 		)
 		(net
-			(code "53")
+			(code "54")
 			(name "unconnected-(U2-NC-Pad3)")
 			(class "Default")
 			(node
@@ -4819,7 +5247,7 @@
 			)
 		)
 		(net
-			(code "54")
+			(code "55")
 			(name "unconnected-(U3-TD-Pad4)")
 			(class "Default")
 			(node
