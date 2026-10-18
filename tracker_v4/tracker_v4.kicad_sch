@@ -3132,10 +3132,22 @@
 		(uuid "34198b2b-f156-4fd5-b847-e87d3e2f4ae5")
 	)
 	(junction
+		(at 219.71 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3a6b54af-0d7d-4468-80ac-fcb962a7b697")
+	)
+	(junction
 		(at 109.22 43.18)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "42a525be-4f8a-4a58-a619-2e9cc2193a45")
+	)
+	(junction
+		(at 156.21 49.53)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4a714b03-63c9-4897-a664-19637e7a284f")
 	)
 	(junction
 		(at 173.99 49.53)
@@ -3154,12 +3166,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "65191c37-9ff4-420f-8685-5ed6e86aeab4")
-	)
-	(junction
-		(at 156.21 49.53)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "74a2bde3-05f6-47d2-8396-89f77ab37416")
 	)
 	(junction
 		(at 233.68 73.66)
@@ -3202,6 +3208,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ad3c07b1-edbc-45b5-8ed8-055e0ceebcfa")
+	)
+	(junction
+		(at 233.68 62.23)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bd3304ee-353d-4ea3-a508-0c19770a70fd")
 	)
 	(junction
 		(at 261.62 114.3)
@@ -3312,6 +3324,10 @@
 		(uuid "dcddcaa5-f1f5-4c49-9303-728f3516f73f")
 	)
 	(no_connect
+		(at 71.12 95.25)
+		(uuid "ded80a08-5fcf-407e-9ec0-d37cd50c8a78")
+	)
+	(no_connect
 		(at 180.34 87.63)
 		(uuid "e3f06e5c-ee7d-458b-be24-d084c8249da6")
 	)
@@ -3382,6 +3398,16 @@
 			(type default)
 		)
 		(uuid "0397dcf2-8f84-42d1-af2b-cb29298eac84")
+	)
+	(wire
+		(pts
+			(xy 219.71 76.2) (xy 224.79 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0444aa25-11a6-4817-9dd6-46860154c335")
 	)
 	(wire
 		(pts
@@ -3545,7 +3571,17 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 76.2) (xy 224.79 76.2)
+			(xy 233.68 62.23) (xy 233.68 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "29c30a16-27ea-4a27-8dd7-a86b82a7c4f1")
+	)
+	(wire
+		(pts
+			(xy 209.55 76.2) (xy 219.71 76.2)
 		)
 		(stroke
 			(width 0)
@@ -3585,7 +3621,7 @@
 	)
 	(wire
 		(pts
-			(xy 233.68 59.69) (xy 233.68 64.77)
+			(xy 233.68 59.69) (xy 233.68 62.23)
 		)
 		(stroke
 			(width 0)
@@ -3785,6 +3821,16 @@
 	)
 	(wire
 		(pts
+			(xy 231.14 62.23) (xy 233.68 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5dfc161b-460d-4ed5-b744-b65c35933ae0")
+	)
+	(wire
+		(pts
 			(xy 67.31 97.79) (xy 72.39 97.79)
 		)
 		(stroke
@@ -3885,6 +3931,16 @@
 	)
 	(wire
 		(pts
+			(xy 156.21 39.37) (xy 156.21 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7328975e-d39b-4731-985d-5d12be7f4808")
+	)
+	(wire
+		(pts
 			(xy 227.33 90.17) (xy 224.79 90.17)
 		)
 		(stroke
@@ -3922,6 +3978,16 @@
 			(type default)
 		)
 		(uuid "7f7df356-f2bd-4e59-a479-a7a476ab4ed8")
+	)
+	(wire
+		(pts
+			(xy 156.21 25.4) (xy 156.21 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "84980718-94fe-47a8-8dc9-d6c7db35783c")
 	)
 	(wire
 		(pts
@@ -4225,13 +4291,13 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 49.53) (xy 165.1 49.53)
+			(xy 219.71 66.04) (xy 219.71 76.2)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b4fe5b30-5b7a-4c47-9013-6a838d507dd0")
+		(uuid "b59109ac-eda9-4171-a993-9e0c640d047d")
 	)
 	(wire
 		(pts
@@ -4415,6 +4481,26 @@
 	)
 	(wire
 		(pts
+			(xy 231.14 58.42) (xy 231.14 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d4a96aba-371e-4832-a8de-804a6edbb98d")
+	)
+	(wire
+		(pts
+			(xy 219.71 58.42) (xy 231.14 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d4c0f64e-6268-4447-b3e3-923f1b9bacac")
+	)
+	(wire
+		(pts
 			(xy 96.52 45.72) (xy 96.52 49.53)
 		)
 		(stroke
@@ -4475,16 +4561,6 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 49.53) (xy 156.21 25.4)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ea00ae9a-225d-4109-83c8-08f43d667cc1")
-	)
-	(wire
-		(pts
 			(xy 39.37 74.93) (xy 33.02 74.93)
 		)
 		(stroke
@@ -4502,6 +4578,16 @@
 			(type default)
 		)
 		(uuid "ee1b15f1-7788-4f31-91be-a1b189d53a08")
+	)
+	(wire
+		(pts
+			(xy 156.21 49.53) (xy 165.1 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f02591d7-49aa-4e23-8d1a-6e684bf7f183")
 	)
 	(wire
 		(pts
@@ -6239,85 +6325,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 71.12 95.25 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7897fd55-5f1f-4341-9dea-62a04e16f8c3")
-		(property "Reference" "#PWR015"
-			(at 77.47 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 74.93 95.2499 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 71.12 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 71.12 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 71.12 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "61cbee63-456a-436c-b866-e939477f42de")
-		)
-		(instances
-			(project "tracker_v4"
-				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
-					(reference "#PWR015")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 27.94 104.14 0)
 		(unit 1)
@@ -6630,6 +6637,88 @@
 			(project "tracker_v4"
 				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
 					(reference "R11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 219.71 62.23 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c7e60257-6dde-4e6b-9639-0aaee5b29e03")
+		(property "Reference" "C9"
+			(at 223.52 60.9599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22u"
+			(at 223.52 63.4999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 220.6752 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 219.71 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 219.71 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "87812bbe-5ec5-4f18-ad24-5a978f79766a")
+		)
+		(pin "1"
+			(uuid "dbac677f-318e-4ae0-9cde-ba1edf56162c")
+		)
+		(instances
+			(project "tracker_v4"
+				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
+					(reference "C9")
 					(unit 1)
 				)
 			)
@@ -8137,6 +8226,88 @@
 			(project "tracker_v4"
 				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
 					(reference "SW1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 156.21 34.29 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fab9a989-bc32-43d9-af28-6b0339cb1aa3")
+		(property "Reference" "SW2"
+			(at 157.48 33.0199 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "SW_Push"
+			(at 157.48 35.5599 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Button_Switch_SMD:Nidec_Copal_CAS-120A"
+			(at 151.13 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 151.13 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 156.21 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fe81f734-0670-4d65-8e06-ed50f9cd3b5c")
+		)
+		(pin "2"
+			(uuid "2d483f1a-6e86-40ea-a991-501f9d41cc72")
+		)
+		(instances
+			(project "tracker_v4"
+				(path "/0704e846-b6bf-4206-baa8-1088b529855e"
+					(reference "SW2")
 					(unit 1)
 				)
 			)
