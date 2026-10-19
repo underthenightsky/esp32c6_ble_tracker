@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "/home/joseph/Downloads/esp32c6_ble_tracker/tracker_v4/tracker_v4.kicad_sch")
-		(date "2026-10-19T17:46:36")
+		(date "2026-10-19T17:50:09")
 		(tool "Eeschema 10.0.7-1.fc44")
 		(sheet
 			(number "1")
