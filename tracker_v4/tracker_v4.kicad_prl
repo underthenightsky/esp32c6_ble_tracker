@@ -34,6 +34,7 @@
       "footprint_text",
       "footprint_anchors",
       "ratsnest",
+      "grid",
       "footprints_front",
       "footprints_back",
       "footprint_values",
@@ -62,7 +63,7 @@
     "ssh_key": ""
   },
   "meta": {
-    "filename": "tracker_v3.kicad_prl",
+    "filename": "tracker_v4.kicad_prl",
     "version": 5
   },
   "net_inspector_panel": {
