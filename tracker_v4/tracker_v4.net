@@ -1,9 +1,9 @@
 (export
 	(version "E")
 	(design
-		(source "/home/joseph/Documents/GitHub/esp32c6_ble_tracker/tracker_v4/tracker_v4.kicad_sch")
-		(date "2026-10-22T19:13:17")
-		(tool "Eeschema 10.0.6")
+		(source "/home/joseph/Downloads/esp32c6_ble_tracker/tracker_v4/tracker_v4.kicad_sch")
+		(date "2026-10-23T16:54:45")
+		(tool "Eeschema 10.0.7-1.fc44")
 		(sheet
 			(number "1")
 			(name "/")
@@ -412,6 +412,222 @@
 				(tstamps "/")
 			)
 			(tstamps "c7e60257-6dde-4e6b-9639-0aaee5b29e03")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C10")
+			(value "100n")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(description "Unpolarized capacitor")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unpolarized capacitor")
+			)
+			(libsource
+				(lib "Device")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "tracker_v4")
+			)
+			(property
+				(name "Sheetfile")
+				(value "tracker_v4.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "950bdfca-3b86-4a52-b0b1-598f7d197132")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C11")
+			(value "10n")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(description "Unpolarized capacitor")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unpolarized capacitor")
+			)
+			(libsource
+				(lib "Device")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "tracker_v4")
+			)
+			(property
+				(name "Sheetfile")
+				(value "tracker_v4.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "b46e851d-6a4b-470c-ae68-d13ee82b1e0d")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C12")
+			(value "100n")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(description "Unpolarized capacitor")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unpolarized capacitor")
+			)
+			(libsource
+				(lib "Device")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "tracker_v4")
+			)
+			(property
+				(name "Sheetfile")
+				(value "tracker_v4.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "c3a29f7c-852f-413c-94eb-f87d0ba556e6")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C13")
+			(value "100n")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(description "Unpolarized capacitor")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unpolarized capacitor")
+			)
+			(libsource
+				(lib "Device")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "tracker_v4")
+			)
+			(property
+				(name "Sheetfile")
+				(value "tracker_v4.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "3fa91742-bdec-4992-9cc7-d21b0ba78241")
 			(units
 				(unit
 					(name "A")
@@ -839,6 +1055,168 @@
 				(tstamps "/")
 			)
 			(tstamps "4f6ba89a-d8d1-4aa7-8d9f-0e0902a29c1a")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R14")
+			(value "1.27M")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(description "Resistor")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "tracker_v4")
+			)
+			(property
+				(name "Sheetfile")
+				(value "tracker_v4.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "f5e821f1-89ab-430f-9de2-605bc58c781f")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R15")
+			(value "226k")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(description "Resistor")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "tracker_v4")
+			)
+			(property
+				(name "Sheetfile")
+				(value "tracker_v4.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "8d403228-e2f2-4840-94ed-60921a2d3198")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R16")
+			(value "1M")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(description "Resistor")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "tracker_v4")
+			)
+			(property
+				(name "Sheetfile")
+				(value "tracker_v4.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "edba25d0-ccd7-4969-93a1-e78ca917fec9")
 			(units
 				(unit
 					(name "A")
@@ -1692,6 +2070,72 @@
 			)
 		)
 		(comp
+			(ref "U7")
+			(value "TPS3899DL01DSER")
+			(footprint "DSE0006A-IPC_A")
+			(datasheet "https://www.ti.com/lit/gpn/tps3899")
+			(fields
+				(field
+					(name "Footprint") "DSE0006A-IPC_A")
+				(field
+					(name "Datasheet") "https://www.ti.com/lit/gpn/tps3899")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "2026-10-23_10-32-17")
+				(part "PTPS3899DL01DSER")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "tracker_v4")
+			)
+			(property
+				(name "Sheetfile")
+				(value "tracker_v4.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "PTPS3899DL01DSER")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "DSE0006A-IPC_A DSE0006A-IPC_B DSE0006A-IPC_C DSE0006A-MFG")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "26875402-4ff1-4c5f-aa27-744a1e44ada3")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "3")
+						)
+					)
+				)
+			)
+		)
+		(comp
 			(ref "BT1")
 			(value "Battery_Cell")
 			(footprint "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal")
@@ -2042,35 +2486,23 @@
 			)
 		)
 		(comp
-			(ref "D5")
-			(value "DO-214AC")
+			(ref "D3")
+			(value "SMAJ5.0A")
 			(footprint "Diode_SMD:D_SMA")
-			(datasheet "DO-214AC")
-			(description "Diode")
+			(datasheet "https://www.littelfuse.com/media?resourcetype=datasheets&itemid=75e32973-b177-4ee3-a0ff-cedaf1abdb93&filename=smaj-datasheet")
+			(description "400W unidirectional Transient Voltage Suppressor, 5.0Vr, SMA(DO-214AC)")
 			(fields
-				(field
-					(name "Sim.Device") "D")
-				(field
-					(name "Sim.Pins") "1=K 2=A")
 				(field
 					(name "Footprint") "Diode_SMD:D_SMA")
 				(field
-					(name "Datasheet") "DO-214AC")
+					(name "Datasheet") "https://www.littelfuse.com/media?resourcetype=datasheets&itemid=75e32973-b177-4ee3-a0ff-cedaf1abdb93&filename=smaj-datasheet")
 				(field
-					(name "Description") "Diode")
+					(name "Description") "400W unidirectional Transient Voltage Suppressor, 5.0Vr, SMA(DO-214AC)")
 			)
 			(libsource
-				(lib "Device")
-				(part "D")
-				(description "Diode")
-			)
-			(property
-				(name "Sim.Device")
-				(value "D")
-			)
-			(property
-				(name "Sim.Pins")
-				(value "1=K 2=A")
+				(lib "Diode")
+				(part "SMAJ5.0A")
+				(description "400W unidirectional Transient Voltage Suppressor, 5.0Vr, SMA(DO-214AC)")
 			)
 			(property
 				(name "Sheetname")
@@ -2082,17 +2514,17 @@
 			)
 			(property
 				(name "ki_keywords")
-				(value "diode")
+				(value "unidirectional diode TVS voltage suppressor")
 			)
 			(property
 				(name "ki_fp_filters")
-				(value "TO-???* *_Diode_* *SingleDiode* D_*")
+				(value "D*SMA*")
 			)
 			(sheetpath
 				(names "/Charging_and_Battery/")
 				(tstamps "/c73a9412-a8df-45fb-8b45-856a5aea081b/")
 			)
-			(tstamps "bff0fe07-3dcf-4402-8231-d86e0f41aed5")
+			(tstamps "7d3609e1-ab30-4a87-8f9e-77a32511d40f")
 			(units
 				(unit
 					(name "A")
@@ -3043,6 +3475,62 @@
 	(variants)
 	(libparts
 		(libpart
+			(lib "2026-10-23_10-32-17")
+			(part "PTPS3899DL01DSER")
+			(docs "https://www.ti.com/lit/gpn/tps3899")
+			(footprints
+				(fp "DSE0006A-IPC_A")
+				(fp "DSE0006A-IPC_B")
+				(fp "DSE0006A-IPC_C")
+				(fp "DSE0006A-MFG")
+			)
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "PTPS3899DL01DSER")
+				(field
+					(name "Footprint") "DSE0006A-IPC_A")
+				(field
+					(name "Datasheet") "https://www.ti.com/lit/gpn/tps3899")
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "CTR")
+					(type "unspecified")
+				)
+				(pin
+					(num "2")
+					(name "CTS")
+					(type "unspecified")
+				)
+				(pin
+					(num "3")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "4")
+					(name "VDD")
+					(type "power_in")
+				)
+				(pin
+					(num "5")
+					(name "SENSE")
+					(type "unspecified")
+				)
+				(pin
+					(num "6")
+					(name "RESET_N")
+					(type "open_collector")
+				)
+			)
+		)
+		(libpart
 			(lib "Battery_Management")
 			(part "DW01A")
 			(description "Overcharge, overcurrent and overdischarge protection IC for single cell lithium-ion/polymer battery")
@@ -3375,47 +3863,6 @@
 		)
 		(libpart
 			(lib "Device")
-			(part "D")
-			(description "Diode")
-			(footprints
-				(fp "TO-???*")
-				(fp "*_Diode_*")
-				(fp "*SingleDiode*")
-				(fp "D_*")
-			)
-			(fields
-				(field
-					(name "Reference") "D")
-				(field
-					(name "Value") "D")
-				(field
-					(name "Footprint")
-				)
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "Diode")
-				(field
-					(name "Sim.Device") "D")
-				(field
-					(name "Sim.Pins") "1=K 2=A")
-			)
-			(pins
-				(pin
-					(num "1")
-					(name "K")
-					(type "passive")
-				)
-				(pin
-					(num "2")
-					(name "A")
-					(type "passive")
-				)
-			)
-		)
-		(libpart
-			(lib "Device")
 			(part "LED")
 			(description "Light emitting diode")
 			(footprints
@@ -3482,6 +3929,39 @@
 				(pin
 					(num "2")
 					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Diode")
+			(part "SMAJ5.0A")
+			(description "400W unidirectional Transient Voltage Suppressor, 5.0Vr, SMA(DO-214AC)")
+			(docs "https://www.littelfuse.com/media?resourcetype=datasheets&itemid=75e32973-b177-4ee3-a0ff-cedaf1abdb93&filename=smaj-datasheet")
+			(footprints
+				(fp "D*SMA*")
+			)
+			(fields
+				(field
+					(name "Reference") "D")
+				(field
+					(name "Value") "SMAJ5.0A")
+				(field
+					(name "Footprint") "Diode_SMD:D_SMA")
+				(field
+					(name "Datasheet") "https://www.littelfuse.com/media?resourcetype=datasheets&itemid=75e32973-b177-4ee3-a0ff-cedaf1abdb93&filename=smaj-datasheet")
+				(field
+					(name "Description") "400W unidirectional Transient Voltage Suppressor, 5.0Vr, SMA(DO-214AC)")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "A1")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "A2")
 					(type "passive")
 				)
 			)
@@ -4217,28 +4697,52 @@
 	)
 	(libraries
 		(library
+			(logical "2026-10-23_10-32-17")
+			(uri "/home/joseph/Downloads/esp32c6_ble_tracker/tracker_v4/ul_PTPS3899DL01DSER/KiCADv6/2026-10-23_10-32-17.kicad_sym")
+		)
+		(library
 			(logical "Battery_Management")
-			(uri "${KICAD10_SYMBOL_DIR}/Battery_Management.kicad_symdir")
+			(uri "${KICAD10_SYMBOL_DIR}/Battery_Management.kicad_sym")
 		)
 		(library
 			(logical "Connector")
-			(uri "${KICAD10_SYMBOL_DIR}/Connector.kicad_symdir")
+			(uri "${KICAD10_SYMBOL_DIR}/Connector.kicad_sym")
 		)
 		(library
 			(logical "Device")
-			(uri "${KICAD10_SYMBOL_DIR}/Device.kicad_symdir")
+			(uri "${KICAD10_SYMBOL_DIR}/Device.kicad_sym")
+		)
+		(library
+			(logical "Diode")
+			(uri "${KICAD10_SYMBOL_DIR}/Diode.kicad_sym")
+		)
+		(library
+			(logical "ESP32-C6-MINI-1-N4")
+			(uri "/home/joseph/Downloads/esp32c6_ble_tracker/tracker_v4/ESP32-C6-MINI-1-N4.kicad_sym")
+		)
+		(library
+			(logical "INA226")
+			(uri "/home/joseph/Downloads/esp32c6_ble_tracker/tracker/INA226.kicad_sym")
 		)
 		(library
 			(logical "Power_Protection")
-			(uri "${KICAD10_SYMBOL_DIR}/Power_Protection.kicad_symdir")
+			(uri "${KICAD10_SYMBOL_DIR}/Power_Protection.kicad_sym")
+		)
+		(library
+			(logical "RT9080-33GJ5")
+			(uri "/home/joseph/Downloads/esp32c6_ble_tracker/tracker_v4/RT9080-33GJ5/RT9080-33GJ5.kicad_sym")
 		)
 		(library
 			(logical "Sensor_Motion")
-			(uri "${KICAD10_SYMBOL_DIR}/Sensor_Motion.kicad_symdir")
+			(uri "${KICAD10_SYMBOL_DIR}/Sensor_Motion.kicad_sym")
 		)
 		(library
 			(logical "Switch")
-			(uri "${KICAD10_SYMBOL_DIR}/Switch.kicad_symdir")
+			(uri "${KICAD10_SYMBOL_DIR}/Switch.kicad_sym")
+		)
+		(library
+			(logical "digikey-dual_channel_nfets")
+			(uri "/home/joseph/Downloads/esp32c6_ble_tracker/tracker/digikey_dual_n_fets/digikey-dual_channel_nfets.kicad_sym")
 		)
 	)
 	(nets
@@ -4329,11 +4833,6 @@
 				(pin "5")
 				(pinfunction "5_5")
 				(pintype "unspecified")
-			)
-			(node
-				(ref "R9")
-				(pin "2")
-				(pintype "passive")
 			)
 		)
 		(net
@@ -4450,6 +4949,26 @@
 				(pintype "passive")
 			)
 			(node
+				(ref "C10")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C11")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C12")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C13")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
 				(ref "C2")
 				(pin "1")
 				(pintype "passive")
@@ -4485,9 +5004,9 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "D5")
+				(ref "D3")
 				(pin "2")
-				(pinfunction "A_2")
+				(pinfunction "A2_2")
 				(pintype "passive")
 			)
 			(node
@@ -4533,6 +5052,11 @@
 				(pintype "unspecified")
 			)
 			(node
+				(ref "R15")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
 				(ref "R4")
 				(pin "2")
 				(pintype "passive")
@@ -4544,6 +5068,11 @@
 			)
 			(node
 				(ref "R6")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R9")
 				(pin "2")
 				(pintype "passive")
 			)
@@ -4811,6 +5340,12 @@
 				(pinfunction "GND_2")
 				(pintype "passive")
 			)
+			(node
+				(ref "U7")
+				(pin "3")
+				(pinfunction "GND_3")
+				(pintype "power_in")
+			)
 		)
 		(net
 			(code "6")
@@ -4836,6 +5371,28 @@
 		)
 		(net
 			(code "7")
+			(name "LDO_EN")
+			(class "Default")
+			(node
+				(ref "IC1")
+				(pin "3")
+				(pinfunction "EN_3")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "R16")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U7")
+				(pin "6")
+				(pinfunction "RESET_N_6")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "8")
 			(name "LIS3DH_INT1")
 			(class "Default")
 			(node
@@ -4852,7 +5409,7 @@
 			)
 		)
 		(net
-			(code "8")
+			(code "9")
 			(name "Net-(D1-A)")
 			(class "Default")
 			(node
@@ -4868,7 +5425,7 @@
 			)
 		)
 		(net
-			(code "9")
+			(code "10")
 			(name "Net-(D1-K)")
 			(class "Default")
 			(node
@@ -4885,7 +5442,7 @@
 			)
 		)
 		(net
-			(code "10")
+			(code "11")
 			(name "Net-(D2-A)")
 			(class "Default")
 			(node
@@ -4901,7 +5458,7 @@
 			)
 		)
 		(net
-			(code "11")
+			(code "12")
 			(name "Net-(D2-K)")
 			(class "Default")
 			(node
@@ -4918,7 +5475,7 @@
 			)
 		)
 		(net
-			(code "12")
+			(code "13")
 			(name "Net-(J1-CC1)")
 			(class "Default")
 			(node
@@ -4934,7 +5491,7 @@
 			)
 		)
 		(net
-			(code "13")
+			(code "14")
 			(name "Net-(J1-CC2)")
 			(class "Default")
 			(node
@@ -4950,7 +5507,7 @@
 			)
 		)
 		(net
-			(code "14")
+			(code "15")
 			(name "Net-(U1-EN)")
 			(class "Default")
 			(node
@@ -4977,7 +5534,7 @@
 			)
 		)
 		(net
-			(code "15")
+			(code "16")
 			(name "Net-(U1-IO8)")
 			(class "Default")
 			(node
@@ -4993,7 +5550,7 @@
 			)
 		)
 		(net
-			(code "16")
+			(code "17")
 			(name "Net-(U1-IO9)")
 			(class "Default")
 			(node
@@ -5010,7 +5567,7 @@
 			)
 		)
 		(net
-			(code "17")
+			(code "18")
 			(name "Net-(U3-CS)")
 			(class "Default")
 			(node
@@ -5026,7 +5583,7 @@
 			)
 		)
 		(net
-			(code "18")
+			(code "19")
 			(name "Net-(U3-OC)")
 			(class "Default")
 			(node
@@ -5043,7 +5600,7 @@
 			)
 		)
 		(net
-			(code "19")
+			(code "20")
 			(name "Net-(U3-OD)")
 			(class "Default")
 			(node
@@ -5060,7 +5617,7 @@
 			)
 		)
 		(net
-			(code "20")
+			(code "21")
 			(name "Net-(U3-VCC)")
 			(class "Default")
 			(node
@@ -5081,7 +5638,7 @@
 			)
 		)
 		(net
-			(code "21")
+			(code "22")
 			(name "Net-(U5-PROG)")
 			(class "Default")
 			(node
@@ -5097,7 +5654,39 @@
 			)
 		)
 		(net
-			(code "22")
+			(code "23")
+			(name "Net-(U7-CTR)")
+			(class "Default")
+			(node
+				(ref "C13")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U7")
+				(pin "1")
+				(pinfunction "CTR_1")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "24")
+			(name "Net-(U7-CTS)")
+			(class "Default")
+			(node
+				(ref "C12")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U7")
+				(pin "2")
+				(pinfunction "CTS_2")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "25")
 			(name "SCL")
 			(class "Default")
 			(node
@@ -5131,7 +5720,7 @@
 			)
 		)
 		(net
-			(code "23")
+			(code "26")
 			(name "SDA")
 			(class "Default")
 			(node
@@ -5165,9 +5754,14 @@
 			)
 		)
 		(net
-			(code "24")
+			(code "27")
 			(name "SHUNT_OUTPUT")
 			(class "Default")
+			(node
+				(ref "C10")
+				(pin "1")
+				(pintype "passive")
+			)
 			(node
 				(ref "C8")
 				(pin "1")
@@ -5180,14 +5774,18 @@
 				(pintype "bidirectional")
 			)
 			(node
-				(ref "IC1")
-				(pin "3")
-				(pinfunction "EN_3")
-				(pintype "bidirectional")
-			)
-			(node
 				(ref "R1")
 				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R14")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R16")
+				(pin "1")
 				(pintype "passive")
 			)
 			(node
@@ -5202,9 +5800,15 @@
 				(pinfunction "VIN-_9")
 				(pintype "unspecified")
 			)
+			(node
+				(ref "U7")
+				(pin "4")
+				(pinfunction "VDD_4")
+				(pintype "power_in")
+			)
 		)
 		(net
-			(code "25")
+			(code "28")
 			(name "USB_DM")
 			(class "Default")
 			(node
@@ -5239,7 +5843,7 @@
 			)
 		)
 		(net
-			(code "26")
+			(code "29")
 			(name "USB_DP")
 			(class "Default")
 			(node
@@ -5274,7 +5878,7 @@
 			)
 		)
 		(net
-			(code "27")
+			(code "30")
 			(name "USB_VBUS")
 			(class "Default")
 			(node
@@ -5283,9 +5887,9 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "D5")
+				(ref "D3")
 				(pin "1")
-				(pinfunction "K_1")
+				(pinfunction "A1_1")
 				(pintype "passive")
 			)
 			(node
@@ -5348,7 +5952,33 @@
 			)
 		)
 		(net
-			(code "28")
+			(code "31")
+			(name "UVLO_SENSE")
+			(class "Default")
+			(node
+				(ref "C11")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R14")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R15")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U7")
+				(pin "5")
+				(pinfunction "SENSE_5")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "32")
 			(name "unconnected-(IC1-SNS-Pad4)")
 			(class "Default")
 			(node
@@ -5359,7 +5989,7 @@
 			)
 		)
 		(net
-			(code "29")
+			(code "33")
 			(name "unconnected-(J1-SBU1-PadA8)")
 			(class "Default")
 			(node
@@ -5370,7 +6000,7 @@
 			)
 		)
 		(net
-			(code "30")
+			(code "34")
 			(name "unconnected-(J1-SBU2-PadB8)")
 			(class "Default")
 			(node
@@ -5381,7 +6011,7 @@
 			)
 		)
 		(net
-			(code "31")
+			(code "35")
 			(name "unconnected-(U1-IO1-Pad13)")
 			(class "Default")
 			(node
@@ -5392,7 +6022,7 @@
 			)
 		)
 		(net
-			(code "32")
+			(code "36")
 			(name "unconnected-(U1-IO3-Pad6)")
 			(class "Default")
 			(node
@@ -5403,7 +6033,7 @@
 			)
 		)
 		(net
-			(code "33")
+			(code "37")
 			(name "unconnected-(U1-IO4-Pad9)")
 			(class "Default")
 			(node
@@ -5414,7 +6044,7 @@
 			)
 		)
 		(net
-			(code "34")
+			(code "38")
 			(name "unconnected-(U1-IO5-Pad10)")
 			(class "Default")
 			(node
@@ -5425,7 +6055,7 @@
 			)
 		)
 		(net
-			(code "35")
+			(code "39")
 			(name "unconnected-(U1-IO6-Pad15)")
 			(class "Default")
 			(node
@@ -5436,7 +6066,7 @@
 			)
 		)
 		(net
-			(code "36")
+			(code "40")
 			(name "unconnected-(U1-IO7-Pad16)")
 			(class "Default")
 			(node
@@ -5447,7 +6077,7 @@
 			)
 		)
 		(net
-			(code "37")
+			(code "41")
 			(name "unconnected-(U1-IO14-Pad19)")
 			(class "Default")
 			(node
@@ -5458,7 +6088,7 @@
 			)
 		)
 		(net
-			(code "38")
+			(code "42")
 			(name "unconnected-(U1-IO15-Pad20)")
 			(class "Default")
 			(node
@@ -5469,7 +6099,7 @@
 			)
 		)
 		(net
-			(code "39")
+			(code "43")
 			(name "unconnected-(U1-IO18-Pad24)")
 			(class "Default")
 			(node
@@ -5480,7 +6110,7 @@
 			)
 		)
 		(net
-			(code "40")
+			(code "44")
 			(name "unconnected-(U1-IO19-Pad25)")
 			(class "Default")
 			(node
@@ -5491,7 +6121,7 @@
 			)
 		)
 		(net
-			(code "41")
+			(code "45")
 			(name "unconnected-(U1-IO20-Pad26)")
 			(class "Default")
 			(node
@@ -5502,7 +6132,7 @@
 			)
 		)
 		(net
-			(code "42")
+			(code "46")
 			(name "unconnected-(U1-IO21-Pad27)")
 			(class "Default")
 			(node
@@ -5513,7 +6143,7 @@
 			)
 		)
 		(net
-			(code "43")
+			(code "47")
 			(name "unconnected-(U1-NC-Pad4)")
 			(class "Default")
 			(node
@@ -5524,7 +6154,7 @@
 			)
 		)
 		(net
-			(code "44")
+			(code "48")
 			(name "unconnected-(U1-NC-Pad7)")
 			(class "Default")
 			(node
@@ -5535,7 +6165,7 @@
 			)
 		)
 		(net
-			(code "45")
+			(code "49")
 			(name "unconnected-(U1-NC-Pad21)")
 			(class "Default")
 			(node
@@ -5546,7 +6176,7 @@
 			)
 		)
 		(net
-			(code "46")
+			(code "50")
 			(name "unconnected-(U1-NC-Pad32)")
 			(class "Default")
 			(node
@@ -5557,7 +6187,7 @@
 			)
 		)
 		(net
-			(code "47")
+			(code "51")
 			(name "unconnected-(U1-NC-Pad33)")
 			(class "Default")
 			(node
@@ -5568,7 +6198,7 @@
 			)
 		)
 		(net
-			(code "48")
+			(code "52")
 			(name "unconnected-(U1-NC-Pad34)")
 			(class "Default")
 			(node
@@ -5579,7 +6209,7 @@
 			)
 		)
 		(net
-			(code "49")
+			(code "53")
 			(name "unconnected-(U1-NC-Pad35)")
 			(class "Default")
 			(node
@@ -5590,7 +6220,7 @@
 			)
 		)
 		(net
-			(code "50")
+			(code "54")
 			(name "unconnected-(U1-RXD0-Pad30)")
 			(class "Default")
 			(node
@@ -5601,7 +6231,7 @@
 			)
 		)
 		(net
-			(code "51")
+			(code "55")
 			(name "unconnected-(U1-TXD0-Pad31)")
 			(class "Default")
 			(node
@@ -5612,7 +6242,7 @@
 			)
 		)
 		(net
-			(code "52")
+			(code "56")
 			(name "unconnected-(U2-ADC1-Pad16)")
 			(class "Default")
 			(node
@@ -5623,7 +6253,7 @@
 			)
 		)
 		(net
-			(code "53")
+			(code "57")
 			(name "unconnected-(U2-ADC2-Pad15)")
 			(class "Default")
 			(node
@@ -5634,7 +6264,7 @@
 			)
 		)
 		(net
-			(code "54")
+			(code "58")
 			(name "unconnected-(U2-ADC3-Pad13)")
 			(class "Default")
 			(node
@@ -5645,7 +6275,7 @@
 			)
 		)
 		(net
-			(code "55")
+			(code "59")
 			(name "unconnected-(U2-INT2-Pad9)")
 			(class "Default")
 			(node
@@ -5656,7 +6286,7 @@
 			)
 		)
 		(net
-			(code "56")
+			(code "60")
 			(name "unconnected-(U2-NC-Pad2)")
 			(class "Default")
 			(node
@@ -5667,7 +6297,7 @@
 			)
 		)
 		(net
-			(code "57")
+			(code "61")
 			(name "unconnected-(U2-NC-Pad3)")
 			(class "Default")
 			(node
@@ -5678,7 +6308,7 @@
 			)
 		)
 		(net
-			(code "58")
+			(code "62")
 			(name "unconnected-(U3-TD-Pad4)")
 			(class "Default")
 			(node

@@ -1687,194 +1687,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:D"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "D"
-				(at 0 2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "D"
-				(at 0 -2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Diode"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Sim.Device" "D"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Sim.Pins" "1=K 2=A"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "diode"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "D_0_1"
-				(polyline
-					(pts
-						(xy -1.27 1.27) (xy -1.27 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 0) (xy -1.27 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "D_1_1"
-				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:LED"
 			(pin_numbers
 				(hide yes)
@@ -2199,6 +2011,160 @@
 					(at 0 -3.81 90)
 					(length 1.27)
 					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Diode:SMAJ5.0A"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SMAJ5.0A"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Diode_SMD:D_SMA"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.littelfuse.com/media?resourcetype=datasheets&itemid=75e32973-b177-4ee3-a0ff-cedaf1abdb93&filename=smaj-datasheet"
+				(at -1.27 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "400W unidirectional Transient Voltage Suppressor, 5.0Vr, SMA(DO-214AC)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "unidirectional diode TVS voltage suppressor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "D*SMA*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "SMAJ5.0A_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy -1.27 1.27) (xy -1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SMAJ5.0A_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "A1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3862,12 +3828,6 @@
 		(uuid "31d6cf44-7bc6-4cb4-bbcb-1e2fb8f1d519")
 	)
 	(junction
-		(at 222.25 118.11)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "608a7557-187b-45fa-bed0-a7ed61d733b3")
-	)
-	(junction
 		(at 147.32 81.28)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3914,6 +3874,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a1bf0e3d-f9da-484b-bdf5-888fbd843283")
+	)
+	(junction
+		(at 180.34 140.97)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b5fe2d54-854e-4ec7-bbee-1c2acc061fdc")
 	)
 	(junction
 		(at 67.31 78.74)
@@ -4315,16 +4281,6 @@
 	)
 	(wire
 		(pts
-			(xy 252.73 92.71) (xy 252.73 118.11)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4153d54e-2795-48fe-a4d6-eef179c77461")
-	)
-	(wire
-		(pts
 			(xy 172.72 77.47) (xy 147.32 77.47)
 		)
 		(stroke
@@ -4395,6 +4351,16 @@
 	)
 	(wire
 		(pts
+			(xy 180.34 140.97) (xy 180.34 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "530d9995-d852-4e04-b331-0a850b6f5907")
+	)
+	(wire
+		(pts
 			(xy 147.32 97.79) (xy 147.32 134.62)
 		)
 		(stroke
@@ -4445,7 +4411,7 @@
 	)
 	(wire
 		(pts
-			(xy 222.25 118.11) (xy 222.25 120.65)
+			(xy 222.25 116.84) (xy 222.25 120.65)
 		)
 		(stroke
 			(width 0)
@@ -4465,16 +4431,6 @@
 	)
 	(wire
 		(pts
-			(xy 222.25 116.84) (xy 222.25 118.11)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "63c9a475-824b-44e0-863d-c9e25b59bd1c")
-	)
-	(wire
-		(pts
 			(xy 60.96 82.55) (xy 60.96 106.68)
 		)
 		(stroke
@@ -4482,6 +4438,16 @@
 			(type default)
 		)
 		(uuid "64417ce6-2cff-4e38-aca7-225151b8a7ce")
+	)
+	(wire
+		(pts
+			(xy 252.73 92.71) (xy 252.73 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "65aa1cef-14a4-4405-9421-f786cb406440")
 	)
 	(wire
 		(pts
@@ -4572,16 +4538,6 @@
 			(type default)
 		)
 		(uuid "7c0b9a9e-8e79-4de7-9bd2-5d9c863e25fa")
-	)
-	(wire
-		(pts
-			(xy 91.44 134.62) (xy 91.44 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7d9ff902-3fd0-4d55-b71c-6597d3b21a4e")
 	)
 	(wire
 		(pts
@@ -4685,6 +4641,16 @@
 	)
 	(wire
 		(pts
+			(xy 252.73 140.97) (xy 180.34 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8c436a53-8c3a-4cb7-bf6e-753bb4314f69")
+	)
+	(wire
+		(pts
 			(xy 31.75 163.83) (xy 46.99 163.83)
 		)
 		(stroke
@@ -4705,7 +4671,7 @@
 	)
 	(wire
 		(pts
-			(xy 180.34 128.27) (xy 180.34 144.78)
+			(xy 180.34 128.27) (xy 180.34 140.97)
 		)
 		(stroke
 			(width 0)
@@ -4925,7 +4891,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 137.16) (xy 90.17 179.07)
+			(xy 91.44 134.62) (xy 91.44 179.07)
 		)
 		(stroke
 			(width 0)
@@ -5015,16 +4981,6 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 137.16) (xy 91.44 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c8103537-d8de-47cd-b2ab-26abfeb50bd4")
-	)
-	(wire
-		(pts
 			(xy 111.76 104.14) (xy 101.6 104.14)
 		)
 		(stroke
@@ -5092,16 +5048,6 @@
 			(type default)
 		)
 		(uuid "d619d443-2988-490c-9949-6c5922d4c048")
-	)
-	(wire
-		(pts
-			(xy 252.73 118.11) (xy 222.25 118.11)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e07d8368-0022-492c-8d8d-ccec95416de7")
 	)
 	(wire
 		(pts
@@ -6527,6 +6473,88 @@
 		)
 	)
 	(symbol
+		(lib_id "Diode:SMAJ5.0A")
+		(at 66.04 130.81 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7d3609e1-ab30-4a87-8f9e-77a32511d40f")
+		(property "Reference" "D3"
+			(at 68.58 129.5399 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SMAJ5.0A"
+			(at 68.58 132.0799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SMA"
+			(at 60.96 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.littelfuse.com/media?resourcetype=datasheets&itemid=75e32973-b177-4ee3-a0ff-cedaf1abdb93&filename=smaj-datasheet"
+			(at 66.04 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "400W unidirectional Transient Voltage Suppressor, 5.0Vr, SMA(DO-214AC)"
+			(at 66.04 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "6ca41f10-ac3b-4e3b-936e-99b4d52429c1")
+		)
+		(pin "1"
+			(uuid "0c8edb3c-6e3a-487f-85e4-d00eafc5d0b4")
+		)
+		(instances
+			(project "tracker_v4"
+				(path "/0704e846-b6bf-4206-baa8-1088b529855e/c73a9412-a8df-45fb-8b45-856a5aea081b"
+					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 55.88 130.81 0)
 		(unit 1)
@@ -7324,7 +7352,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 90.17 179.07 0)
+		(at 91.44 179.07 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7334,7 +7362,7 @@
 		(dnp no)
 		(uuid "b498cc52-c9c7-47a5-8d87-440f1dad856c")
 		(property "Reference" "#PWR09"
-			(at 90.17 185.42 0)
+			(at 91.44 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7345,7 +7373,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 90.424 183.134 0)
+			(at 91.694 183.134 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7355,7 +7383,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 90.17 179.07 0)
+			(at 91.44 179.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7366,7 +7394,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 90.17 179.07 0)
+			(at 91.44 179.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7377,7 +7405,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 90.17 179.07 0)
+			(at 91.44 179.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7519,110 +7547,6 @@
 			(project "tracker_v4"
 				(path "/0704e846-b6bf-4206-baa8-1088b529855e/c73a9412-a8df-45fb-8b45-856a5aea081b"
 					(reference "J1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D")
-		(at 66.04 130.81 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "bff0fe07-3dcf-4402-8231-d86e0f41aed5")
-		(property "Reference" "D5"
-			(at 68.58 129.5399 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "DO-214AC"
-			(at 68.58 132.0799 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SMA"
-			(at 66.04 130.81 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "DO-214AC"
-			(at 66.04 130.81 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Diode"
-			(at 66.04 130.81 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Device" "D"
-			(at 66.04 130.81 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 66.04 130.81 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "9c3f7f83-3579-4332-8d52-3ccf55d10631")
-		)
-		(pin "1"
-			(uuid "f193295c-72da-4ab3-ba97-34d1c7625843")
-		)
-		(instances
-			(project "tracker_v4"
-				(path "/0704e846-b6bf-4206-baa8-1088b529855e/c73a9412-a8df-45fb-8b45-856a5aea081b"
-					(reference "D5")
 					(unit 1)
 				)
 			)
