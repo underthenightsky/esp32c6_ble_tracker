@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "/home/joseph/Downloads/esp32c6_ble_tracker/tracker_v4/tracker_v4.kicad_sch")
-		(date "2026-10-23T16:54:45")
+		(date "2026-10-28T17:43:21")
 		(tool "Eeschema 10.0.7-1.fc44")
 		(sheet
 			(number "1")
@@ -320,12 +320,12 @@
 		)
 		(comp
 			(ref "C8")
-			(value "10u")
-			(footprint "Capacitor_SMD:C_0805_2012Metric")
+			(value "22u")
+			(footprint "Capacitor_SMD:C_1206_3216Metric")
 			(description "Unpolarized capacitor")
 			(fields
 				(field
-					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
+					(name "Footprint") "Capacitor_SMD:C_1206_3216Metric")
 				(field
 					(name "Datasheet")
 				)
@@ -357,7 +357,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "7c2965a9-3568-4210-9cce-5d619462ba30")
+			(tstamps "9bc44eee-d083-4293-a6e3-f4b0159f8e11")
 			(units
 				(unit
 					(name "A")
@@ -643,71 +643,23 @@
 			)
 		)
 		(comp
-			(ref "IC1")
-			(value "RT9080-33GJ5")
-			(footprint "RT9080-33GJ5:SOT94P280X100-5N")
-			(description "Linear Voltage Regulator IC Positive Fixed 1 Output  600mA TSOT-23-5")
+			(ref "C14")
+			(value "22u")
+			(footprint "Capacitor_SMD:C_1206_3216Metric")
+			(description "Unpolarized capacitor")
 			(fields
 				(field
-					(name "SnapEDA_Link") "https://www.snapeda.com/parts/RT9080-33GJ5/Richtek/view-part/?ref=snap")
-				(field
-					(name "Check_prices") "https://www.snapeda.com/parts/RT9080-33GJ5/Richtek/view-part/?ref=eda")
-				(field
-					(name "Package") "TSOT-23 Richtek")
-				(field
-					(name "Price") "None")
-				(field
-					(name "MF") "Richtek USA")
-				(field
-					(name "MP") "RT9080-33GJ5")
-				(field
-					(name "Purchase-URL") "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=1406383&manufacturer=Richtek USA&part_name=RT9080-33GJ5&search_term=None")
-				(field
-					(name "Availability") "In Stock")
-				(field
-					(name "Footprint") "RT9080-33GJ5:SOT94P280X100-5N")
+					(name "Footprint") "Capacitor_SMD:C_1206_3216Metric")
 				(field
 					(name "Datasheet")
 				)
 				(field
-					(name "Description") "Linear Voltage Regulator IC Positive Fixed 1 Output  600mA TSOT-23-5")
+					(name "Description") "Unpolarized capacitor")
 			)
 			(libsource
-				(lib "RT9080-33GJ5")
-				(part "RT9080-33GJ5")
-				(description "Linear Voltage Regulator IC Positive Fixed 1 Output  600mA TSOT-23-5")
-			)
-			(property
-				(name "SnapEDA_Link")
-				(value "https://www.snapeda.com/parts/RT9080-33GJ5/Richtek/view-part/?ref=snap")
-			)
-			(property
-				(name "Check_prices")
-				(value "https://www.snapeda.com/parts/RT9080-33GJ5/Richtek/view-part/?ref=eda")
-			)
-			(property
-				(name "Package")
-				(value "TSOT-23 Richtek")
-			)
-			(property
-				(name "Price")
-				(value "None")
-			)
-			(property
-				(name "MF")
-				(value "Richtek USA")
-			)
-			(property
-				(name "MP")
-				(value "RT9080-33GJ5")
-			)
-			(property
-				(name "Purchase-URL")
-				(value "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=1406383&manufacturer=Richtek USA&part_name=RT9080-33GJ5&search_term=None")
-			)
-			(property
-				(name "Availability")
-				(value "In Stock")
+				(lib "Device")
+				(part "C")
+				(description "Unpolarized capacitor")
 			)
 			(property
 				(name "Sheetname")
@@ -717,11 +669,19 @@
 				(name "Sheetfile")
 				(value "tracker_v4.kicad_sch")
 			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
 			(sheetpath
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "dc2e4e1b-ad3a-46c7-9bf5-bce5fb940035")
+			(tstamps "e684f04a-263e-4c7c-bb41-a753f781ba14")
 			(units
 				(unit
 					(name "A")
@@ -732,14 +692,221 @@
 						(pin
 							(num "2")
 						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C16")
+			(value "10u")
+			(footprint "Capacitor_SMD:C_0805_2012Metric")
+			(description "Unpolarized capacitor")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unpolarized capacitor")
+			)
+			(libsource
+				(lib "Device")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "tracker_v4")
+			)
+			(property
+				(name "Sheetfile")
+				(value "tracker_v4.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "97c71983-8ce2-4efe-8ec2-757c251b9435")
+			(units
+				(unit
+					(name "A")
+					(pins
 						(pin
-							(num "3")
+							(num "1")
 						)
 						(pin
-							(num "4")
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C17")
+			(value "100n")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(description "Unpolarized capacitor")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unpolarized capacitor")
+			)
+			(libsource
+				(lib "Device")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "tracker_v4")
+			)
+			(property
+				(name "Sheetfile")
+				(value "tracker_v4.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "14ea7bad-e175-4fe7-82e9-41ed3643b46b")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
 						)
 						(pin
-							(num "5")
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C18")
+			(value "10u")
+			(footprint "Capacitor_SMD:C_0805_2012Metric")
+			(description "Unpolarized capacitor")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unpolarized capacitor")
+			)
+			(libsource
+				(lib "Device")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "tracker_v4")
+			)
+			(property
+				(name "Sheetfile")
+				(value "tracker_v4.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "277facfd-e582-46f3-b7eb-34f6bb5f7f21")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "L1")
+			(value "1.0u")
+			(footprint "Inductor_SMD:L_Coilcraft_XxL4020")
+			(description "Inductor")
+			(fields
+				(field
+					(name "Footprint") "Inductor_SMD:L_Coilcraft_XxL4020")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Inductor")
+			)
+			(libsource
+				(lib "Device")
+				(part "L")
+				(description "Inductor")
+			)
+			(property
+				(name "Sheetname")
+				(value "tracker_v4")
+			)
+			(property
+				(name "Sheetfile")
+				(value "tracker_v4.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "inductor choke coil reactor magnetic")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Choke_* *Coil* Inductor_* L_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "d65c1dfa-53a6-4d2b-a656-ed61eb79f3f7")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
 						)
 					)
 				)
@@ -1071,7 +1238,7 @@
 		)
 		(comp
 			(ref "R14")
-			(value "1.27M")
+			(value "499k")
 			(footprint "Resistor_SMD:R_0603_1608Metric")
 			(description "Resistor")
 			(fields
@@ -1125,7 +1292,7 @@
 		)
 		(comp
 			(ref "R15")
-			(value "226k")
+			(value "100k")
 			(footprint "Resistor_SMD:R_0603_1608Metric")
 			(description "Resistor")
 			(fields
@@ -1217,6 +1384,168 @@
 				(tstamps "/")
 			)
 			(tstamps "edba25d0-ccd7-4969-93a1-e78ca917fec9")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R17")
+			(value "1M")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(description "Resistor")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "tracker_v4")
+			)
+			(property
+				(name "Sheetfile")
+				(value "tracker_v4.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "4ce2c09c-9412-4c2b-81e3-7303dd39ef04")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R18")
+			(value "180k")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(description "Resistor")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "tracker_v4")
+			)
+			(property
+				(name "Sheetfile")
+				(value "tracker_v4.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "6e995a19-8ece-40d8-8489-096d9f2e9e21")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R22")
+			(value "10k")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(description "Resistor")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "tracker_v4")
+			)
+			(property
+				(name "Sheetfile")
+				(value "tracker_v4.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "5ee2783a-bc49-46c6-8bef-bde51bd11bcb")
 			(units
 				(unit
 					(name "A")
@@ -2070,6 +2399,154 @@
 			)
 		)
 		(comp
+			(ref "U5")
+			(value "TPS63020")
+			(footprint "TPS63020:TPS63020")
+			(description "Buck-Boost Switching Regulator IC Positive Adjustable 1.2V 1 Output 3.5A (Switch) 14-VFDFN Exposed Pad")
+			(fields
+				(field
+					(name "MF") "Texas Instruments")
+				(field
+					(name "Package") "None")
+				(field
+					(name "Price") "None")
+				(field
+					(name "SnapEDA_Link") "https://www.snapeda.com/parts/TPS63020/Texas+Instruments/view-part/?ref=snap")
+				(field
+					(name "MP") "TPS63020")
+				(field
+					(name "Availability") "Not in stock")
+				(field
+					(name "Check_prices") "https://www.snapeda.com/parts/TPS63020/Texas+Instruments/view-part/?ref=eda")
+				(field
+					(name "Footprint") "TPS63020:TPS63020")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Buck-Boost Switching Regulator IC Positive Adjustable 1.2V 1 Output 3.5A (Switch) 14-VFDFN Exposed Pad")
+			)
+			(libsource
+				(lib "TPS63020")
+				(part "TPS63020")
+				(description "Buck-Boost Switching Regulator IC Positive Adjustable 1.2V 1 Output 3.5A (Switch) 14-VFDFN Exposed Pad")
+			)
+			(property
+				(name "MF")
+				(value "Texas Instruments")
+			)
+			(property
+				(name "Package")
+				(value "None")
+			)
+			(property
+				(name "Price")
+				(value "None")
+			)
+			(property
+				(name "SnapEDA_Link")
+				(value "https://www.snapeda.com/parts/TPS63020/Texas+Instruments/view-part/?ref=snap")
+			)
+			(property
+				(name "MP")
+				(value "TPS63020")
+			)
+			(property
+				(name "Availability")
+				(value "Not in stock")
+			)
+			(property
+				(name "Check_prices")
+				(value "https://www.snapeda.com/parts/TPS63020/Texas+Instruments/view-part/?ref=eda")
+			)
+			(property
+				(name "Sheetname")
+				(value "tracker_v4")
+			)
+			(property
+				(name "Sheetfile")
+				(value "tracker_v4.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "ec31fe68-66c1-4f60-8e98-02d0bf98a9d8")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "PIN9")
+						)
+						(pin
+							(num "PIN8")
+						)
+						(pin
+							(num "PIN11")
+						)
+						(pin
+							(num "PIN10")
+						)
+						(pin
+							(num "PIN14")
+						)
+						(pin
+							(num "PIN1")
+						)
+						(pin
+							(num "PIN12")
+						)
+						(pin
+							(num "PIN13")
+						)
+						(pin
+							(num "PIN2")
+						)
+						(pin
+							(num "PAD2")
+						)
+						(pin
+							(num "PAD8")
+						)
+						(pin
+							(num "PAD7")
+						)
+						(pin
+							(num "PAD6")
+						)
+						(pin
+							(num "PAD5")
+						)
+						(pin
+							(num "PAD4")
+						)
+						(pin
+							(num "PAD3")
+						)
+						(pin
+							(num "PAD1")
+						)
+						(pin
+							(num "PIN6")
+						)
+						(pin
+							(num "PIN7")
+						)
+						(pin
+							(num "PIN4")
+						)
+						(pin
+							(num "PIN5")
+						)
+						(pin
+							(num "PIN3")
+						)
+					)
+				)
+			)
+		)
+		(comp
 			(ref "U7")
 			(value "TPS3899DL01DSER")
 			(footprint "DSE0006A-IPC_A")
@@ -2205,7 +2682,7 @@
 		)
 		(comp
 			(ref "C5")
-			(value "10u")
+			(value "4.7u")
 			(footprint "Capacitor_SMD:C_0603_1608Metric")
 			(description "Unpolarized capacitor")
 			(fields
@@ -2351,6 +2828,60 @@
 				(tstamps "/c73a9412-a8df-45fb-8b45-856a5aea081b/")
 			)
 			(tstamps "e39e2f07-3734-4c4f-b4f1-86bf22a0e4e9")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C15")
+			(value "4.7u")
+			(footprint "Capacitor_SMD:C_0805_2012Metric")
+			(description "Unpolarized capacitor")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unpolarized capacitor")
+			)
+			(libsource
+				(lib "Device")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Charging_and_Battery")
+			)
+			(property
+				(name "Sheetfile")
+				(value "charging_and_battery.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/Charging_and_Battery/")
+				(tstamps "/c73a9412-a8df-45fb-8b45-856a5aea081b/")
+			)
+			(tstamps "528744a9-f0d4-489d-a098-97429ec0de38")
 			(units
 				(unit
 					(name "A")
@@ -2706,7 +3237,7 @@
 		)
 		(comp
 			(ref "R4")
-			(value "3.0k")
+			(value "1.5k")
 			(footprint "Resistor_SMD:R_0603_1608Metric")
 			(description "Resistor")
 			(fields
@@ -3111,6 +3642,168 @@
 			)
 		)
 		(comp
+			(ref "R19")
+			(value "2.1k")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(description "Resistor")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Charging_and_Battery")
+			)
+			(property
+				(name "Sheetfile")
+				(value "charging_and_battery.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Charging_and_Battery/")
+				(tstamps "/c73a9412-a8df-45fb-8b45-856a5aea081b/")
+			)
+			(tstamps "e15b6fd6-db3d-4787-9ecb-21ed1e88cedf")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R20")
+			(value "47k")
+			(description "Resistor")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Charging_and_Battery")
+			)
+			(property
+				(name "Sheetfile")
+				(value "charging_and_battery.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Charging_and_Battery/")
+				(tstamps "/c73a9412-a8df-45fb-8b45-856a5aea081b/")
+			)
+			(tstamps "493ef75d-d696-45ff-878f-57b71bc90722")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R21")
+			(value "10k")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(description "Resistor")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Charging_and_Battery")
+			)
+			(property
+				(name "Sheetfile")
+				(value "charging_and_battery.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Charging_and_Battery/")
+				(tstamps "/c73a9412-a8df-45fb-8b45-856a5aea081b/")
+			)
+			(tstamps "92e7636f-5a60-4702-ab1d-c7341fbccd88")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
 			(ref "TP2")
 			(value "TestPoint")
 			(footprint "TestPoint:TestPoint_Pad_D1.0mm")
@@ -3330,81 +4023,6 @@
 			)
 		)
 		(comp
-			(ref "U5")
-			(value "TP4056-42-ESOP8")
-			(footprint "Package_SO:SOIC-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.3mm_ThermalVias")
-			(datasheet "https://www.lcsc.com/datasheet/lcsc_datasheet_2410121619_TOPPOWER-Nanjing-Extension-Microelectronics-TP4056-42-ESOP8_C16581.pdf")
-			(description "1A Standalone Linear Li-ion/LiPo single-cell battery charger, 4.2V ±1% charge voltage, VCC = 4.0..8.0V, SOIC-8 (SOP-8)")
-			(fields
-				(field
-					(name "Footprint") "Package_SO:SOIC-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.3mm_ThermalVias")
-				(field
-					(name "Datasheet") "https://www.lcsc.com/datasheet/lcsc_datasheet_2410121619_TOPPOWER-Nanjing-Extension-Microelectronics-TP4056-42-ESOP8_C16581.pdf")
-				(field
-					(name "Description") "1A Standalone Linear Li-ion/LiPo single-cell battery charger, 4.2V ±1% charge voltage, VCC = 4.0..8.0V, SOIC-8 (SOP-8)")
-			)
-			(libsource
-				(lib "Battery_Management")
-				(part "TP4056-42-ESOP8")
-				(description "1A Standalone Linear Li-ion/LiPo single-cell battery charger, 4.2V ±1% charge voltage, VCC = 4.0..8.0V, SOIC-8 (SOP-8)")
-			)
-			(property
-				(name "Sheetname")
-				(value "Charging_and_Battery")
-			)
-			(property
-				(name "Sheetfile")
-				(value "charging_and_battery.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "lithium-ion lithium-polymer Li-Poly")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "*SO*3.9x4.*P1.27mm*EP2.4*x3.3*mm*")
-			)
-			(sheetpath
-				(names "/Charging_and_Battery/")
-				(tstamps "/c73a9412-a8df-45fb-8b45-856a5aea081b/")
-			)
-			(tstamps "45c43b4f-8ba9-42c1-a41a-cf9717d040aa")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "8")
-						)
-						(pin
-							(num "7")
-						)
-						(pin
-							(num "6")
-						)
-						(pin
-							(num "9")
-						)
-						(pin
-							(num "4")
-						)
-						(pin
-							(num "3")
-						)
-						(pin
-							(num "5")
-						)
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
-						)
-					)
-				)
-			)
-		)
-		(comp
 			(ref "U6")
 			(value "USBLC6-2SC6")
 			(footprint "Package_TO_SOT_SMD:SOT-23-6")
@@ -3465,6 +4083,105 @@
 						)
 						(pin
 							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U8")
+			(value "BQ24072RGT")
+			(footprint "Package_DFN_QFN:VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm")
+			(datasheet "http://www.ti.com/lit/ds/symlink/bq24072.pdf")
+			(description "USB-Friendly Li-Ion Battery Charger and Power-Path Management, VQFN-16")
+			(fields
+				(field
+					(name "Footprint") "Package_DFN_QFN:VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm")
+				(field
+					(name "Datasheet") "http://www.ti.com/lit/ds/symlink/bq24072.pdf")
+				(field
+					(name "Description") "USB-Friendly Li-Ion Battery Charger and Power-Path Management, VQFN-16")
+			)
+			(libsource
+				(lib "Battery_Management")
+				(part "BQ24072RGT")
+				(description "USB-Friendly Li-Ion Battery Charger and Power-Path Management, VQFN-16")
+			)
+			(property
+				(name "Sheetname")
+				(value "Charging_and_Battery")
+			)
+			(property
+				(name "Sheetfile")
+				(value "charging_and_battery.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "USB Charger")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "VQFN*1EP*3x3mm*P0.5mm*")
+			)
+			(sheetpath
+				(names "/Charging_and_Battery/")
+				(tstamps "/c73a9412-a8df-45fb-8b45-856a5aea081b/")
+			)
+			(tstamps "c7760838-1809-4b94-8f32-30039581cd7a")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "15")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "14")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "16")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "17")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "9")
 						)
 					)
 				)
@@ -3532,6 +4249,114 @@
 		)
 		(libpart
 			(lib "Battery_Management")
+			(part "BQ24072RGT")
+			(description "USB-Friendly Li-Ion Battery Charger and Power-Path Management, VQFN-16")
+			(docs "http://www.ti.com/lit/ds/symlink/bq24072.pdf")
+			(footprints
+				(fp "VQFN*1EP*3x3mm*P0.5mm*")
+			)
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "BQ24072RGT")
+				(field
+					(name "Footprint") "Package_DFN_QFN:VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm")
+				(field
+					(name "Datasheet") "http://www.ti.com/lit/ds/symlink/bq24072.pdf")
+				(field
+					(name "Description") "USB-Friendly Li-Ion Battery Charger and Power-Path Management, VQFN-16")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "TS")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "BAT")
+					(type "power_out")
+				)
+				(pin
+					(num "3")
+					(name "BAT")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "~{CE}")
+					(type "input")
+				)
+				(pin
+					(num "5")
+					(name "EN2")
+					(type "input")
+				)
+				(pin
+					(num "6")
+					(name "EN1")
+					(type "input")
+				)
+				(pin
+					(num "7")
+					(name "~{PGOOD}")
+					(type "open_collector")
+				)
+				(pin
+					(num "8")
+					(name "VSS")
+					(type "power_in")
+				)
+				(pin
+					(num "9")
+					(name "~{CHG}")
+					(type "open_collector")
+				)
+				(pin
+					(num "10")
+					(name "OUT")
+					(type "power_out")
+				)
+				(pin
+					(num "11")
+					(name "OUT")
+					(type "passive")
+				)
+				(pin
+					(num "12")
+					(name "ILIM")
+					(type "passive")
+				)
+				(pin
+					(num "13")
+					(name "IN")
+					(type "power_in")
+				)
+				(pin
+					(num "14")
+					(name "TMR")
+					(type "input")
+				)
+				(pin
+					(num "15")
+					(name "TD")
+					(type "input")
+				)
+				(pin
+					(num "16")
+					(name "ISET")
+					(type "passive")
+				)
+				(pin
+					(num "17")
+					(name "VSS")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Battery_Management")
 			(part "DW01A")
 			(description "Overcharge, overcurrent and overdischarge protection IC for single cell lithium-ion/polymer battery")
 			(docs "https://hmsemi.com/downfile/DW01A.PDF")
@@ -3580,74 +4405,6 @@
 					(num "6")
 					(name "GND")
 					(type "power_in")
-				)
-			)
-		)
-		(libpart
-			(lib "Battery_Management")
-			(part "TP4056-42-ESOP8")
-			(description "1A Standalone Linear Li-ion/LiPo single-cell battery charger, 4.2V ±1% charge voltage, VCC = 4.0..8.0V, SOIC-8 (SOP-8)")
-			(docs "https://www.lcsc.com/datasheet/lcsc_datasheet_2410121619_TOPPOWER-Nanjing-Extension-Microelectronics-TP4056-42-ESOP8_C16581.pdf")
-			(footprints
-				(fp "*SO*3.9x4.*P1.27mm*EP2.4*x3.3*mm*")
-			)
-			(fields
-				(field
-					(name "Reference") "U")
-				(field
-					(name "Value") "TP4056-42-ESOP8")
-				(field
-					(name "Footprint") "Package_SO:SOIC-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.3mm_ThermalVias")
-				(field
-					(name "Datasheet") "https://www.lcsc.com/datasheet/lcsc_datasheet_2410121619_TOPPOWER-Nanjing-Extension-Microelectronics-TP4056-42-ESOP8_C16581.pdf")
-				(field
-					(name "Description") "1A Standalone Linear Li-ion/LiPo single-cell battery charger, 4.2V ±1% charge voltage, VCC = 4.0..8.0V, SOIC-8 (SOP-8)")
-			)
-			(pins
-				(pin
-					(num "1")
-					(name "TEMP")
-					(type "input")
-				)
-				(pin
-					(num "2")
-					(name "PROG")
-					(type "passive")
-				)
-				(pin
-					(num "3")
-					(name "GND")
-					(type "power_in")
-				)
-				(pin
-					(num "4")
-					(name "V_{CC}")
-					(type "power_in")
-				)
-				(pin
-					(num "5")
-					(name "BAT")
-					(type "power_out")
-				)
-				(pin
-					(num "6")
-					(name "~{STDBY}")
-					(type "open_collector")
-				)
-				(pin
-					(num "7")
-					(name "~{CHRG}")
-					(type "open_collector")
-				)
-				(pin
-					(num "8")
-					(name "CE")
-					(type "input")
-				)
-				(pin
-					(num "9")
-					(name "EPAD")
-					(type "passive")
 				)
 			)
 		)
@@ -3857,6 +4614,43 @@
 				(pin
 					(num "2")
 					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Device")
+			(part "L")
+			(description "Inductor")
+			(footprints
+				(fp "Choke_*")
+				(fp "*Coil*")
+				(fp "Inductor_*")
+				(fp "L_*")
+			)
+			(fields
+				(field
+					(name "Reference") "L")
+				(field
+					(name "Value") "L")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Inductor")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "2")
 					(type "passive")
 				)
 			)
@@ -4445,67 +5239,6 @@
 			)
 		)
 		(libpart
-			(lib "RT9080-33GJ5")
-			(part "RT9080-33GJ5")
-			(description "Linear Voltage Regulator IC Positive Fixed 1 Output  600mA TSOT-23-5")
-			(fields
-				(field
-					(name "Reference") "IC")
-				(field
-					(name "Value") "RT9080-33GJ5")
-				(field
-					(name "Footprint") "RT9080-33GJ5:SOT94P280X100-5N")
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "Linear Voltage Regulator IC Positive Fixed 1 Output  600mA TSOT-23-5")
-				(field
-					(name "SnapEDA_Link") "https://www.snapeda.com/parts/RT9080-33GJ5/Richtek/view-part/?ref=snap")
-				(field
-					(name "Check_prices") "https://www.snapeda.com/parts/RT9080-33GJ5/Richtek/view-part/?ref=eda")
-				(field
-					(name "Package") "TSOT-23 Richtek")
-				(field
-					(name "Price") "None")
-				(field
-					(name "MF") "Richtek USA")
-				(field
-					(name "MP") "RT9080-33GJ5")
-				(field
-					(name "Purchase-URL") "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=1406383&manufacturer=Richtek USA&part_name=RT9080-33GJ5&search_term=None")
-				(field
-					(name "Availability") "In Stock")
-			)
-			(pins
-				(pin
-					(num "1")
-					(name "VIN")
-					(type "bidirectional")
-				)
-				(pin
-					(num "2")
-					(name "GND")
-					(type "bidirectional")
-				)
-				(pin
-					(num "3")
-					(name "EN")
-					(type "bidirectional")
-				)
-				(pin
-					(num "4")
-					(name "SNS")
-					(type "bidirectional")
-				)
-				(pin
-					(num "5")
-					(name "VOUT")
-					(type "bidirectional")
-				)
-			)
-		)
-		(libpart
 			(lib "Sensor_Motion")
 			(part "LIS3DH")
 			(description "3-Axis Accelerometer, 2/4/8/16g range, I2C/SPI interface, LGA-16")
@@ -4640,6 +5373,150 @@
 			)
 		)
 		(libpart
+			(lib "TPS63020")
+			(part "TPS63020")
+			(description "Buck-Boost Switching Regulator IC Positive Adjustable 1.2V 1 Output 3.5A (Switch) 14-VFDFN Exposed Pad")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "TPS63020")
+				(field
+					(name "Footprint") "TPS63020:TPS63020")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Buck-Boost Switching Regulator IC Positive Adjustable 1.2V 1 Output 3.5A (Switch) 14-VFDFN Exposed Pad")
+				(field
+					(name "MF") "Texas Instruments")
+				(field
+					(name "Package") "None")
+				(field
+					(name "Price") "None")
+				(field
+					(name "SnapEDA_Link") "https://www.snapeda.com/parts/TPS63020/Texas+Instruments/view-part/?ref=snap")
+				(field
+					(name "MP") "TPS63020")
+				(field
+					(name "Availability") "Not in stock")
+				(field
+					(name "Check_prices") "https://www.snapeda.com/parts/TPS63020/Texas+Instruments/view-part/?ref=eda")
+			)
+			(pins
+				(pin
+					(num "PAD1")
+					(name "PGND")
+					(type "input")
+				)
+				(pin
+					(num "PAD2")
+					(name "PGND")
+					(type "input")
+				)
+				(pin
+					(num "PAD3")
+					(name "PGND")
+					(type "input")
+				)
+				(pin
+					(num "PAD4")
+					(name "PGND")
+					(type "input")
+				)
+				(pin
+					(num "PAD5")
+					(name "PGND")
+					(type "input")
+				)
+				(pin
+					(num "PAD6")
+					(name "PGND")
+					(type "input")
+				)
+				(pin
+					(num "PAD7")
+					(name "PGND")
+					(type "input")
+				)
+				(pin
+					(num "PAD8")
+					(name "PGND")
+					(type "input")
+				)
+				(pin
+					(num "PIN1")
+					(name "VINA")
+					(type "input")
+				)
+				(pin
+					(num "PIN2")
+					(name "GND")
+					(type "input")
+				)
+				(pin
+					(num "PIN3")
+					(name "FB")
+					(type "input")
+				)
+				(pin
+					(num "PIN4")
+					(name "VOUT")
+					(type "bidirectional")
+				)
+				(pin
+					(num "PIN5")
+					(name "VOUT")
+					(type "bidirectional")
+				)
+				(pin
+					(num "PIN6")
+					(name "L2")
+					(type "bidirectional")
+				)
+				(pin
+					(num "PIN7")
+					(name "L2")
+					(type "bidirectional")
+				)
+				(pin
+					(num "PIN8")
+					(name "L1")
+					(type "bidirectional")
+				)
+				(pin
+					(num "PIN9")
+					(name "L1")
+					(type "bidirectional")
+				)
+				(pin
+					(num "PIN10")
+					(name "VIN")
+					(type "bidirectional")
+				)
+				(pin
+					(num "PIN11")
+					(name "VIN")
+					(type "bidirectional")
+				)
+				(pin
+					(num "PIN12")
+					(name "EN")
+					(type "bidirectional")
+				)
+				(pin
+					(num "PIN13")
+					(name "SYNC")
+					(type "bidirectional")
+				)
+				(pin
+					(num "PIN14")
+					(name "PG")
+					(type "input")
+				)
+			)
+		)
+		(libpart
 			(lib "digikey-dual_channel_nfets")
 			(part "DMG9926UDM-7")
 			(docs "DMG9926UDM-7")
@@ -4729,16 +5606,16 @@
 			(uri "${KICAD10_SYMBOL_DIR}/Power_Protection.kicad_sym")
 		)
 		(library
-			(logical "RT9080-33GJ5")
-			(uri "/home/joseph/Downloads/esp32c6_ble_tracker/tracker_v4/RT9080-33GJ5/RT9080-33GJ5.kicad_sym")
-		)
-		(library
 			(logical "Sensor_Motion")
 			(uri "${KICAD10_SYMBOL_DIR}/Sensor_Motion.kicad_sym")
 		)
 		(library
 			(logical "Switch")
 			(uri "${KICAD10_SYMBOL_DIR}/Switch.kicad_sym")
+		)
+		(library
+			(logical "TPS63020")
+			(uri "/home/joseph/Downloads/esp32c6_ble_tracker/tracker_v4/TPS63020/TPS63020.kicad_sym")
 		)
 		(library
 			(logical "digikey-dual_channel_nfets")
@@ -4748,50 +5625,6 @@
 	(nets
 		(net
 			(code "1")
-			(name "/Charging_and_Battery/BAT+")
-			(class "Power,Default")
-			(node
-				(ref "BT1")
-				(pin "1")
-				(pinfunction "+_1")
-				(pintype "passive")
-			)
-			(node
-				(ref "C6")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "R1")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "R7")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "TP8")
-				(pin "1")
-				(pinfunction "1_1")
-				(pintype "passive")
-			)
-			(node
-				(ref "U4")
-				(pin "10")
-				(pinfunction "VIN+_10")
-				(pintype "unspecified")
-			)
-			(node
-				(ref "U5")
-				(pin "5")
-				(pinfunction "BAT_5")
-				(pintype "power_out")
-			)
-		)
-		(net
-			(code "2")
 			(name "/Charging_and_Battery/BAT-")
 			(class "Power,Default")
 			(node
@@ -4819,7 +5652,7 @@
 			)
 		)
 		(net
-			(code "3")
+			(code "2")
 			(name "/Charging_and_Battery/PROTECT_MID")
 			(class "Default")
 			(node
@@ -4836,11 +5669,16 @@
 			)
 		)
 		(net
-			(code "4")
+			(code "3")
 			(name "3v3")
 			(class "Default")
 			(node
 				(ref "C1")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C14")
 				(pin "2")
 				(pintype "passive")
 			)
@@ -4855,15 +5693,14 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "C9")
-				(pin "2")
+				(ref "C8")
+				(pin "1")
 				(pintype "passive")
 			)
 			(node
-				(ref "IC1")
-				(pin "5")
-				(pinfunction "VOUT_5")
-				(pintype "bidirectional")
+				(ref "C9")
+				(pin "2")
+				(pintype "passive")
 			)
 			(node
 				(ref "R11")
@@ -4877,6 +5714,11 @@
 			)
 			(node
 				(ref "R13")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R17")
 				(pin "1")
 				(pintype "passive")
 			)
@@ -4938,9 +5780,104 @@
 				(pinfunction "VS+_6")
 				(pintype "unspecified")
 			)
+			(node
+				(ref "U5")
+				(pin "PIN4")
+				(pinfunction "VOUT_PIN4")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "U5")
+				(pin "PIN5")
+				(pinfunction "VOUT_PIN5")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "4")
+			(name "BAT+")
+			(class "Default")
+			(node
+				(ref "BT1")
+				(pin "1")
+				(pinfunction "+_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C6")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R7")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "TP8")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U8")
+				(pin "2")
+				(pinfunction "BAT_2")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U8")
+				(pin "3")
+				(pinfunction "BAT_3")
+				(pintype "passive")
+			)
 		)
 		(net
 			(code "5")
+			(name "BUCK_EN")
+			(class "Default")
+			(node
+				(ref "R16")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U5")
+				(pin "PIN12")
+				(pinfunction "EN_PIN12")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "U7")
+				(pin "6")
+				(pinfunction "RESET_N_6")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "6")
+			(name "BUCK_SYNC")
+			(class "Default")
+			(node
+				(ref "R22")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "9")
+				(pinfunction "IO4_9")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "U5")
+				(pin "PIN13")
+				(pinfunction "SYNC_PIN13")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "7")
 			(name "GND")
 			(class "Default")
 			(node
@@ -4966,6 +5903,31 @@
 			(node
 				(ref "C13")
 				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C14")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C15")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C16")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C17")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C18")
+				(pin "1")
 				(pintype "passive")
 			)
 			(node
@@ -5010,12 +5972,6 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "IC1")
-				(pin "2")
-				(pinfunction "GND_2")
-				(pintype "bidirectional")
-			)
-			(node
 				(ref "J1")
 				(pin "A1")
 				(pinfunction "GND_A1")
@@ -5053,6 +6009,31 @@
 			)
 			(node
 				(ref "R15")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R18")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R19")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R20")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R21")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R22")
 				(pin "2")
 				(pintype "passive")
 			)
@@ -5318,21 +6299,57 @@
 			)
 			(node
 				(ref "U5")
-				(pin "1")
-				(pinfunction "TEMP_1")
+				(pin "PAD1")
+				(pinfunction "PGND_PAD1")
 				(pintype "input")
 			)
 			(node
 				(ref "U5")
-				(pin "3")
-				(pinfunction "GND_3")
-				(pintype "power_in")
+				(pin "PAD2")
+				(pinfunction "PGND_PAD2")
+				(pintype "input")
 			)
 			(node
 				(ref "U5")
-				(pin "9")
-				(pinfunction "EPAD_9")
-				(pintype "passive")
+				(pin "PAD3")
+				(pinfunction "PGND_PAD3")
+				(pintype "input")
+			)
+			(node
+				(ref "U5")
+				(pin "PAD4")
+				(pinfunction "PGND_PAD4")
+				(pintype "input")
+			)
+			(node
+				(ref "U5")
+				(pin "PAD5")
+				(pinfunction "PGND_PAD5")
+				(pintype "input")
+			)
+			(node
+				(ref "U5")
+				(pin "PAD6")
+				(pinfunction "PGND_PAD6")
+				(pintype "input")
+			)
+			(node
+				(ref "U5")
+				(pin "PAD7")
+				(pinfunction "PGND_PAD7")
+				(pintype "input")
+			)
+			(node
+				(ref "U5")
+				(pin "PAD8")
+				(pinfunction "PGND_PAD8")
+				(pintype "input")
+			)
+			(node
+				(ref "U5")
+				(pin "PIN2")
+				(pinfunction "GND_PIN2")
+				(pintype "input")
 			)
 			(node
 				(ref "U6")
@@ -5346,9 +6363,39 @@
 				(pinfunction "GND_3")
 				(pintype "power_in")
 			)
+			(node
+				(ref "U8")
+				(pin "15")
+				(pinfunction "TD_15")
+				(pintype "input")
+			)
+			(node
+				(ref "U8")
+				(pin "17")
+				(pinfunction "VSS_17")
+				(pintype "passive")
+			)
+			(node
+				(ref "U8")
+				(pin "4")
+				(pinfunction "~{CE}_4")
+				(pintype "input")
+			)
+			(node
+				(ref "U8")
+				(pin "5")
+				(pinfunction "EN2_5")
+				(pintype "input")
+			)
+			(node
+				(ref "U8")
+				(pin "8")
+				(pinfunction "VSS_8")
+				(pintype "power_in")
+			)
 		)
 		(net
-			(code "6")
+			(code "8")
 			(name "INA226_ALERT")
 			(class "Default")
 			(node
@@ -5370,29 +6417,7 @@
 			)
 		)
 		(net
-			(code "7")
-			(name "LDO_EN")
-			(class "Default")
-			(node
-				(ref "IC1")
-				(pin "3")
-				(pinfunction "EN_3")
-				(pintype "bidirectional")
-			)
-			(node
-				(ref "R16")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "U7")
-				(pin "6")
-				(pinfunction "RESET_N_6")
-				(pintype "open_collector")
-			)
-		)
-		(net
-			(code "8")
+			(code "9")
 			(name "LIS3DH_INT1")
 			(class "Default")
 			(node
@@ -5409,7 +6434,7 @@
 			)
 		)
 		(net
-			(code "9")
+			(code "10")
 			(name "Net-(D1-A)")
 			(class "Default")
 			(node
@@ -5425,7 +6450,7 @@
 			)
 		)
 		(net
-			(code "10")
+			(code "11")
 			(name "Net-(D1-K)")
 			(class "Default")
 			(node
@@ -5435,14 +6460,14 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "U5")
-				(pin "7")
-				(pinfunction "~{CHRG}_7")
+				(ref "U8")
+				(pin "9")
+				(pinfunction "~{CHG}_9")
 				(pintype "open_collector")
 			)
 		)
 		(net
-			(code "11")
+			(code "12")
 			(name "Net-(D2-A)")
 			(class "Default")
 			(node
@@ -5458,7 +6483,7 @@
 			)
 		)
 		(net
-			(code "12")
+			(code "13")
 			(name "Net-(D2-K)")
 			(class "Default")
 			(node
@@ -5468,14 +6493,14 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "U5")
-				(pin "6")
-				(pinfunction "~{STDBY}_6")
+				(ref "U8")
+				(pin "7")
+				(pinfunction "~{PGOOD}_7")
 				(pintype "open_collector")
 			)
 		)
 		(net
-			(code "13")
+			(code "14")
 			(name "Net-(J1-CC1)")
 			(class "Default")
 			(node
@@ -5491,7 +6516,7 @@
 			)
 		)
 		(net
-			(code "14")
+			(code "15")
 			(name "Net-(J1-CC2)")
 			(class "Default")
 			(node
@@ -5507,7 +6532,53 @@
 			)
 		)
 		(net
-			(code "15")
+			(code "16")
+			(name "Net-(L1-Pad1)")
+			(class "Default")
+			(node
+				(ref "L1")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U5")
+				(pin "PIN8")
+				(pinfunction "L1_PIN8")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "U5")
+				(pin "PIN9")
+				(pinfunction "L1_PIN9")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "17")
+			(name "Net-(L1-Pad2)")
+			(class "Default")
+			(node
+				(ref "L1")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U5")
+				(pin "PIN6")
+				(pinfunction "L2_PIN6")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "U5")
+				(pin "PIN7")
+				(pinfunction "L2_PIN7")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "18")
 			(name "Net-(U1-EN)")
 			(class "Default")
 			(node
@@ -5534,7 +6605,7 @@
 			)
 		)
 		(net
-			(code "16")
+			(code "19")
 			(name "Net-(U1-IO8)")
 			(class "Default")
 			(node
@@ -5550,7 +6621,7 @@
 			)
 		)
 		(net
-			(code "17")
+			(code "20")
 			(name "Net-(U1-IO9)")
 			(class "Default")
 			(node
@@ -5567,7 +6638,7 @@
 			)
 		)
 		(net
-			(code "18")
+			(code "21")
 			(name "Net-(U3-CS)")
 			(class "Default")
 			(node
@@ -5583,7 +6654,7 @@
 			)
 		)
 		(net
-			(code "19")
+			(code "22")
 			(name "Net-(U3-OC)")
 			(class "Default")
 			(node
@@ -5600,7 +6671,7 @@
 			)
 		)
 		(net
-			(code "20")
+			(code "23")
 			(name "Net-(U3-OD)")
 			(class "Default")
 			(node
@@ -5617,7 +6688,7 @@
 			)
 		)
 		(net
-			(code "21")
+			(code "24")
 			(name "Net-(U3-VCC)")
 			(class "Default")
 			(node
@@ -5638,23 +6709,28 @@
 			)
 		)
 		(net
-			(code "22")
-			(name "Net-(U5-PROG)")
+			(code "25")
+			(name "Net-(U5-FB)")
 			(class "Default")
 			(node
-				(ref "R4")
+				(ref "R17")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R18")
 				(pin "1")
 				(pintype "passive")
 			)
 			(node
 				(ref "U5")
-				(pin "2")
-				(pinfunction "PROG_2")
-				(pintype "passive")
+				(pin "PIN3")
+				(pinfunction "FB_PIN3")
+				(pintype "input")
 			)
 		)
 		(net
-			(code "23")
+			(code "26")
 			(name "Net-(U7-CTR)")
 			(class "Default")
 			(node
@@ -5670,7 +6746,7 @@
 			)
 		)
 		(net
-			(code "24")
+			(code "27")
 			(name "Net-(U7-CTS)")
 			(class "Default")
 			(node
@@ -5686,7 +6762,104 @@
 			)
 		)
 		(net
-			(code "25")
+			(code "28")
+			(name "Net-(U8-ILIM)")
+			(class "Default")
+			(node
+				(ref "R4")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U8")
+				(pin "12")
+				(pinfunction "ILIM_12")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "29")
+			(name "Net-(U8-ISET)")
+			(class "Default")
+			(node
+				(ref "R19")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U8")
+				(pin "16")
+				(pinfunction "ISET_16")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "30")
+			(name "Net-(U8-TMR)")
+			(class "Default")
+			(node
+				(ref "R20")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U8")
+				(pin "14")
+				(pinfunction "TMR_14")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "31")
+			(name "Net-(U8-TS)")
+			(class "Default")
+			(node
+				(ref "R21")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U8")
+				(pin "1")
+				(pinfunction "TS_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "32")
+			(name "POWER_OUT")
+			(class "Default")
+			(node
+				(ref "C15")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R1")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U4")
+				(pin "10")
+				(pinfunction "VIN+_10")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "U8")
+				(pin "10")
+				(pinfunction "OUT_10")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U8")
+				(pin "11")
+				(pinfunction "OUT_11")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "33")
 			(name "SCL")
 			(class "Default")
 			(node
@@ -5720,7 +6893,7 @@
 			)
 		)
 		(net
-			(code "26")
+			(code "34")
 			(name "SDA")
 			(class "Default")
 			(node
@@ -5754,7 +6927,7 @@
 			)
 		)
 		(net
-			(code "27")
+			(code "35")
 			(name "SHUNT_OUTPUT")
 			(class "Default")
 			(node
@@ -5763,15 +6936,19 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "C8")
-				(pin "1")
+				(ref "C16")
+				(pin "2")
 				(pintype "passive")
 			)
 			(node
-				(ref "IC1")
-				(pin "1")
-				(pinfunction "VIN_1")
-				(pintype "bidirectional")
+				(ref "C17")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C18")
+				(pin "2")
+				(pintype "passive")
 			)
 			(node
 				(ref "R1")
@@ -5801,6 +6978,24 @@
 				(pintype "unspecified")
 			)
 			(node
+				(ref "U5")
+				(pin "PIN1")
+				(pinfunction "VINA_PIN1")
+				(pintype "input")
+			)
+			(node
+				(ref "U5")
+				(pin "PIN10")
+				(pinfunction "VIN_PIN10")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "U5")
+				(pin "PIN11")
+				(pinfunction "VIN_PIN11")
+				(pintype "bidirectional")
+			)
+			(node
 				(ref "U7")
 				(pin "4")
 				(pinfunction "VDD_4")
@@ -5808,7 +7003,7 @@
 			)
 		)
 		(net
-			(code "28")
+			(code "36")
 			(name "USB_DM")
 			(class "Default")
 			(node
@@ -5843,7 +7038,7 @@
 			)
 		)
 		(net
-			(code "29")
+			(code "37")
 			(name "USB_DP")
 			(class "Default")
 			(node
@@ -5878,7 +7073,7 @@
 			)
 		)
 		(net
-			(code "30")
+			(code "38")
 			(name "USB_VBUS")
 			(class "Default")
 			(node
@@ -5933,26 +7128,26 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "U5")
-				(pin "4")
-				(pinfunction "V_{CC}_4")
-				(pintype "power_in")
-			)
-			(node
-				(ref "U5")
-				(pin "8")
-				(pinfunction "CE_8")
-				(pintype "input")
-			)
-			(node
 				(ref "U6")
 				(pin "5")
 				(pinfunction "VBUS_5")
 				(pintype "passive")
 			)
+			(node
+				(ref "U8")
+				(pin "13")
+				(pinfunction "IN_13")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U8")
+				(pin "6")
+				(pinfunction "EN1_6")
+				(pintype "input")
+			)
 		)
 		(net
-			(code "31")
+			(code "39")
 			(name "UVLO_SENSE")
 			(class "Default")
 			(node
@@ -5978,18 +7173,7 @@
 			)
 		)
 		(net
-			(code "32")
-			(name "unconnected-(IC1-SNS-Pad4)")
-			(class "Default")
-			(node
-				(ref "IC1")
-				(pin "4")
-				(pinfunction "SNS_4")
-				(pintype "bidirectional+no_connect")
-			)
-		)
-		(net
-			(code "33")
+			(code "40")
 			(name "unconnected-(J1-SBU1-PadA8)")
 			(class "Default")
 			(node
@@ -6000,7 +7184,7 @@
 			)
 		)
 		(net
-			(code "34")
+			(code "41")
 			(name "unconnected-(J1-SBU2-PadB8)")
 			(class "Default")
 			(node
@@ -6011,7 +7195,7 @@
 			)
 		)
 		(net
-			(code "35")
+			(code "42")
 			(name "unconnected-(U1-IO1-Pad13)")
 			(class "Default")
 			(node
@@ -6022,7 +7206,7 @@
 			)
 		)
 		(net
-			(code "36")
+			(code "43")
 			(name "unconnected-(U1-IO3-Pad6)")
 			(class "Default")
 			(node
@@ -6033,18 +7217,7 @@
 			)
 		)
 		(net
-			(code "37")
-			(name "unconnected-(U1-IO4-Pad9)")
-			(class "Default")
-			(node
-				(ref "U1")
-				(pin "9")
-				(pinfunction "IO4_9")
-				(pintype "bidirectional+no_connect")
-			)
-		)
-		(net
-			(code "38")
+			(code "44")
 			(name "unconnected-(U1-IO5-Pad10)")
 			(class "Default")
 			(node
@@ -6055,7 +7228,7 @@
 			)
 		)
 		(net
-			(code "39")
+			(code "45")
 			(name "unconnected-(U1-IO6-Pad15)")
 			(class "Default")
 			(node
@@ -6066,7 +7239,7 @@
 			)
 		)
 		(net
-			(code "40")
+			(code "46")
 			(name "unconnected-(U1-IO7-Pad16)")
 			(class "Default")
 			(node
@@ -6077,7 +7250,7 @@
 			)
 		)
 		(net
-			(code "41")
+			(code "47")
 			(name "unconnected-(U1-IO14-Pad19)")
 			(class "Default")
 			(node
@@ -6088,7 +7261,7 @@
 			)
 		)
 		(net
-			(code "42")
+			(code "48")
 			(name "unconnected-(U1-IO15-Pad20)")
 			(class "Default")
 			(node
@@ -6099,7 +7272,7 @@
 			)
 		)
 		(net
-			(code "43")
+			(code "49")
 			(name "unconnected-(U1-IO18-Pad24)")
 			(class "Default")
 			(node
@@ -6110,7 +7283,7 @@
 			)
 		)
 		(net
-			(code "44")
+			(code "50")
 			(name "unconnected-(U1-IO19-Pad25)")
 			(class "Default")
 			(node
@@ -6121,7 +7294,7 @@
 			)
 		)
 		(net
-			(code "45")
+			(code "51")
 			(name "unconnected-(U1-IO20-Pad26)")
 			(class "Default")
 			(node
@@ -6132,7 +7305,7 @@
 			)
 		)
 		(net
-			(code "46")
+			(code "52")
 			(name "unconnected-(U1-IO21-Pad27)")
 			(class "Default")
 			(node
@@ -6143,7 +7316,7 @@
 			)
 		)
 		(net
-			(code "47")
+			(code "53")
 			(name "unconnected-(U1-NC-Pad4)")
 			(class "Default")
 			(node
@@ -6154,7 +7327,7 @@
 			)
 		)
 		(net
-			(code "48")
+			(code "54")
 			(name "unconnected-(U1-NC-Pad7)")
 			(class "Default")
 			(node
@@ -6165,7 +7338,7 @@
 			)
 		)
 		(net
-			(code "49")
+			(code "55")
 			(name "unconnected-(U1-NC-Pad21)")
 			(class "Default")
 			(node
@@ -6176,7 +7349,7 @@
 			)
 		)
 		(net
-			(code "50")
+			(code "56")
 			(name "unconnected-(U1-NC-Pad32)")
 			(class "Default")
 			(node
@@ -6187,7 +7360,7 @@
 			)
 		)
 		(net
-			(code "51")
+			(code "57")
 			(name "unconnected-(U1-NC-Pad33)")
 			(class "Default")
 			(node
@@ -6198,7 +7371,7 @@
 			)
 		)
 		(net
-			(code "52")
+			(code "58")
 			(name "unconnected-(U1-NC-Pad34)")
 			(class "Default")
 			(node
@@ -6209,7 +7382,7 @@
 			)
 		)
 		(net
-			(code "53")
+			(code "59")
 			(name "unconnected-(U1-NC-Pad35)")
 			(class "Default")
 			(node
@@ -6220,7 +7393,7 @@
 			)
 		)
 		(net
-			(code "54")
+			(code "60")
 			(name "unconnected-(U1-RXD0-Pad30)")
 			(class "Default")
 			(node
@@ -6231,7 +7404,7 @@
 			)
 		)
 		(net
-			(code "55")
+			(code "61")
 			(name "unconnected-(U1-TXD0-Pad31)")
 			(class "Default")
 			(node
@@ -6242,7 +7415,7 @@
 			)
 		)
 		(net
-			(code "56")
+			(code "62")
 			(name "unconnected-(U2-ADC1-Pad16)")
 			(class "Default")
 			(node
@@ -6253,7 +7426,7 @@
 			)
 		)
 		(net
-			(code "57")
+			(code "63")
 			(name "unconnected-(U2-ADC2-Pad15)")
 			(class "Default")
 			(node
@@ -6264,7 +7437,7 @@
 			)
 		)
 		(net
-			(code "58")
+			(code "64")
 			(name "unconnected-(U2-ADC3-Pad13)")
 			(class "Default")
 			(node
@@ -6275,7 +7448,7 @@
 			)
 		)
 		(net
-			(code "59")
+			(code "65")
 			(name "unconnected-(U2-INT2-Pad9)")
 			(class "Default")
 			(node
@@ -6286,7 +7459,7 @@
 			)
 		)
 		(net
-			(code "60")
+			(code "66")
 			(name "unconnected-(U2-NC-Pad2)")
 			(class "Default")
 			(node
@@ -6297,7 +7470,7 @@
 			)
 		)
 		(net
-			(code "61")
+			(code "67")
 			(name "unconnected-(U2-NC-Pad3)")
 			(class "Default")
 			(node
@@ -6308,7 +7481,7 @@
 			)
 		)
 		(net
-			(code "62")
+			(code "68")
 			(name "unconnected-(U3-TD-Pad4)")
 			(class "Default")
 			(node
@@ -6316,6 +7489,17 @@
 				(pin "4")
 				(pinfunction "TD_4")
 				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "69")
+			(name "unconnected-(U5-PG-PadPIN14)")
+			(class "Default")
+			(node
+				(ref "U5")
+				(pin "PIN14")
+				(pinfunction "PG_PIN14")
+				(pintype "input+no_connect")
 			)
 		)
 	)

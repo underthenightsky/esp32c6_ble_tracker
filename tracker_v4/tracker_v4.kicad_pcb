@@ -113,7 +113,6 @@
 		)
 		(capping no)
 		(filling no)
-		(zone_defaults)
 		(pcbplotparams
 			(layerselection 0x00000000_00000000_55555555_5755f5ff)
 			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
@@ -537,7 +536,7 @@
 		(at 122 103.5)
 		(descr "CK components KMR2 tactile switch http://www.ckswitches.com/media/1479/kmr2.pdf")
 		(tags "tactile switch kmr2")
-		(property "Reference" "SW1"
+		(property "Reference" "BOOT"
 			(at 0 -2.45 0)
 			(layer "F.SilkS")
 			(uuid "b28c851a-b2d6-4af3-82b4-4a464cc3b7d0")
@@ -7653,7 +7652,7 @@
 		(at 118.55 119.3 180)
 		(descr "CK components KMR2 tactile switch http://www.ckswitches.com/media/1479/kmr2.pdf")
 		(tags "tactile switch kmr2")
-		(property "Reference" "SW2"
+		(property "Reference" "RESET"
 			(at 0 -2.45 0)
 			(layer "F.SilkS")
 			(uuid "f907b0dd-4dc3-4fb0-822f-5eabb5b57ab9")
