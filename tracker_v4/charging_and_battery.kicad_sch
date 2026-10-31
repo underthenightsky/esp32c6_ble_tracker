@@ -6359,7 +6359,7 @@
 				)
 			)
 		)
-		(property "Value" "500"
+		(property "Value" "499"
 			(at 140.97 77.47 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7889,7 +7889,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_JST:JST_SH_SM02B-SRSS-TB_1x02-1MP_P1.00mm_Horizontal"
+		(property "Footprint" "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal"
 			(at 129.54 124.206 90)
 			(hide yes)
 			(show_name no)
