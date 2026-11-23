@@ -10876,7 +10876,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_Coilcraft_XxL4020"
+		(property "Footprint" "74437324015:WE-LHMI_4020"
 			(at 90.17 58.42 0)
 			(hide yes)
 			(show_name no)
